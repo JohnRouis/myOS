@@ -1,5 +1,5 @@
 #include "tinyOS.h"
-
+#include "ARMCM3.h"
 tTask* currentTask;
 
 tTask* nextTask;
@@ -47,16 +47,29 @@ void tTaskSched(void)
 	tTaskSwitch();
 }
 
+void tSetSysTickPeriod(uint32_t ms)
+{
+	SysTick->LOAD = ms * SystemCoreClock / 1000 - 1;
+	NVIC_SetPriority(SysTick_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
+	SysTick->VAL = 0;
+	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_ENABLE_Msk;
+}
+
+void SysTick_Handler()
+{
+	tTaskSched();
+}
+
 int task1Flag = 0;
 void task1Entry(void* param)
 {
+	tSetSysTickPeriod(10);
 	for(;;)
 	{
 		task1Flag = 1;
 		delay(100);
 		task1Flag = 0;
 		delay(100);
-		tTaskSched();
 	}
 }
 
@@ -69,7 +82,6 @@ void task2Entry(void* param)
 		delay(100);
 		task2Flag = 0;
 		delay(100);
-		tTaskSched();
 	}
 }
 
