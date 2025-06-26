@@ -20,4 +20,8 @@ void tTaskSwitch(void);
 
 void tTaskRunFirst(void);
 
+uint32_t tTaskEnterCritical(void);
+
+void tTaskExitCritical(uint32_t status);
+
 #endif

@@ -10,6 +10,18 @@
 #define MEM32(addr) *(volatile unsigned long*)(addr)
 #define MEM8(addr)  *(volatile unsigned char*)(addr)
 
+uint32_t tTaskEnterCritical(void)
+{
+    uint32_t primask = __get_PRIMASK();
+    __disable_irq();
+    return  primask;
+}
+
+void tTaskExitCritical(uint32_t status)
+{
+    __set_PRIMASK(status);
+}
+
 //可成功执行，但后续采取汇编文件写法
 #if 0
 __attribute__((naked)) void PendSV_Handler()

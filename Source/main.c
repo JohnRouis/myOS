@@ -32,7 +32,9 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t* stack)
 }
 
 void tTaskSched(void)
-{
+{   //进入临界区，保护任务调度和切换期间，不会因为发生中断而导致更改
+	uint32_t status = tTaskEnterCritical();
+
 	if(currentTask == idleTask)//如果时空闲任务，执行其中一个任务即可
 	{
 		if(taskTable[0]->delayTicks == 0)
@@ -45,6 +47,7 @@ void tTaskSched(void)
 		}
 		else
 		{
+			tTaskExitCritical(status);
 			return;
 		}
 	}
@@ -62,6 +65,7 @@ void tTaskSched(void)
 			}
 			else
 			{
+				tTaskExitCritical(status);
 				return;
 			}
 		}
@@ -77,16 +81,20 @@ void tTaskSched(void)
 			}
 			else
 			{
+				tTaskExitCritical(status);
 				return;
 			}
 		}
 	}
 	tTaskSwitch();
+	//推出临界区
+	tTaskExitCritical(status);
 }
 
 void tTaskSystemTickHandler()
 {
 	int i;
+	uint32_t status = tTaskEnterCritical();
 	for(i = 0; i < 2; i++)
 	{
 		if(taskTable[i]->delayTicks > 0)
@@ -94,13 +102,18 @@ void tTaskSystemTickHandler()
 			taskTable[i]->delayTicks--;
 		}
 	}
+	tTaskExitCritical(status);
+
 	tTaskSched();
 }
 
 void tTaskDelay(uint32_t delay)
 {
+	uint32_t status = tTaskEnterCritical();
+
 	currentTask->delayTicks = delay;
 
+	tTaskExitCritical(status);
 	tTaskSched();
 }
 
@@ -146,7 +159,7 @@ void idleTaskEntry(void* param)
 {
 	for(;;)
 	{
-		
+
 	}
 }
 
