@@ -4,6 +4,8 @@ tTask* currentTask;
 
 tTask* nextTask;
 
+tTask* idleTask;
+
 tTask* taskTable[2];
 
 void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t* stack)
@@ -26,25 +28,80 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t* stack)
 	*(--stack) = (unsigned long)0x4;
 
 	task->stack = stack;//更新堆栈指针位置
-}
-
-void delay(int count)
-{
-	while (--count > 0);
-	
+	task->delayTicks = 0;
 }
 
 void tTaskSched(void)
 {
-	if(currentTask == taskTable[0])
+	if(currentTask == idleTask)//如果时空闲任务，执行其中一个任务即可
 	{
-		nextTask = taskTable[1];
+		if(taskTable[0]->delayTicks == 0)
+		{
+			nextTask = taskTable[0];
+		}
+		else if(taskTable[1]->delayTicks == 0)
+		{
+			nextTask == taskTable[1];
+		}
+		else
+		{
+			return;
+		}
 	}
-	else
+	else//不是空闲任务，检查下一个任务去
 	{
-		nextTask = taskTable[0];
+		if(currentTask == taskTable[0])
+		{
+			if(taskTable[1]->delayTicks == 0)//下一个任务行，那就执行
+			{
+				nextTask = taskTable[1];
+			}
+			else if(currentTask->delayTicks != 0)//下一个任务还在延时而且
+			{
+				nextTask = idleTask;
+			}
+			else
+			{
+				return;
+			}
+		}
+		else if(currentTask == taskTable[1])
+		{
+			if(taskTable[0]->delayTicks == 0)//下一个任务行，那就执行
+			{
+				nextTask = taskTable[0];
+			}
+			else if(currentTask->delayTicks != 0)//下一个任务还在延时而且
+			{
+				nextTask = idleTask;
+			}
+			else
+			{
+				return;
+			}
+		}
 	}
 	tTaskSwitch();
+}
+
+void tTaskSystemTickHandler()
+{
+	int i;
+	for(i = 0; i < 2; i++)
+	{
+		if(taskTable[i]->delayTicks > 0)
+		{
+			taskTable[i]->delayTicks--;
+		}
+	}
+	tTaskSched();
+}
+
+void tTaskDelay(uint32_t delay)
+{
+	currentTask->delayTicks = delay;
+
+	tTaskSched();
 }
 
 void tSetSysTickPeriod(uint32_t ms)
@@ -57,7 +114,7 @@ void tSetSysTickPeriod(uint32_t ms)
 
 void SysTick_Handler()
 {
-	tTaskSched();
+	tTaskSystemTickHandler();
 }
 
 int task1Flag = 0;
@@ -67,9 +124,9 @@ void task1Entry(void* param)
 	for(;;)
 	{
 		task1Flag = 1;
-		delay(100);
+		tTaskDelay(1);
 		task1Flag = 0;
-		delay(100);
+		tTaskDelay(1);
 	}
 }
 
@@ -79,9 +136,17 @@ void task2Entry(void* param)
 	for(;;)
 	{
 		task2Flag = 1;
-		delay(100);
+		tTaskDelay(1);
 		task2Flag = 0;
-		delay(100);
+		tTaskDelay(1);
+	}
+}
+
+void idleTaskEntry(void* param)
+{
+	for(;;)
+	{
+		
 	}
 }
 
@@ -90,13 +155,18 @@ tTask tTask2;
 tTaskStack task1Env[1024];
 tTaskStack task2Env[1024];
 
+tTask tTaskIdle;
+tTaskStack idleTaskEnv[1024];
+
 int main(void)
 {
 	tTaskInit(&tTask1, task1Entry, (void*)0x11111111, &task1Env[1024]);
 	tTaskInit(&tTask2, task2Entry, (void*)0x22222222, &task2Env[1024]);
+	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, &idleTaskEnv[1024]);
 
 	taskTable[0] = &tTask1;
 	taskTable[1] = &tTask2;
+	idleTask = &tTaskIdle;
 
 	nextTask = taskTable[0];
 

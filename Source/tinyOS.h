@@ -8,6 +8,8 @@ typedef uint32_t tTaskStack;
 typedef struct tTask
 {
     tTaskStack* stack;
+
+    uint32_t delayTicks;//任务延时计数
 }tTask;
 
 extern tTask* currentTask;
