@@ -405,6 +405,16 @@
               <FileType>2</FileType>
               <FilePath>.\Source\cortex.s</FilePath>
             </File>
+            <File>
+              <FileName>tLib.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source\tLib.h</FilePath>
+            </File>
+            <File>
+              <FileName>tBitmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\tBitmap.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

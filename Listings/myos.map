@@ -69,6 +69,13 @@ Section Cross References
     switch.o(.ARM.exidx.text.tTaskSwitch) refers to switch.o(.text.tTaskSwitch) for [Anonymous Symbol]
     cortex.o(.text) refers to main.o(.bss.currentTask) for currentTask
     cortex.o(.text) refers to main.o(.bss.nextTask) for nextTask
+    tbitmap.o(.ARM.exidx.text.tBitmapInit) refers to tbitmap.o(.text.tBitmapInit) for [Anonymous Symbol]
+    tbitmap.o(.ARM.exidx.text.tBitmapPosCount) refers to tbitmap.o(.text.tBitmapPosCount) for [Anonymous Symbol]
+    tbitmap.o(.ARM.exidx.text.tBitmapSet) refers to tbitmap.o(.text.tBitmapSet) for [Anonymous Symbol]
+    tbitmap.o(.ARM.exidx.text.tBitmapClear) refers to tbitmap.o(.text.tBitmapClear) for [Anonymous Symbol]
+    tbitmap.o(.text.tBitmapGetFirstSet) refers to tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable) for tBitmapGetFirstSet.quickFindTable
+    tbitmap.o(.text.tBitmapGetFirstSet) refers to tbitmap.o(.text.tBitmapPosCount) for tBitmapPosCount
+    tbitmap.o(.ARM.exidx.text.tBitmapGetFirstSet) refers to tbitmap.o(.text.tBitmapGetFirstSet) for [Anonymous Symbol]
     startup_armcm3.o(.ARM.exidx.text.Default_Handler) refers to startup_armcm3.o(.text.Default_Handler) for [Anonymous Symbol]
     startup_armcm3.o(.text.Reset_Handler) refers to system_armcm3.o(.text.SystemInit) for SystemInit
     startup_armcm3.o(.text.Reset_Handler) refers to entry.o(.ARM.Collect$$$$00000000) for __main
@@ -128,6 +135,18 @@ Removing Unused input sections from the image.
     Removing switch.o(.ARM.exidx.text.tTaskExitCritical), (8 bytes).
     Removing switch.o(.ARM.exidx.text.tTaskRunFirst), (8 bytes).
     Removing switch.o(.ARM.exidx.text.tTaskSwitch), (8 bytes).
+    Removing tbitmap.o(.text), (0 bytes).
+    Removing tbitmap.o(.text.tBitmapInit), (14 bytes).
+    Removing tbitmap.o(.ARM.exidx.text.tBitmapInit), (8 bytes).
+    Removing tbitmap.o(.text.tBitmapPosCount), (4 bytes).
+    Removing tbitmap.o(.ARM.exidx.text.tBitmapPosCount), (8 bytes).
+    Removing tbitmap.o(.text.tBitmapSet), (26 bytes).
+    Removing tbitmap.o(.ARM.exidx.text.tBitmapSet), (8 bytes).
+    Removing tbitmap.o(.text.tBitmapClear), (26 bytes).
+    Removing tbitmap.o(.ARM.exidx.text.tBitmapClear), (8 bytes).
+    Removing tbitmap.o(.text.tBitmapGetFirstSet), (130 bytes).
+    Removing tbitmap.o(.ARM.exidx.text.tBitmapGetFirstSet), (8 bytes).
+    Removing tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable), (256 bytes).
     Removing startup_armcm3.o(.text), (0 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Default_Handler), (8 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Reset_Handler), (8 bytes).
@@ -137,7 +156,7 @@ Removing Unused input sections from the image.
     Removing system_armcm3.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_armcm3.o(.ARM.exidx.text.SystemInit), (8 bytes).
 
-33 unused section(s) (total 339 bytes) removed from the image.
+45 unused section(s) (total 835 bytes) removed from the image.
 
 ==============================================================================
 
@@ -169,6 +188,7 @@ Image Symbol Table
     startup_ARMCM3.c                         0x00000000   Number         0  startup_armcm3.o ABSOLUTE
     switch.c                                 0x00000000   Number         0  switch.o ABSOLUTE
     system_ARMCM3.c                          0x00000000   Number         0  system_armcm3.o ABSOLUTE
+    tBitmap.c                                0x00000000   Number         0  tbitmap.o ABSOLUTE
     .ARM.Collect$$$$00000000                 0x000003c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
     .ARM.Collect$$$$00000003                 0x000003c0   Section        4  entry4.o(.ARM.Collect$$$$00000003)
     .ARM.Collect$$$$00000004                 0x000003c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
@@ -296,23 +316,23 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000003c0   Data   RO           80    RESET               startup_armcm3.o
-    0x000003c0   0x000003c0   0x00000000   Code   RO           99  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000003c0   0x000003c0   0x00000004   Code   RO          102    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
-    0x000003c4   0x000003c4   0x00000004   Code   RO          105    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          107    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          109    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000003c8   0x000003c8   0x00000008   Code   RO          110    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          112    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          114    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000003d0   0x000003d0   0x00000004   Code   RO          103    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
+    0x00000000   0x00000000   0x000003c0   Data   RO           98    RESET               startup_armcm3.o
+    0x000003c0   0x000003c0   0x00000000   Code   RO          117  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000003c0   0x000003c0   0x00000004   Code   RO          120    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
+    0x000003c4   0x000003c4   0x00000004   Code   RO          123    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          125    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          127    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000003c8   0x000003c8   0x00000008   Code   RO          128    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          130    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          132    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000003d0   0x000003d0   0x00000004   Code   RO          121    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
     0x000003d4   0x000003d4   0x00000030   Code   RO           67    .text               cortex.o
-    0x00000404   0x00000404   0x00000030   Code   RO          116    .text               mc_w.l(init.o)
-    0x00000434   0x00000434   0x00000004   Code   RO           74    .text.Default_Handler  startup_armcm3.o
-    0x00000438   0x00000438   0x00000004   Code   RO           78    .text.HardFault_Handler  startup_armcm3.o
-    0x0000043c   0x0000043c   0x00000008   Code   RO           76    .text.Reset_Handler  startup_armcm3.o
+    0x00000404   0x00000404   0x00000030   Code   RO          134    .text               mc_w.l(init.o)
+    0x00000434   0x00000434   0x00000004   Code   RO           92    .text.Default_Handler  startup_armcm3.o
+    0x00000438   0x00000438   0x00000004   Code   RO           96    .text.HardFault_Handler  startup_armcm3.o
+    0x0000043c   0x0000043c   0x00000008   Code   RO           94    .text.Reset_Handler  startup_armcm3.o
     0x00000444   0x00000444   0x00000008   Code   RO           22    .text.SysTick_Handler  main.o
-    0x0000044c   0x0000044c   0x00000026   Code   RO           90    .text.SystemInit    system_armcm3.o
+    0x0000044c   0x0000044c   0x00000026   Code   RO          108    .text.SystemInit    system_armcm3.o
     0x00000472   0x00000472   0x00000002   PAD
     0x00000474   0x00000474   0x00000042   Code   RO           20    .text.__NVIC_SetPriority  main.o
     0x000004b6   0x000004b6   0x00000002   PAD
@@ -333,10 +353,10 @@ Memory Map of the image
     0x000008e6   0x000008e6   0x00000002   PAD
     0x000008e8   0x000008e8   0x00000030   Code   RO           24    .text.task1Entry    main.o
     0x00000918   0x00000918   0x0000002a   Code   RO           26    .text.task2Entry    main.o
-    0x00000942   0x00000942   0x0000000e   Code   RO          120    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000950   0x00000950   0x00000002   Code   RO          121    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000952   0x00000952   0x0000000e   Code   RO          122    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000960   0x00000960   0x00000020   Data   RO          119    Region$$Table       anon$$obj.o
+    0x00000942   0x00000942   0x0000000e   Code   RO          138    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000950   0x00000950   0x00000002   Code   RO          139    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000952   0x00000952   0x0000000e   Code   RO          140    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000960   0x00000960   0x00000020   Data   RO          137    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_NOINIT (Exec base: 0x20000000, Load base: 0x00000980, Size: 0x00000000, Max: 0x0003f200, ABSOLUTE, UNINIT)
@@ -348,7 +368,7 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000980   0x00000004   Data   RW           92    .data.SystemCoreClock  system_armcm3.o
+    0x20000000   0x00000980   0x00000004   Data   RW          110    .data.SystemCoreClock  system_armcm3.o
     0x20000004        -       0x00000004   Zero   RW           33    .bss.currentTask    main.o
     0x20000008        -       0x00000004   Zero   RW           34    .bss.idleTask       main.o
     0x2000000c        -       0x00001000   Zero   RW           44    .bss.idleTaskEnv    main.o

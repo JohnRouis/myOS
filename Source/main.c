@@ -143,6 +143,7 @@ void tTaskDelay(uint32_t delay)
 	currentTask->delayTicks = delay;
 
 	tTaskExitCritical(status);
+	
 	tTaskSched();
 }
 
