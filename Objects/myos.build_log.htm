@@ -27,15 +27,16 @@ Project File Date:  06/24/2025
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'E:\KEIL\ARM\ARMCLANG\Bin'
 Build target 'Target_1'
-Source/main.c(46): warning: equality comparison result unused [-Wunused-comparison]
-   46 |                         nextTask == taskTable[1];
+Source/main.c(75): warning: equality comparison result unused [-Wunused-comparison]
+   75 |                         nextTask == taskTable[1];
       |                         ~~~~~~~~~^~~~~~~~~~~~~~~
-Source/main.c(46): note: use '=' to turn this equality comparison into an assignment
-   46 |                         nextTask == taskTable[1];
+Source/main.c(75): note: use '=' to turn this equality comparison into an assignment
+   75 |                         nextTask == taskTable[1];
       |                                  ^~
       |                                  =
 1 warning generated.
 compiling main.c...
+compiling switch.c...
 linking...
 .\RTE\Device\ARMCM3\ARMCM3_ac6.sct(19): warning: L6314W: No section matches pattern *(.bss.noinit).
 Program Size: Code=1440 RO-data=992 RW-data=4 ZI-data=15924  
@@ -69,7 +70,7 @@ Package Vendor: ARM
       Include file:  Device/ARMCM3/Include/ARMCM3.h
       Source file:   Device/ARMCM3/Source/startup_ARMCM3.c
       Source file:   Device/ARMCM3/Source/system_ARMCM3.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

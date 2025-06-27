@@ -8,6 +8,8 @@ tTask* idleTask;
 
 tTask* taskTable[2];
 
+uint8_t schedLockCount;//调度锁计数器
+
 void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t* stack)
 {
 	*(--stack) = (unsigned long)(1 << 24);
@@ -31,6 +33,33 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t* stack)
 	task->delayTicks = 0;
 }
 
+void tTaskSchedInit(void)
+{
+	schedLockCount = 0;
+}
+//禁止任务调度 上锁
+void tTaskSchedDisable(void)
+{
+	uint32_t status = tTaskEnterCritical();//访问公共变量需要进入临界区
+	if(schedLockCount < 255)
+	{
+		schedLockCount++;
+	}
+	tTaskExitCritical(status);
+}
+//允许任务调度 解锁
+void tTaskSchedEnable(void)
+{
+	uint32_t status = tTaskEnterCritical();
+	if(schedLockCount > 0)
+	{
+		if(--schedLockCount == 0)
+		{
+			tTaskSched();
+		}
+	}
+	tTaskExitCritical(status);
+}
 void tTaskSched(void)
 {   //进入临界区，保护任务调度和切换期间，不会因为发生中断而导致更改
 	uint32_t status = tTaskEnterCritical();

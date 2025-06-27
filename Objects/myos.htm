@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\myos.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\myos.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Thu Jun 26 17:15:47 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Fri Jun 27 13:11:01 2025
 <BR><P>
 <H3>Maximum Stack Usage =         64 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -170,9 +170,9 @@ Global Symbols
 <P><STRONG><a name="[22]"></a>tTaskDelay</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, main.o(.text.tTaskDelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = tTaskDelay &rArr; tTaskSched &rArr; tTaskExitCritical
 </UL>
-<BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskExitCritical
+<BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskSched
+<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskExitCritical
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskEnterCritical
-<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskSched
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;task2Entry
 <LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;task1Entry
@@ -224,9 +224,9 @@ Global Symbols
 <P><STRONG><a name="[1d]"></a>tTaskSystemTickHandler</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, main.o(.text.tTaskSystemTickHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = tTaskSystemTickHandler &rArr; tTaskSched &rArr; tTaskExitCritical
 </UL>
-<BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskExitCritical
+<BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskSched
+<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskExitCritical
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskEnterCritical
-<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tTaskSched
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
