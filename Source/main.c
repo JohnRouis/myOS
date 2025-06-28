@@ -6,11 +6,13 @@ tTask* nextTask;
 
 tTask* idleTask;
 
-tTask* taskTable[2];
+tTask* taskTable[TINYOS_PRO_COUNT];
 
 uint8_t schedLockCount;//调度锁计数器
 
-void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t* stack)
+tBitmap taskPrioBitmap;//任务优先级标志位置结构
+
+void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, uint32_t* stack)
 {
 	*(--stack) = (unsigned long)(1 << 24);
 	*(--stack) = (unsigned long)entry;
@@ -31,6 +33,16 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t* stack)
 
 	task->stack = stack;//更新堆栈指针位置
 	task->delayTicks = 0;
+	task->prio = prio;
+
+	taskTable[prio] = task;
+	tBitmapSet(&taskPrioBitmap, prio);
+}
+
+tTask* tTaskHighestReady(void)
+{
+	uint32_t  highestPrio = tBitmapGetFirstSet(&taskPrioBitmap);
+	return taskTable[highestPrio];
 }
 
 void tTaskSchedInit(void)
@@ -60,63 +72,25 @@ void tTaskSchedEnable(void)
 	}
 	tTaskExitCritical(status);
 }
+
 void tTaskSched(void)
-{   //进入临界区，保护任务调度和切换期间，不会因为发生中断而导致更改
+{   
+	tTask* tempTask;//临时变量
 	uint32_t status = tTaskEnterCritical();
 
-	if(currentTask == idleTask)//如果时空闲任务，执行其中一个任务即可
+	if(schedLockCount > 0)//调度器已上锁，不进行调度
 	{
-		if(taskTable[0]->delayTicks == 0)
-		{
-			nextTask = taskTable[0];
-		}
-		else if(taskTable[1]->delayTicks == 0)
-		{
-			nextTask == taskTable[1];
-		}
-		else
-		{
-			tTaskExitCritical(status);
-			return;
-		}
+		tTaskExitCritical(status);
+		return;
 	}
-	else//不是空闲任务，检查下一个任务去
+	//找到最高优先级的任务，优先级比当前的还高，切换到这个任务
+	tempTask = tTaskHighestReady();
+	if(tempTask != currentTask)
 	{
-		if(currentTask == taskTable[0])
-		{
-			if(taskTable[1]->delayTicks == 0)//下一个任务行，那就执行
-			{
-				nextTask = taskTable[1];
-			}
-			else if(currentTask->delayTicks != 0)//下一个任务还在延时而且
-			{
-				nextTask = idleTask;
-			}
-			else
-			{
-				tTaskExitCritical(status);
-				return;
-			}
-		}
-		else if(currentTask == taskTable[1])
-		{
-			if(taskTable[0]->delayTicks == 0)//下一个任务行，那就执行
-			{
-				nextTask = taskTable[0];
-			}
-			else if(currentTask->delayTicks != 0)//下一个任务还在延时而且
-			{
-				nextTask = idleTask;
-			}
-			else
-			{
-				tTaskExitCritical(status);
-				return;
-			}
-		}
+		nextTask = tempTask;
+		tTaskSwitch();
 	}
-	tTaskSwitch();
-	//推出临界区
+
 	tTaskExitCritical(status);
 }
 
@@ -124,13 +98,24 @@ void tTaskSystemTickHandler()
 {
 	int i;
 	uint32_t status = tTaskEnterCritical();
-	for(i = 0; i < 2; i++)
+	
+	for (i = 0; i < TINYOS_PRO_COUNT; i++)
 	{
-		if(taskTable[i]->delayTicks > 0)
+		if (taskTable[i] == (tTask*)0)
+		{
+			continue;
+		}
+		if (taskTable[i]->delayTicks > 0)
 		{
 			taskTable[i]->delayTicks--;
 		}
+		else
+		{
+			tBitmapSet(&taskPrioBitmap, i);
+		}
 	}
+	
+
 	tTaskExitCritical(status);
 
 	tTaskSched();
@@ -142,8 +127,10 @@ void tTaskDelay(uint32_t delay)
 
 	currentTask->delayTicks = delay;
 
+	tBitmapClear(&taskPrioBitmap, currentTask->prio);
+
 	tTaskExitCritical(status);
-	
+
 	tTaskSched();
 }
 
@@ -203,15 +190,11 @@ tTaskStack idleTaskEnv[1024];
 
 int main(void)
 {
-	tTaskInit(&tTask1, task1Entry, (void*)0x11111111, &task1Env[1024]);
-	tTaskInit(&tTask2, task2Entry, (void*)0x22222222, &task2Env[1024]);
-	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, &idleTaskEnv[1024]);
+	tTaskInit(&tTask1, task1Entry, (void*)0x11111111, 0, &task1Env[1024]);
+	tTaskInit(&tTask2, task2Entry, (void*)0x22222222, 1, &task2Env[1024]);
+	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, TINYOS_PRO_COUNT - 1, &idleTaskEnv[1024]);
 
-	taskTable[0] = &tTask1;
-	taskTable[1] = &tTask2;
-	idleTask = &tTaskIdle;
-
-	nextTask = taskTable[0];
+	nextTask = tTaskHighestReady();
 
 	tTaskRunFirst();
 

@@ -415,6 +415,11 @@
               <FileType>1</FileType>
               <FilePath>.\Source\tBitmap.c</FilePath>
             </File>
+            <File>
+              <FileName>tConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source\tConfig.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
