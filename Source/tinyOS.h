@@ -64,5 +64,5 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, ui
 
 void tSetSysTickPeriod(uint32_t ms);
 
-
+void tInitApp(void);
 #endif

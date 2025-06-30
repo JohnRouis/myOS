@@ -14,37 +14,6 @@ tBitmap taskPrioBitmap;//任务优先级标志位置结构
 
 tList tTaskDelayedList;//延时队列
 
-void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, uint32_t* stack)
-{
-	*(--stack) = (unsigned long)(1 << 24);
-	*(--stack) = (unsigned long)entry;
-	*(--stack) = (unsigned long)0x14;
-	*(--stack) = (unsigned long)0x12;
-	*(--stack) = (unsigned long)0x3;
-	*(--stack) = (unsigned long)0x2;
-	*(--stack) = (unsigned long)0x1;
-	*(--stack) = (unsigned long)param;
-	*(--stack) = (unsigned long)0x11;
-	*(--stack) = (unsigned long)0x10;
-	*(--stack) = (unsigned long)0x9;
-	*(--stack) = (unsigned long)0x8;
-	*(--stack) = (unsigned long)0x7;
-	*(--stack) = (unsigned long)0x6;
-	*(--stack) = (unsigned long)0x5;
-	*(--stack) = (unsigned long)0x4;
-
-	task->stack = stack;//更新堆栈指针位置
-	task->delayTicks = 0;
-	task->prio = prio;
-	task->state = TINYOS_TASK_STATE_RDY;
-	task->slice = TINYOS_SLICE_MAX;
-
-	tNodeInit(&(task->linkNode));
-	tNodeInit(&(task->delayNode)); 
-	tListAddFirst(&taskTable[prio], &(task->linkNode));
-
-	tBitmapSet(&taskPrioBitmap, prio);
-}
 
 tTask* tTaskHighestReady(void)
 {
@@ -176,74 +145,6 @@ void tTaskSystemTickHandler()
 	tTaskSched();
 }
 
-void tTaskDelay(uint32_t delay)
-{
-	uint32_t status = tTaskEnterCritical();
-
-	tTimeTaskWait(currentTask, delay);//设置延时，插入队列
-
-	tTaskSchedUnRdy(currentTask);//将任务从就绪列表中移除
-
-	tTaskSched();
-
-	tTaskExitCritical(status);
-}
-
-void tSetSysTickPeriod(uint32_t ms)
-{
-	SysTick->LOAD = ms * SystemCoreClock / 1000 - 1;
-	NVIC_SetPriority(SysTick_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
-	SysTick->VAL = 0;
-	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_ENABLE_Msk;
-}
-
-void SysTick_Handler()
-{
-	tTaskSystemTickHandler();
-}
-
-int task1Flag = 0;
-void task1Entry(void* param)
-{
-	tSetSysTickPeriod(10);
-	for(;;)
-	{
-		task1Flag = 1;
-		tTaskDelay(1);
-		task1Flag = 0;
-		tTaskDelay(1);
-	}
-}
-
-void delay(void)
-{
-	for(int i = 0; i < 0xff; i++){}
-}
-
-int task2Flag = 0;
-void task2Entry(void* param)
-{
-	for(;;)
-	{
-		task2Flag = 1;
-		delay();
-		task2Flag = 0;
-		delay();
-	}
-}
-
-int task3Flag = 0;
-void task3Entry(void* param)
-{
-	for(;;)
-	{
-		task3Flag = 1;
-		delay();
-		task3Flag = 0;
-		delay();
-	}
-}
-
 void idleTaskEntry(void* param)
 {
 	for(;;)
@@ -251,13 +152,6 @@ void idleTaskEntry(void* param)
 
 	}
 }
-
-tTask tTask1;
-tTask tTask2;
-tTask tTask3;
-tTaskStack task1Env[1024];
-tTaskStack task2Env[1024];
-tTaskStack task3Env[1024];
 
 tTask tTaskIdle;
 tTaskStack idleTaskEnv[1024];
@@ -268,10 +162,9 @@ int main(void)
 
 	tTaskDelayedInit();//初始化延时队列
 
-	tTaskInit(&tTask1, task1Entry, (void*)0x11111111, 0, &task1Env[1024]);
-	tTaskInit(&tTask2, task2Entry, (void*)0x22222222, 1, &task2Env[1024]);
-	tTaskInit(&tTask3, task3Entry, (void*)0x33333333, 1, &task3Env[1024]);
-	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, TINYOS_PRO_COUNT - 1, &idleTaskEnv[1024]);
+	tInitApp();
+
+	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, TINYOS_PRO_COUNT - 1, &idleTaskEnv[TINYOS_IDLETASK_STACK_SIZE]);
 
 	nextTask = tTaskHighestReady();//找到最高优先级任务
 
