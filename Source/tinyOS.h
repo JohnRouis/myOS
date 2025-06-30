@@ -4,6 +4,9 @@
 #include <stdint.h>
 #include "tConfig.h"
 #include "tLib.h"
+//延时状态
+#define TINYOS_TASK_STATE_RDY         0
+#define TINYOS_TASK_STATE__DELAYED   (1 << 1)//任务处于延时状态
 
 //cortex-m3堆栈单元类型，堆栈单元大小为32位
 typedef uint32_t tTaskStack;
@@ -14,7 +17,13 @@ typedef struct tTask
 
     uint32_t delayTicks;//任务延时计数
 
+    tNode delayNode;//延时结点
+
     uint32_t prio;//任务的优先级
+
+    uint32_t state;//任务当前状态
+
+    uint32_t slice;//当前剩余时间片
 }tTask;
 
 extern tTask* currentTask;
