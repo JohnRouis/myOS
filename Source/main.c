@@ -6,7 +6,7 @@ tTask* nextTask;
 
 tTask* idleTask;
 
-tTask* taskTable[TINYOS_PRO_COUNT];
+tList taskTable[TINYOS_PRO_COUNT];//就绪队列
 
 uint8_t schedLockCount;//调度锁计数器
 
@@ -37,22 +37,31 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, ui
 	task->delayTicks = 0;
 	task->prio = prio;
 	task->state = TINYOS_TASK_STATE_RDY;
+	task->slice = TINYOS_SLICE_MAX;
 
+	tNodeInit(&(task->linkNode));
 	tNodeInit(&(task->delayNode)); 
+	tListAddFirst(&taskTable[prio], &(task->linkNode));
 
-	taskTable[prio] = task;
 	tBitmapSet(&taskPrioBitmap, prio);
 }
 
 tTask* tTaskHighestReady(void)
 {
 	uint32_t  highestPrio = tBitmapGetFirstSet(&taskPrioBitmap);
-	return taskTable[highestPrio];
+	tNode* node = tListFirst(&taskTable[highestPrio]);//从就绪队列中找到最高优先级任务
+	return (tTask*)tNodeParent(node, tTask, linkNode);
 }
 
 void tTaskSchedInit(void)
 {
 	schedLockCount = 0;
+	int i;
+	for ( i = 0; i < TINYOS_PRO_COUNT; i++)//初始化就绪队列链表
+	{
+		tListInit(&taskTable[i]);
+	}
+	
 }
 //禁止任务调度 上锁
 void tTaskSchedDisable(void)
@@ -81,15 +90,18 @@ void tTaskSchedEnable(void)
 /* 将任务设置为就绪态 */
 void tTaskSchedRdy(tTask* task)
 {
-	taskTable[task->prio] = task;
+	tListAddLast(&taskTable[task->prio], &(task->linkNode));
 	tBitmapSet(&taskPrioBitmap, task->prio);
 }
 
 /* 将任务从就绪列表中移除 */
 void tTaskSchedUnRdy(tTask*  task)
 {
-	taskTable[task->prio] = (tTask*)0;
-	tBitmapClear(&taskPrioBitmap, task->prio);
+	tListRemove(&taskTable[task->prio], &(task->linkNode));
+	if(tListCount(&taskTable[task->prio]) == 0)//队列中可能存在多个任务,只有没有任务时才清除位图标记
+	{
+		tBitmapClear(&taskPrioBitmap, task->prio);
+	}
 }
 
 void tTaskSched(void)
@@ -149,6 +161,16 @@ void tTaskSystemTickHandler()
 		}
 	}
 
+	if(--currentTask->slice == 0)
+	{
+		if(tListCount(&taskTable[currentTask->prio]) > 0)
+		{
+			tListRemoveFirst(&taskTable[currentTask->prio]);//首节点移除
+			tListAddLast(&taskTable[currentTask->prio], &(currentTask->linkNode));//把刚刚挪掉的结点放回到后面去
+			currentTask->slice = TINYOS_SLICE_MAX;//重置计数器
+		}
+	}
+
 	tTaskExitCritical(status);
 
 	tTaskSched();
@@ -193,15 +215,32 @@ void task1Entry(void* param)
 	}
 }
 
+void delay(void)
+{
+	for(int i = 0; i < 0xff; i++){}
+}
+
 int task2Flag = 0;
 void task2Entry(void* param)
 {
 	for(;;)
 	{
 		task2Flag = 1;
-		tTaskDelay(1);
+		delay();
 		task2Flag = 0;
-		tTaskDelay(1);
+		delay();
+	}
+}
+
+int task3Flag = 0;
+void task3Entry(void* param)
+{
+	for(;;)
+	{
+		task3Flag = 1;
+		delay();
+		task3Flag = 0;
+		delay();
 	}
 }
 
@@ -215,8 +254,10 @@ void idleTaskEntry(void* param)
 
 tTask tTask1;
 tTask tTask2;
+tTask tTask3;
 tTaskStack task1Env[1024];
 tTaskStack task2Env[1024];
+tTaskStack task3Env[1024];
 
 tTask tTaskIdle;
 tTaskStack idleTaskEnv[1024];
@@ -229,6 +270,7 @@ int main(void)
 
 	tTaskInit(&tTask1, task1Entry, (void*)0x11111111, 0, &task1Env[1024]);
 	tTaskInit(&tTask2, task2Entry, (void*)0x22222222, 1, &task2Env[1024]);
+	tTaskInit(&tTask3, task3Entry, (void*)0x33333333, 1, &task3Env[1024]);
 	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, TINYOS_PRO_COUNT - 1, &idleTaskEnv[1024]);
 
 	nextTask = tTaskHighestReady();//找到最高优先级任务

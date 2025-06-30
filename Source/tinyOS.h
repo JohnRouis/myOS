@@ -17,6 +17,8 @@ typedef struct tTask
 
     uint32_t delayTicks;//任务延时计数
 
+    tNode linkNode;//任务链接结点
+
     tNode delayNode;//延时结点
 
     uint32_t prio;//任务的优先级
@@ -45,5 +47,22 @@ uint32_t tTaskEnterCritical(void);
 void tTaskExitCritical(uint32_t status);
 
 void tTaskSched(void);
+
+void tTaskSchedRdy(tTask* task);
+
+void tTaskSchedUnRdy(tTask* task);
+
+void tTaskSystemTickHandler();
+
+void tTaskDelay(uint32_t delay);
+
+void tTimeTaskWait(tTask* task, uint32_t ticks);
+
+void tTimeTaskWakeUp(tTask* task);
+
+void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, uint32_t* stack);
+
+void tSetSysTickPeriod(uint32_t ms);
+
 
 #endif
