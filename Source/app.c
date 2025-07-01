@@ -20,20 +20,15 @@ void task1Entry(void* param)
 	}
 }
 
-void delay(void)
-{
-	for(int i = 0; i < 0xff; i++){}
-}
-
 int task2Flag = 0;
 void task2Entry(void* param)
 {
 	for(;;)
 	{
 		task2Flag = 1;
-		delay();
+		tTaskDelay(1);
 		task2Flag = 0;
-		delay();
+		tTaskDelay(1);
 	}
 }
 
@@ -43,9 +38,9 @@ void task3Entry(void* param)
 	for(;;)
 	{
 		task3Flag = 1;
-		delay();
+		tTaskDelay(1);
 		task3Flag = 0;
-		delay();
+		tTaskDelay(1);
 	}
 }
 

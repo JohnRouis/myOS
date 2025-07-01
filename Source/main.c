@@ -73,6 +73,15 @@ void tTaskSchedUnRdy(tTask*  task)
 	}
 }
 
+void tTaskSchedRemove(tTask* task)
+{
+	tListRemove(&taskTable[task->prio], &(task->linkNode));
+	if(tListCount(&taskTable[task->prio]) == 0)
+	{
+		tBitmapClear(&taskPrioBitmap, task->prio);
+	}
+}
+
 void tTaskSched(void)
 {   
 	tTask* tempTask;//临时变量
@@ -104,15 +113,21 @@ void tTimeTaskWait(tTask* task, uint32_t ticks)
 {
 	task->delayTicks = ticks;
 	tListAddLast(&tTaskDelayedList, &(task->delayNode));//插入队列
-	task->state |= TINYOS_TASK_STATE__DELAYED;//状态修改
+	task->state |= TINYOS_TASK_STATE_DELAYED;//状态修改
 }
 
 /* 任务从延时队列中移除 */
 void tTimeTaskWakeUp(tTask* task)
 {
 	tListRemove(&tTaskDelayedList, &(task->delayNode));
-	task->state &= ~TINYOS_TASK_STATE__DELAYED;//清除标志位
+	task->state &= ~TINYOS_TASK_STATE_DELAYED;//清除标志位
 }
+
+void tTimeTaskRemove(tTask* task)
+{
+	tListRemove(&tTaskDelayedList, &(task->delayNode));
+}
+
 /* 时钟节拍处理 */
 void tTaskSystemTickHandler()
 {
