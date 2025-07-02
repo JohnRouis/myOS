@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include "tConfig.h"
 #include "tLib.h"
+#include "tEvent.h"
 //延时状态
 #define TINYOS_TASK_STATE_RDY         0
 #define TINYOS_TASK_STATE_DESTROYED  (1 << 0)//删除标志位
@@ -12,6 +13,11 @@
 
 //cortex-m3堆栈单元类型，堆栈单元大小为32位
 typedef uint32_t tTaskStack;
+
+typedef enum _tError
+{
+    tErrorNoError = 0,
+}tErroe;
 
 typedef struct tTask
 {
@@ -37,6 +43,11 @@ typedef struct tTask
 
     uint8_t requestDeleteFlag;//请求删除标志 非0表示请求删除
 
+    struct _tEvent* waitEvent;//任务正在等待的事件类型
+    
+    void* eventMsg;//等待事件的存储位置
+
+    uint32_t waitEventResult;//等待事件结果
 }tTask;
 
 extern tTask* currentTask;

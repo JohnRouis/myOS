@@ -8,6 +8,7 @@
 ".\objects\ttime.o"
 ".\objects\tcpu.o"
 ".\objects\app.o"
+".\objects\tevent.o"
 ".\objects\startup_armcm3.o"
 ".\objects\system_armcm3.o"
 --library_type=microlib --strict --scatter ".\RTE\Device\ARMCM3\ARMCM3_ac6.sct"
