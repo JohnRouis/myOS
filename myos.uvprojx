@@ -391,6 +391,11 @@
               <FilePath>.\Source\main.c</FilePath>
             </File>
             <File>
+              <FileName>app.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\app.c</FilePath>
+            </File>
+            <File>
               <FileName>switch.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\switch.c</FilePath>
@@ -399,11 +404,6 @@
               <FileName>tinyOS.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Source\tinyOS.h</FilePath>
-            </File>
-            <File>
-              <FileName>cortex.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Source\cortex.s</FilePath>
             </File>
             <File>
               <FileName>tLib.h</FileName>
@@ -426,6 +426,11 @@
               <FilePath>.\Source\tList.c</FilePath>
             </File>
             <File>
+              <FileName>tTask.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source\tTask.h</FilePath>
+            </File>
+            <File>
               <FileName>tTask.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\tTask.c</FilePath>
@@ -441,11 +446,6 @@
               <FilePath>.\Source\tCpu.c</FilePath>
             </File>
             <File>
-              <FileName>app.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Source\app.c</FilePath>
-            </File>
-            <File>
               <FileName>tEvent.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Source\tEvent.h</FilePath>
@@ -454,6 +454,11 @@
               <FileName>tEvent.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\tEvent.c</FilePath>
+            </File>
+            <File>
+              <FileName>cortex.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Source\cortex.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -510,5 +515,14 @@
       </file>
     </files>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>myos</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>
