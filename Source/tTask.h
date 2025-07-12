@@ -6,9 +6,12 @@
 #define TINYOS_TASK_STATE_DESTROYED  (1 << 0)//删除标志位
 #define TINYOS_TASK_STATE_DELAYED    (1 << 1)//任务处于延时状态
 #define TINYOS_TASK_STATE_SUSPEND    (1 << 2)
+#define TINYOS_TASK_WAIT_MASK        (0xFF << 16)//等待标志
 
 //cortex-m3堆栈单元类型，堆栈单元大小为32位
 typedef uint32_t tTaskStack;
+
+struct  _tEvent;//前置声明
 
 typedef struct tTask
 {

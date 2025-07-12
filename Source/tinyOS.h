@@ -9,6 +9,7 @@
 typedef enum _tError
 {
     tErrorNoError = 0,
+    tErrorTimeout = 1,
 }tErroe;
 
 

@@ -140,6 +140,11 @@ void tTaskSystemTickHandler()
 		tTask* task = tNodeParent(node, tTask, delayNode); //获取任务结构
 		if(--task->delayTicks == 0)
 		{
+			if(task->waitEvent)//任务仍处于等待事件状态,从事件等待队列中唤醒
+			{
+				tEventRemoveTask(task, (void*)0, tErrorTimeout);
+			}
+
 			tTimeTaskWakeUp(task);//从队列中移除
 			tTaskSchedRdy(task);//恢复到就绪状态
 		}
