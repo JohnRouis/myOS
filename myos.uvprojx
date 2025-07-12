@@ -460,6 +460,16 @@
               <FileType>2</FileType>
               <FilePath>.\Source\cortex.s</FilePath>
             </File>
+            <File>
+              <FileName>tSem.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source\tSem.h</FilePath>
+            </File>
+            <File>
+              <FileName>tSem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\tSem.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -2,11 +2,13 @@
 #define TEVENT_H
 
 #include "tLib.h"
+#include "tinyOS.h"
 #include "tTask.h"
 
 typedef enum _tEventType
 {
     tEventTypeUnkonwn = 0,
+    tEventTypeSem ,
 }tEventType;
 
 typedef struct _tEvent

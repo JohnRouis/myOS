@@ -1,6 +1,7 @@
 #ifndef TTASK_H
 #define TTASK_H
 #include "tinyOS.h"
+
 //延时状态
 #define TINYOS_TASK_STATE_RDY         0
 #define TINYOS_TASK_STATE_DESTROYED  (1 << 0)//删除标志位
@@ -13,7 +14,7 @@ typedef uint32_t tTaskStack;
 
 struct  _tEvent;//前置声明
 
-typedef struct tTask
+typedef struct _tTask
 {
     tTaskStack* stack;
 
