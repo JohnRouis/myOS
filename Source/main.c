@@ -1,5 +1,6 @@
 #include "tinyOS.h"
 #include "ARMCM3.h"
+
 tTask* currentTask;
 
 tTask* nextTask;

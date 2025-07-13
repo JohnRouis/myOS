@@ -1,14 +1,15 @@
 #ifndef TEVENT_H
 #define TEVENT_H
 
+#include "tConfig.h"
 #include "tLib.h"
-#include "tinyOS.h"
 #include "tTask.h"
 
 typedef enum _tEventType
 {
     tEventTypeUnkonwn = 0,
     tEventTypeSem ,
+    tEventTypeMbox,
 }tEventType;
 
 typedef struct _tEvent

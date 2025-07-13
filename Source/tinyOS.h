@@ -2,10 +2,18 @@
 #define TINYOS_H
 
 #include <stdint.h>
+
 #include "tConfig.h"
+
 #include "tLib.h"
+
 #include "tEvent.h"
+
 #include "tTask.h"
+
+#include "tSem.h"
+
+#include "tMbox.h"
 
 typedef enum _tError
 {

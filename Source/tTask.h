@@ -1,6 +1,5 @@
 #ifndef TTASK_H
 #define TTASK_H
-#include "tinyOS.h"
 
 //ÑÓÊ±×´Ì¬
 #define TINYOS_TASK_STATE_RDY         0
