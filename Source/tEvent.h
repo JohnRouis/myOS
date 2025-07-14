@@ -10,6 +10,7 @@ typedef enum _tEventType
     tEventTypeUnkonwn = 0,
     tEventTypeSem ,
     tEventTypeMbox,
+    tEventTypeMemBlock,
 }tEventType;
 
 typedef struct _tEvent

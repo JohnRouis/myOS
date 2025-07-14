@@ -11,6 +11,7 @@
 ".\objects\cortex.o"
 ".\objects\tsem.o"
 ".\objects\tmbox.o"
+".\objects\tmemblock.o"
 ".\objects\startup_armcm3.o"
 ".\objects\system_armcm3.o"
 --library_type=microlib --strict --scatter ".\RTE\Device\ARMCM3\ARMCM3_ac6.sct"
