@@ -21,6 +21,7 @@ typedef enum _tError
     tErrorTimeout,
     tErrorResourceUnavaliable,
     tErrorDel,
+    tErrorResourceFull,
 }tErroe;
 
 
