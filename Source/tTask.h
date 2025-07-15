@@ -33,7 +33,7 @@ typedef struct _tTask
 
     void (*clean) (void* param);//任务删除时的清理函数
 
-    void* cleanParam;//传递给清理函数的参数u
+    void* cleanParam;//传递给清理函数的参数
 
     uint8_t requestDeleteFlag;//请求删除标志 非0表示请求删除
 

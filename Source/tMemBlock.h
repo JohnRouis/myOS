@@ -18,7 +18,28 @@ typedef struct _tMemBlock
 
 }tMemBlock;
 
+typedef struct _tMemBlockInfo
+{
+    uint32_t count;//当前存储块块数
+
+    uint32_t maxCount;//最大存储块个数
+
+    uint32_t blockSize;//每个存储块的大小
+
+    uint32_t taskCount;//当前等待的任务计数
+}tMemBlockInfo;
+
+
 void tMemBlockInit(tMemBlock* memBlock, uint8_t* memStart, uint32_t blockSize, uint32_t blockCnt);
 
+uint32_t tMemBlockWait(tMemBlock* memBlock, uint8_t** mem, uint32_t waitTicks);
+
+uint32_t tMemBlockNoWaitGet(tMemBlock* memBlock, uint8_t** mem);
+
+void tMemBlockNotify(tMemBlock* memBlock, uint8_t* mem);
+
+void tMemBlockGetInfo(tMemBlock* memBlock, tMemBlockInfo* info);
+
+uint32_t tMemBlockDestroy(tMemBlock* memBlock);
 
 #endif
