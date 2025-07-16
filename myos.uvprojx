@@ -490,6 +490,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\tMemBlock.c</FilePath>
             </File>
+            <File>
+              <FileName>tFlagGroup.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source\tFlagGroup.h</FilePath>
+            </File>
+            <File>
+              <FileName>tFlagGroup.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\tFlagGroup.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
