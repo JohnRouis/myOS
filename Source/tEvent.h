@@ -26,6 +26,8 @@ void tEventWait(tEvent* event, tTask* task, void* msg, uint32_t state, uint32_t 
 
 tTask* tEventWakeUp(tEvent* event, void* msg, uint32_t result);
 
+void tEventWakeUpTask(tEvent* event, tTask* task, void* msg, uint32_t result);
+
 void tEventRemoveTask(tTask* task, void* msg, uint32_t result);
 
 uint32_t tEventRemoveAll(tEvent* event, void* msg, uint32_t result);

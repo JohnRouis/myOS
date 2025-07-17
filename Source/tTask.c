@@ -28,6 +28,10 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, ui
     task->cleanParam = (void*)0;
     task->requestDeleteFlag = 0;
 
+    task->waitEvent = (tEvent*)0;//没有等待事件
+    task->eventMsg = (void*)0;
+    task->waitEventResult = tErrorNoError;//没有等待事件错误
+
 	tNodeInit(&(task->linkNode));
 	tNodeInit(&(task->delayNode)); 
 

@@ -63,6 +63,31 @@ tTask* tEventWakeUp(tEvent* event, void* msg, uint32_t result)
 		return task;
 }
 
+/*
+** Description: 唤醒固定任务
+*/
+void tEventWakeUpTask(tEvent* event, tTask* task, void* msg, uint32_t result)
+{
+    uint32_t status = tTaskEnterCritical();
+
+    tListRemove(&event->waitList, &task->linkNode);
+
+    //设置收到的消息 结构 清除相应等待标志位
+    task->waitEvent = (tEvent*)0;
+    task->eventMsg = msg;
+    task->waitEventResult = result;
+    task->state &= ~TINYOS_TASK_WAIT_MASK;
+
+    if(task->delayTicks != 0)//任务申请了超时等待,从延时队列中清除
+    {
+        tTimeTaskWakeUp(task);
+    }
+
+    tTaskSchedRdy(task);//任务加入就绪队列中
+
+    tTaskExitCritical(status);
+}
+
 /* 从等待队列中强制移除 */
 void tEventRemoveTask(tTask* task, void* msg, uint32_t result)
 {

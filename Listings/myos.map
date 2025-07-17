@@ -194,6 +194,12 @@ Section Cross References
     tevent.o(.text.tEventWakeUp) refers to main.o(.text.tTaskSchedRdy) for tTaskSchedRdy
     tevent.o(.text.tEventWakeUp) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
     tevent.o(.ARM.exidx.text.tEventWakeUp) refers to tevent.o(.text.tEventWakeUp) for [Anonymous Symbol]
+    tevent.o(.text.tEventWakeUpTask) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
+    tevent.o(.text.tEventWakeUpTask) refers to tlist.o(.text.tListRemove) for tListRemove
+    tevent.o(.text.tEventWakeUpTask) refers to main.o(.text.tTimeTaskWakeUp) for tTimeTaskWakeUp
+    tevent.o(.text.tEventWakeUpTask) refers to main.o(.text.tTaskSchedRdy) for tTaskSchedRdy
+    tevent.o(.text.tEventWakeUpTask) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
+    tevent.o(.ARM.exidx.text.tEventWakeUpTask) refers to tevent.o(.text.tEventWakeUpTask) for [Anonymous Symbol]
     tevent.o(.text.tEventRemoveTask) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
     tevent.o(.text.tEventRemoveTask) refers to tlist.o(.text.tListRemove) for tListRemove
     tevent.o(.text.tEventRemoveTask) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
@@ -307,6 +313,24 @@ Section Cross References
     tmemblock.o(.ARM.exidx.text.tMemBlockDestroy) refers to tmemblock.o(.text.tMemBlockDestroy) for [Anonymous Symbol]
     tflaggroup.o(.text.tFlagGroupInit) refers to tevent.o(.text.tEventInit) for tEventInit
     tflaggroup.o(.ARM.exidx.text.tFlagGroupInit) refers to tflaggroup.o(.text.tFlagGroupInit) for [Anonymous Symbol]
+    tflaggroup.o(.text.tFlagGroupWait) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
+    tflaggroup.o(.text.tFlagGroupWait) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for tFlagGroupCheckAndConsume
+    tflaggroup.o(.text.tFlagGroupWait) refers to main.o(.bss.currentTask) for currentTask
+    tflaggroup.o(.text.tFlagGroupWait) refers to tevent.o(.text.tEventWait) for tEventWait
+    tflaggroup.o(.text.tFlagGroupWait) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
+    tflaggroup.o(.text.tFlagGroupWait) refers to main.o(.text.tTaskSched) for tTaskSched
+    tflaggroup.o(.ARM.exidx.text.tFlagGroupWait) refers to tflaggroup.o(.text.tFlagGroupWait) for [Anonymous Symbol]
+    tflaggroup.o(.ARM.exidx.text.tFlagGroupCheckAndConsume) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for [Anonymous Symbol]
+    tflaggroup.o(.text.tFlagGroupNoWaitGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
+    tflaggroup.o(.text.tFlagGroupNoWaitGet) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for tFlagGroupCheckAndConsume
+    tflaggroup.o(.text.tFlagGroupNoWaitGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
+    tflaggroup.o(.ARM.exidx.text.tFlagGroupNoWaitGet) refers to tflaggroup.o(.text.tFlagGroupNoWaitGet) for [Anonymous Symbol]
+    tflaggroup.o(.text.tFlagGroupNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
+    tflaggroup.o(.text.tFlagGroupNotify) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for tFlagGroupCheckAndConsume
+    tflaggroup.o(.text.tFlagGroupNotify) refers to tevent.o(.text.tEventWakeUpTask) for tEventWakeUpTask
+    tflaggroup.o(.text.tFlagGroupNotify) refers to main.o(.text.tTaskSched) for tTaskSched
+    tflaggroup.o(.text.tFlagGroupNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
+    tflaggroup.o(.ARM.exidx.text.tFlagGroupNotify) refers to tflaggroup.o(.text.tFlagGroupNotify) for [Anonymous Symbol]
     startup_armcm3.o(.ARM.exidx.text.Default_Handler) refers to startup_armcm3.o(.text.Default_Handler) for [Anonymous Symbol]
     startup_armcm3.o(.text.Reset_Handler) refers to system_armcm3.o(.text.SystemInit) for SystemInit
     startup_armcm3.o(.text.Reset_Handler) refers to entry.o(.ARM.Collect$$$$00000000) for __main
@@ -431,6 +455,8 @@ Removing Unused input sections from the image.
     Removing tevent.o(.ARM.exidx.text.tEventWait), (8 bytes).
     Removing tevent.o(.text.tEventWakeUp), (104 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventWakeUp), (8 bytes).
+    Removing tevent.o(.text.tEventWakeUpTask), (90 bytes).
+    Removing tevent.o(.ARM.exidx.text.tEventWakeUpTask), (8 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventRemoveTask), (8 bytes).
     Removing tevent.o(.text.tEventRemoveAll), (116 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventRemoveAll), (8 bytes).
@@ -480,6 +506,14 @@ Removing Unused input sections from the image.
     Removing tflaggroup.o(.text), (0 bytes).
     Removing tflaggroup.o(.text.tFlagGroupInit), (26 bytes).
     Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupInit), (8 bytes).
+    Removing tflaggroup.o(.text.tFlagGroupWait), (132 bytes).
+    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupWait), (8 bytes).
+    Removing tflaggroup.o(.text.tFlagGroupCheckAndConsume), (168 bytes).
+    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupCheckAndConsume), (8 bytes).
+    Removing tflaggroup.o(.text.tFlagGroupNoWaitGet), (52 bytes).
+    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupNoWaitGet), (8 bytes).
+    Removing tflaggroup.o(.text.tFlagGroupNotify), (178 bytes).
+    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupNotify), (8 bytes).
     Removing startup_armcm3.o(.text), (0 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Default_Handler), (8 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Reset_Handler), (8 bytes).
@@ -489,7 +523,7 @@ Removing Unused input sections from the image.
     Removing system_armcm3.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_armcm3.o(.ARM.exidx.text.SystemInit), (8 bytes).
 
-147 unused section(s) (total 3708 bytes) removed from the image.
+157 unused section(s) (total 4368 bytes) removed from the image.
 
 ==============================================================================
 
@@ -573,23 +607,23 @@ Image Symbol Table
     [Anonymous Symbol]                       0x00000834   Section        0  switch.o(.text.tTaskExitCritical)
     [Anonymous Symbol]                       0x00000848   Section        0  main.o(.text.tTaskHighestReady)
     [Anonymous Symbol]                       0x0000087c   Section        0  ttask.o(.text.tTaskInit)
-    [Anonymous Symbol]                       0x00000994   Section        0  switch.o(.text.tTaskRunFirst)
-    [Anonymous Symbol]                       0x000009c0   Section        0  main.o(.text.tTaskSched)
-    [Anonymous Symbol]                       0x00000a18   Section        0  main.o(.text.tTaskSchedInit)
-    [Anonymous Symbol]                       0x00000a58   Section        0  main.o(.text.tTaskSchedRdy)
-    [Anonymous Symbol]                       0x00000a8c   Section        0  main.o(.text.tTaskSchedUnRdy)
-    [Anonymous Symbol]                       0x00000adc   Section        0  switch.o(.text.tTaskSwitch)
-    [Anonymous Symbol]                       0x00000aec   Section        0  main.o(.text.tTaskSystemTickHandler)
-    [Anonymous Symbol]                       0x00000be0   Section        0  main.o(.text.tTimeTaskWait)
-    [Anonymous Symbol]                       0x00000c10   Section        0  main.o(.text.tTimeTaskWakeUp)
-    [Anonymous Symbol]                       0x00000c38   Section        0  app.o(.text.task1Entry)
-    [Anonymous Symbol]                       0x00000c68   Section        0  app.o(.text.task2Entry)
-    [Anonymous Symbol]                       0x00000c94   Section        0  app.o(.text.task3Entry)
-    i.__scatterload_copy                     0x00000cbe   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000ccc   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000cce   Section       14  handlers.o(i.__scatterload_zeroinit)
-    tBitmapGetFirstSet.quickFindTable        0x00000cdc   Data         256  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
-    [Anonymous Symbol]                       0x00000cdc   Section        0  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
+    [Anonymous Symbol]                       0x000009a0   Section        0  switch.o(.text.tTaskRunFirst)
+    [Anonymous Symbol]                       0x000009cc   Section        0  main.o(.text.tTaskSched)
+    [Anonymous Symbol]                       0x00000a24   Section        0  main.o(.text.tTaskSchedInit)
+    [Anonymous Symbol]                       0x00000a64   Section        0  main.o(.text.tTaskSchedRdy)
+    [Anonymous Symbol]                       0x00000a98   Section        0  main.o(.text.tTaskSchedUnRdy)
+    [Anonymous Symbol]                       0x00000ae8   Section        0  switch.o(.text.tTaskSwitch)
+    [Anonymous Symbol]                       0x00000af8   Section        0  main.o(.text.tTaskSystemTickHandler)
+    [Anonymous Symbol]                       0x00000bec   Section        0  main.o(.text.tTimeTaskWait)
+    [Anonymous Symbol]                       0x00000c1c   Section        0  main.o(.text.tTimeTaskWakeUp)
+    [Anonymous Symbol]                       0x00000c44   Section        0  app.o(.text.task1Entry)
+    [Anonymous Symbol]                       0x00000c74   Section        0  app.o(.text.task2Entry)
+    [Anonymous Symbol]                       0x00000ca0   Section        0  app.o(.text.task3Entry)
+    i.__scatterload_copy                     0x00000cca   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000cd8   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000cda   Section       14  handlers.o(i.__scatterload_zeroinit)
+    tBitmapGetFirstSet.quickFindTable        0x00000ce8   Data         256  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
+    [Anonymous Symbol]                       0x00000ce8   Section        0  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
 
     Global Symbols
 
@@ -656,42 +690,42 @@ Image Symbol Table
     tTaskEnterCritical                       0x00000821   Thumb Code    20  switch.o(.text.tTaskEnterCritical)
     tTaskExitCritical                        0x00000835   Thumb Code    18  switch.o(.text.tTaskExitCritical)
     tTaskHighestReady                        0x00000849   Thumb Code    50  main.o(.text.tTaskHighestReady)
-    tTaskInit                                0x0000087d   Thumb Code   278  ttask.o(.text.tTaskInit)
-    tTaskRunFirst                            0x00000995   Thumb Code    42  switch.o(.text.tTaskRunFirst)
-    tTaskSched                               0x000009c1   Thumb Code    88  main.o(.text.tTaskSched)
-    tTaskSchedInit                           0x00000a19   Thumb Code    64  main.o(.text.tTaskSchedInit)
-    tTaskSchedRdy                            0x00000a59   Thumb Code    52  main.o(.text.tTaskSchedRdy)
-    tTaskSchedUnRdy                          0x00000a8d   Thumb Code    78  main.o(.text.tTaskSchedUnRdy)
-    tTaskSwitch                              0x00000add   Thumb Code    16  switch.o(.text.tTaskSwitch)
-    tTaskSystemTickHandler                   0x00000aed   Thumb Code   242  main.o(.text.tTaskSystemTickHandler)
-    tTimeTaskWait                            0x00000be1   Thumb Code    46  main.o(.text.tTimeTaskWait)
-    tTimeTaskWakeUp                          0x00000c11   Thumb Code    38  main.o(.text.tTimeTaskWakeUp)
-    task1Entry                               0x00000c39   Thumb Code    48  app.o(.text.task1Entry)
-    task2Entry                               0x00000c69   Thumb Code    42  app.o(.text.task2Entry)
-    task3Entry                               0x00000c95   Thumb Code    42  app.o(.text.task3Entry)
-    __scatterload_copy                       0x00000cbf   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000ccd   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000ccf   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00000ddc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000dfc   Number         0  anon$$obj.o(Region$$Table)
+    tTaskInit                                0x0000087d   Thumb Code   290  ttask.o(.text.tTaskInit)
+    tTaskRunFirst                            0x000009a1   Thumb Code    42  switch.o(.text.tTaskRunFirst)
+    tTaskSched                               0x000009cd   Thumb Code    88  main.o(.text.tTaskSched)
+    tTaskSchedInit                           0x00000a25   Thumb Code    64  main.o(.text.tTaskSchedInit)
+    tTaskSchedRdy                            0x00000a65   Thumb Code    52  main.o(.text.tTaskSchedRdy)
+    tTaskSchedUnRdy                          0x00000a99   Thumb Code    78  main.o(.text.tTaskSchedUnRdy)
+    tTaskSwitch                              0x00000ae9   Thumb Code    16  switch.o(.text.tTaskSwitch)
+    tTaskSystemTickHandler                   0x00000af9   Thumb Code   242  main.o(.text.tTaskSystemTickHandler)
+    tTimeTaskWait                            0x00000bed   Thumb Code    46  main.o(.text.tTimeTaskWait)
+    tTimeTaskWakeUp                          0x00000c1d   Thumb Code    38  main.o(.text.tTimeTaskWakeUp)
+    task1Entry                               0x00000c45   Thumb Code    48  app.o(.text.task1Entry)
+    task2Entry                               0x00000c75   Thumb Code    42  app.o(.text.task2Entry)
+    task3Entry                               0x00000ca1   Thumb Code    42  app.o(.text.task3Entry)
+    __scatterload_copy                       0x00000ccb   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000cd9   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000cdb   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000de8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000e08   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_armcm3.o(.data.SystemCoreClock)
     currentTask                              0x20000004   Data           4  main.o(.bss.currentTask)
     idleTaskEnv                              0x20000008   Data        4096  main.o(.bss.idleTaskEnv)
     nextTask                                 0x20001008   Data           4  main.o(.bss.nextTask)
     schedLockCount                           0x2000100c   Data           1  main.o(.bss.schedLockCount)
-    tTask1                                   0x20001010   Data          64  app.o(.bss.tTask1)
-    tTask2                                   0x20001050   Data          64  app.o(.bss.tTask2)
-    tTask3                                   0x20001090   Data          64  app.o(.bss.tTask3)
-    tTaskDelayedList                         0x200010d0   Data          12  main.o(.bss.tTaskDelayedList)
-    tTaskIdle                                0x200010dc   Data          64  main.o(.bss.tTaskIdle)
-    task1Env                                 0x2000111c   Data        4096  app.o(.bss.task1Env)
-    task1Flag                                0x2000211c   Data           4  app.o(.bss.task1Flag)
-    task2Env                                 0x20002120   Data        4096  app.o(.bss.task2Env)
-    task2Flag                                0x20003120   Data           4  app.o(.bss.task2Flag)
-    task3Env                                 0x20003124   Data        4096  app.o(.bss.task3Env)
-    task3Flag                                0x20004124   Data           4  app.o(.bss.task3Flag)
-    taskPrioBitmap                           0x20004128   Data           4  main.o(.bss.taskPrioBitmap)
-    taskTable                                0x2000412c   Data         384  main.o(.bss.taskTable)
+    tTask1                                   0x20001010   Data          72  app.o(.bss.tTask1)
+    tTask2                                   0x20001058   Data          72  app.o(.bss.tTask2)
+    tTask3                                   0x200010a0   Data          72  app.o(.bss.tTask3)
+    tTaskDelayedList                         0x200010e8   Data          12  main.o(.bss.tTaskDelayedList)
+    tTaskIdle                                0x200010f4   Data          72  main.o(.bss.tTaskIdle)
+    task1Env                                 0x2000113c   Data        4096  app.o(.bss.task1Env)
+    task1Flag                                0x2000213c   Data           4  app.o(.bss.task1Flag)
+    task2Env                                 0x20002140   Data        4096  app.o(.bss.task2Env)
+    task2Flag                                0x20003140   Data           4  app.o(.bss.task2Flag)
+    task3Env                                 0x20003144   Data        4096  app.o(.bss.task3Env)
+    task3Flag                                0x20004144   Data           4  app.o(.bss.task3Flag)
+    taskPrioBitmap                           0x20004148   Data           4  main.o(.bss.taskPrioBitmap)
+    taskTable                                0x2000414c   Data         384  main.o(.bss.taskTable)
     Image$$ARM_LIB_STACK$$ZI$$Limit          0x20040000   Number         0  anon$$obj.o ABSOLUTE
 
 
@@ -702,29 +736,29 @@ Memory Map of the image
 
   Image Entry point : 0x000003c1
 
-  Load Region LR_ROM (Base: 0x00000000, Size: 0x00000e00, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_ROM (Base: 0x00000000, Size: 0x00000e0c, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_ROM (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000dfc, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_ROM (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000e08, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000003c0   Data   RO          285    RESET               startup_armcm3.o
-    0x000003c0   0x000003c0   0x00000000   Code   RO          304  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000003c0   0x000003c0   0x00000004   Code   RO          307    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
-    0x000003c4   0x000003c4   0x00000004   Code   RO          310    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          312    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          314    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000003c8   0x000003c8   0x00000008   Code   RO          315    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          317    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          319    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000003d0   0x000003d0   0x00000004   Code   RO          308    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
-    0x000003d4   0x000003d4   0x00000030   Code   RO          205    .text               cortex.o
-    0x00000404   0x00000404   0x00000030   Code   RO          321    .text               mc_w.l(init.o)
-    0x00000434   0x00000434   0x00000004   Code   RO          279    .text.Default_Handler  startup_armcm3.o
-    0x00000438   0x00000438   0x00000004   Code   RO          283    .text.HardFault_Handler  startup_armcm3.o
-    0x0000043c   0x0000043c   0x00000008   Code   RO          281    .text.Reset_Handler  startup_armcm3.o
+    0x00000000   0x00000000   0x000003c0   Data   RO          296    RESET               startup_armcm3.o
+    0x000003c0   0x000003c0   0x00000000   Code   RO          315  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000003c0   0x000003c0   0x00000004   Code   RO          318    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
+    0x000003c4   0x000003c4   0x00000004   Code   RO          321    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          323    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          325    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000003c8   0x000003c8   0x00000008   Code   RO          326    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          328    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          330    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000003d0   0x000003d0   0x00000004   Code   RO          319    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
+    0x000003d4   0x000003d4   0x00000030   Code   RO          207    .text               cortex.o
+    0x00000404   0x00000404   0x00000030   Code   RO          332    .text               mc_w.l(init.o)
+    0x00000434   0x00000434   0x00000004   Code   RO          290    .text.Default_Handler  startup_armcm3.o
+    0x00000438   0x00000438   0x00000004   Code   RO          294    .text.HardFault_Handler  startup_armcm3.o
+    0x0000043c   0x0000043c   0x00000008   Code   RO          292    .text.Reset_Handler  startup_armcm3.o
     0x00000444   0x00000444   0x00000008   Code   RO          178    .text.SysTick_Handler  tcpu.o
-    0x0000044c   0x0000044c   0x00000026   Code   RO          295    .text.SystemInit    system_armcm3.o
+    0x0000044c   0x0000044c   0x00000026   Code   RO          306    .text.SystemInit    system_armcm3.o
     0x00000472   0x00000472   0x00000002   PAD
     0x00000474   0x00000474   0x00000042   Code   RO          176    .text.__NVIC_SetPriority  tcpu.o
     0x000004b6   0x000004b6   0x00000002   PAD
@@ -738,7 +772,7 @@ Memory Map of the image
     0x000005b8   0x000005b8   0x00000004   Code   RO           92    .text.tBitmapPosCount  tbitmap.o
     0x000005bc   0x000005bc   0x0000001a   Code   RO           94    .text.tBitmapSet    tbitmap.o
     0x000005d6   0x000005d6   0x00000002   PAD
-    0x000005d8   0x000005d8   0x00000042   Code   RO          193    .text.tEventRemoveTask  tevent.o
+    0x000005d8   0x000005d8   0x00000042   Code   RO          195    .text.tEventRemoveTask  tevent.o
     0x0000061a   0x0000061a   0x00000002   PAD
     0x0000061c   0x0000061c   0x00000088   Code   RO           57    .text.tInitApp      app.o
     0x000006a4   0x000006a4   0x0000002e   Code   RO          126    .text.tListAddLast  tlist.o
@@ -762,71 +796,71 @@ Memory Map of the image
     0x00000846   0x00000846   0x00000002   PAD
     0x00000848   0x00000848   0x00000032   Code   RO            4    .text.tTaskHighestReady  main.o
     0x0000087a   0x0000087a   0x00000002   PAD
-    0x0000087c   0x0000087c   0x00000116   Code   RO          141    .text.tTaskInit     ttask.o
-    0x00000992   0x00000992   0x00000002   PAD
-    0x00000994   0x00000994   0x0000002a   Code   RO           79    .text.tTaskRunFirst  switch.o
-    0x000009be   0x000009be   0x00000002   PAD
-    0x000009c0   0x000009c0   0x00000058   Code   RO           12    .text.tTaskSched    main.o
-    0x00000a18   0x00000a18   0x00000040   Code   RO            6    .text.tTaskSchedInit  main.o
-    0x00000a58   0x00000a58   0x00000034   Code   RO           14    .text.tTaskSchedRdy  main.o
-    0x00000a8c   0x00000a8c   0x0000004e   Code   RO           16    .text.tTaskSchedUnRdy  main.o
-    0x00000ada   0x00000ada   0x00000002   PAD
-    0x00000adc   0x00000adc   0x00000010   Code   RO           81    .text.tTaskSwitch   switch.o
-    0x00000aec   0x00000aec   0x000000f2   Code   RO           28    .text.tTaskSystemTickHandler  main.o
-    0x00000bde   0x00000bde   0x00000002   PAD
-    0x00000be0   0x00000be0   0x0000002e   Code   RO           22    .text.tTimeTaskWait  main.o
-    0x00000c0e   0x00000c0e   0x00000002   PAD
-    0x00000c10   0x00000c10   0x00000026   Code   RO           24    .text.tTimeTaskWakeUp  main.o
-    0x00000c36   0x00000c36   0x00000002   PAD
-    0x00000c38   0x00000c38   0x00000030   Code   RO           51    .text.task1Entry    app.o
-    0x00000c68   0x00000c68   0x0000002a   Code   RO           53    .text.task2Entry    app.o
-    0x00000c92   0x00000c92   0x00000002   PAD
-    0x00000c94   0x00000c94   0x0000002a   Code   RO           55    .text.task3Entry    app.o
-    0x00000cbe   0x00000cbe   0x0000000e   Code   RO          325    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000ccc   0x00000ccc   0x00000002   Code   RO          326    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000cce   0x00000cce   0x0000000e   Code   RO          327    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000cdc   0x00000cdc   0x00000100   Data   RO          100    .rodata.tBitmapGetFirstSet.quickFindTable  tbitmap.o
-    0x00000ddc   0x00000ddc   0x00000020   Data   RO          324    Region$$Table       anon$$obj.o
+    0x0000087c   0x0000087c   0x00000122   Code   RO          141    .text.tTaskInit     ttask.o
+    0x0000099e   0x0000099e   0x00000002   PAD
+    0x000009a0   0x000009a0   0x0000002a   Code   RO           79    .text.tTaskRunFirst  switch.o
+    0x000009ca   0x000009ca   0x00000002   PAD
+    0x000009cc   0x000009cc   0x00000058   Code   RO           12    .text.tTaskSched    main.o
+    0x00000a24   0x00000a24   0x00000040   Code   RO            6    .text.tTaskSchedInit  main.o
+    0x00000a64   0x00000a64   0x00000034   Code   RO           14    .text.tTaskSchedRdy  main.o
+    0x00000a98   0x00000a98   0x0000004e   Code   RO           16    .text.tTaskSchedUnRdy  main.o
+    0x00000ae6   0x00000ae6   0x00000002   PAD
+    0x00000ae8   0x00000ae8   0x00000010   Code   RO           81    .text.tTaskSwitch   switch.o
+    0x00000af8   0x00000af8   0x000000f2   Code   RO           28    .text.tTaskSystemTickHandler  main.o
+    0x00000bea   0x00000bea   0x00000002   PAD
+    0x00000bec   0x00000bec   0x0000002e   Code   RO           22    .text.tTimeTaskWait  main.o
+    0x00000c1a   0x00000c1a   0x00000002   PAD
+    0x00000c1c   0x00000c1c   0x00000026   Code   RO           24    .text.tTimeTaskWakeUp  main.o
+    0x00000c42   0x00000c42   0x00000002   PAD
+    0x00000c44   0x00000c44   0x00000030   Code   RO           51    .text.task1Entry    app.o
+    0x00000c74   0x00000c74   0x0000002a   Code   RO           53    .text.task2Entry    app.o
+    0x00000c9e   0x00000c9e   0x00000002   PAD
+    0x00000ca0   0x00000ca0   0x0000002a   Code   RO           55    .text.task3Entry    app.o
+    0x00000cca   0x00000cca   0x0000000e   Code   RO          336    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000cd8   0x00000cd8   0x00000002   Code   RO          337    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000cda   0x00000cda   0x0000000e   Code   RO          338    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000ce8   0x00000ce8   0x00000100   Data   RO          100    .rodata.tBitmapGetFirstSet.quickFindTable  tbitmap.o
+    0x00000de8   0x00000de8   0x00000020   Data   RO          335    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_NOINIT (Exec base: 0x20000000, Load base: 0x00000dfc, Size: 0x00000000, Max: 0x0003f200, ABSOLUTE, UNINIT)
+    Execution Region RW_NOINIT (Exec base: 0x20000000, Load base: 0x00000e08, Size: 0x00000000, Max: 0x0003f200, ABSOLUTE, UNINIT)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region RW_RAM (Exec base: 0x20000000, Load base: 0x00000dfc, Size: 0x000042ac, Max: 0x0003f200, ABSOLUTE)
+    Execution Region RW_RAM (Exec base: 0x20000000, Load base: 0x00000e08, Size: 0x000042cc, Max: 0x0003f200, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000dfc   0x00000004   Data   RW          297    .data.SystemCoreClock  system_armcm3.o
+    0x20000000   0x00000e08   0x00000004   Data   RW          308    .data.SystemCoreClock  system_armcm3.o
     0x20000004        -       0x00000004   Zero   RW           37    .bss.currentTask    main.o
     0x20000008        -       0x00001000   Zero   RW           41    .bss.idleTaskEnv    main.o
     0x20001008        -       0x00000004   Zero   RW           38    .bss.nextTask       main.o
     0x2000100c        -       0x00000001   Zero   RW           36    .bss.schedLockCount  main.o
-    0x2000100d   0x00000e00   0x00000003   PAD
-    0x20001010        -       0x00000040   Zero   RW           62    .bss.tTask1         app.o
-    0x20001050        -       0x00000040   Zero   RW           64    .bss.tTask2         app.o
-    0x20001090        -       0x00000040   Zero   RW           66    .bss.tTask3         app.o
-    0x200010d0        -       0x0000000c   Zero   RW           39    .bss.tTaskDelayedList  main.o
-    0x200010dc        -       0x00000040   Zero   RW           40    .bss.tTaskIdle      main.o
-    0x2000111c        -       0x00001000   Zero   RW           63    .bss.task1Env       app.o
-    0x2000211c        -       0x00000004   Zero   RW           59    .bss.task1Flag      app.o
-    0x20002120        -       0x00001000   Zero   RW           65    .bss.task2Env       app.o
-    0x20003120        -       0x00000004   Zero   RW           60    .bss.task2Flag      app.o
-    0x20003124        -       0x00001000   Zero   RW           67    .bss.task3Env       app.o
-    0x20004124        -       0x00000004   Zero   RW           61    .bss.task3Flag      app.o
-    0x20004128        -       0x00000004   Zero   RW           34    .bss.taskPrioBitmap  main.o
-    0x2000412c        -       0x00000180   Zero   RW           35    .bss.taskTable      main.o
+    0x2000100d   0x00000e0c   0x00000003   PAD
+    0x20001010        -       0x00000048   Zero   RW           62    .bss.tTask1         app.o
+    0x20001058        -       0x00000048   Zero   RW           64    .bss.tTask2         app.o
+    0x200010a0        -       0x00000048   Zero   RW           66    .bss.tTask3         app.o
+    0x200010e8        -       0x0000000c   Zero   RW           39    .bss.tTaskDelayedList  main.o
+    0x200010f4        -       0x00000048   Zero   RW           40    .bss.tTaskIdle      main.o
+    0x2000113c        -       0x00001000   Zero   RW           63    .bss.task1Env       app.o
+    0x2000213c        -       0x00000004   Zero   RW           59    .bss.task1Flag      app.o
+    0x20002140        -       0x00001000   Zero   RW           65    .bss.task2Env       app.o
+    0x20003140        -       0x00000004   Zero   RW           60    .bss.task2Flag      app.o
+    0x20003144        -       0x00001000   Zero   RW           67    .bss.task3Env       app.o
+    0x20004144        -       0x00000004   Zero   RW           61    .bss.task3Flag      app.o
+    0x20004148        -       0x00000004   Zero   RW           34    .bss.taskPrioBitmap  main.o
+    0x2000414c        -       0x00000180   Zero   RW           35    .bss.taskTable      main.o
 
 
-    Execution Region ARM_LIB_HEAP (Exec base: 0x200042b0, Load base: 0x00000e00, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+    Execution Region ARM_LIB_HEAP (Exec base: 0x200042d0, Load base: 0x00000e0c, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x200042b0        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
+    0x200042d0        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
 
 
-    Execution Region ARM_LIB_STACK (Exec base: 0x2003fe00, Load base: 0x00000e00, Size: 0x00000200, Max: 0x00000200, ABSOLUTE)
+    Execution Region ARM_LIB_STACK (Exec base: 0x2003fe00, Load base: 0x00000e0c, Size: 0x00000200, Max: 0x00000200, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -840,21 +874,21 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       268          0          0          0      12492       2067   app.o
+       268          0          0          0      12516       2116   app.o
         48          8          0          0          0        324   cortex.o
-       768          0          0          0       4569       4247   main.o
+       768          0          0          0       4577       4296   main.o
         16          0        960          0          0        803   startup_armcm3.o
         96          0          0          0          0       1484   switch.o
         38          0          0          4          0       1403   system_armcm3.o
        186          0        256          0          0       1326   tbitmap.o
        160          0          0          0          0       2693   tcpu.o
-        66          0          0          0          0       3000   tevent.o
+        66          0          0          0          0       3312   tevent.o
        214          0          0          0          0       2695   tlist.o
-       278          0          0          0          0       3311   ttask.o
+       290          0          0          0          0       3553   ttask.o
         52          0          0          0          0        536   ttime.o
 
     ----------------------------------------------------------------------
-      2234          8       1248          4      20648      23889   Object Totals
+      2246          8       1248          4      20680      24541   Object Totals
          0          0         32          0       3584          0   (incl. Generated)
         44          0          0          0          3          0   (incl. Padding)
 
@@ -893,15 +927,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2332         26       1248          4      20648      23909   Grand Totals
-      2332         26       1248          4      20648      23909   ELF Image Totals
-      2332         26       1248          4          0          0   ROM Totals
+      2344         26       1248          4      20680      24561   Grand Totals
+      2344         26       1248          4      20680      24561   ELF Image Totals
+      2344         26       1248          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3580 (   3.50kB)
-    Total RW  Size (RW Data + ZI Data)             20652 (  20.17kB)
-    Total ROM Size (Code + RO Data + RW Data)       3584 (   3.50kB)
+    Total RO  Size (Code + RO Data)                 3592 (   3.51kB)
+    Total RW  Size (RW Data + ZI Data)             20684 (  20.20kB)
+    Total ROM Size (Code + RO Data + RW Data)       3596 (   3.51kB)
 
 ==============================================================================
 

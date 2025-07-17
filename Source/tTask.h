@@ -42,6 +42,10 @@ typedef struct _tTask
     void* eventMsg;//等待事件的存储位置
 
     uint32_t waitEventResult;//等待事件结果
+
+    uint32_t waitFlagsType;//等待的事件方式
+
+    uint32_t eventFlags;//等待的事件标志
 }tTask;
 
 typedef struct _tTaskInfo
