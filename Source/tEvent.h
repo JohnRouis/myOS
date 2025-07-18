@@ -5,6 +5,7 @@
 #include "tLib.h"
 #include "tTask.h"
 
+/*事件类型*/
 typedef enum _tEventType
 {
     tEventTypeUnkonwn = 0,
@@ -12,6 +13,7 @@ typedef enum _tEventType
     tEventTypeMbox,
     tEventTypeMemBlock,
     tEventTypeFlagGroup,
+    tEventTypeMutex,
 }tEventType;
 
 typedef struct _tEvent

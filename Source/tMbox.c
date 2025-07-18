@@ -75,6 +75,7 @@ uint32_t tMboxNoWaitGet(tMbox* mbox, void** msg)
 }
 /*
 ** Description: 邮箱通知操作,通知有消息可用,唤醒等待队列中的一个任务,或者将消息插入到邮箱中
+** Parameters: msg发送的消息
 */
 uint32_t tMboxNotify(tMbox* mbox, void* msg, uint32_t notifyOption)
 {

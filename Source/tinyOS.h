@@ -17,6 +17,10 @@
 
 #include "tMemBlock.h"
 
+#include "tFlagGroup.h"
+
+#include "tMutex.h"
+
 typedef enum _tError
 {
     tErrorNoError = 0,

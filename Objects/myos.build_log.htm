@@ -22,17 +22,35 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 D:\tinyos2\myos.uvprojx
-Project File Date:  07/16/2025
+Project File Date:  07/18/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'E:\KEIL\ARM\ARMCLANG\Bin'
 Build target 'Target_1'
+compiling app.c...
 compiling tFlagGroup.c...
+compiling main.c...
+compiling tTask.c...
+compiling tTime.c...
+compiling switch.c...
+compiling tEvent.c...
+compiling tMbox.c...
+compiling tCpu.c...
+Source/tMemBlock.c(122): warning: incompatible pointer types passing 'tList *' (aka 'struct _tList *') to parameter of type 'tEvent *' (aka 'struct _tEvent *') [-Wincompatible-pointer-types]
+  122 |     uint32_t count = tEventRemoveAll(&memBlock->blockList, (void*)0, tErrorDel);//<C7><E5><BF><D5><CB><F9><D3>п<D8><D6>ƿ<E9><C8><CE><CE><F1>
+      |                                      ^~~~~~~~~~~~~~~~~~~~
+Source\tEvent.h(35): note: passing argument to parameter 'event' here
+   35 | uint32_t tEventRemoveAll(tEvent* event, void* msg, uint32_t result);
+      |                                  ^
+1 warning generated.
+compiling tMemBlock.c...
+compiling tSem.c...
+compiling tMutex.c...
 linking...
 .\RTE\Device\ARMCM3\ARMCM3_ac6.sct(19): warning: L6314W: No section matches pattern *(.bss.noinit).
 Program Size: Code=2344 RO-data=1248 RW-data=4 ZI-data=20680  
 Finished: 0 information, 1 warning and 0 error messages.
-".\Objects\myos.axf" - 0 Error(s), 1 Warning(s).
+".\Objects\myos.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -61,7 +79,7 @@ Package Vendor: ARM
       Source file:   Device/ARMCM3/Source/startup_ARMCM3.c
       Source file:   Device/ARMCM3/Source/system_ARMCM3.c
       Include file:  Device/ARMCM3/Include/ARMCM3.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
