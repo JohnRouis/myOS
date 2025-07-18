@@ -133,3 +133,34 @@ void tFlagGroupNotify(tFlagGroup* flagGroup, uint8_t isSet, uint32_t flags)
     }
     tTaskExitCritical(status);
 }
+
+/*
+** Description: 查询事件标志组的状态信息
+*/
+void tFlagGroupGetInfo(tFlagGroup* flagGroup, tFlagGroupInfo* info)
+{
+    uint32_t status = tTaskEnterCritical();
+
+    info->flags = flagGroup->flags;
+    info->taskCount = tEventWaitCount(&flagGroup->event);
+
+    tTaskExitCritical(status);
+}
+
+/*
+** Description: 销毁事件标志组
+*/
+uint32_t tFlagGroupDestroy(tFlagGroup* flagGroup)
+{
+    uint32_t status = tTaskEnterCritical();
+
+    uint32_t count = tEventRemoveAll(&flagGroup->event, (void*)0, tErrorDel);
+
+    tTaskExitCritical(status);
+
+    if(count > 0)//如果还有任务在就绪状态,执行调度
+    {
+        tTaskSched();
+    }
+    return count;
+}

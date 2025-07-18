@@ -112,9 +112,9 @@ I (Source\tTask.h)(0x6878EB25)
 I (Source\tinyOS.h)(0x6874FFAF)
 I (Source\tSem.h)(0x68737294)
 I (Source\tMbox.h)(0x6874EB87)
-F (.\Source\tFlagGroup.h)(0x6878EB00)()
-F (.\Source\tFlagGroup.c)(0x6878EBD1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./RTE -I ./Source-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/ARM/Cortex_DFP/1.1.0/Device/ARMCM3/Include-D__UVISION_VERSION="541" -DARMCM3 -D_RTE_-o ./objects/tflaggroup.o -MMD)
-I (Source\tFlagGroup.h)(0x6878EB00)
+F (.\Source\tFlagGroup.h)(0x6879FC2E)()
+F (.\Source\tFlagGroup.c)(0x6879FC2C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -mlittle-endian -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./RTE -I ./Source-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/ARM/Cortex_DFP/1.1.0/Device/ARMCM3/Include-D__UVISION_VERSION="541" -DARMCM3 -D_RTE_-o ./objects/tflaggroup.o -MMD)
+I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tConfig.h)(0x68627578)
 I (Source\tEvent.h)(0x6878EAB3)
 I (Source\tLib.h)(0x6860ECB8)

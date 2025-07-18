@@ -11,6 +11,14 @@ typedef struct _tFlagGroup
     uint32_t flags;//当前事件标志
 }tFlagGroup;
 
+typedef struct _tFlagGroupInfo
+{
+    uint32_t flags;//当前事件标志
+
+    uint32_t taskCount;//等待的任务数量
+}tFlagGroupInfo;
+
+
 //采用二进制位 00 01 10 11表示四种标志位情况
 #define TFLAGGROUP_CLEAR   (0x0 << 0)
 #define TFLAGGROUP_SET     (0x1 << 0)
@@ -31,5 +39,9 @@ uint32_t tFlagGroupWait(tFlagGroup* flagGroup, uint32_t waitType, uint32_t reque
 uint32_t tFlagGroupNoWaitGet(tFlagGroup* flagGroup, uint32_t waitType, uint32_t requestFlag, uint32_t* resultFlag);
 
 void tFlagGroupNotify(tFlagGroup* flagGroup, uint8_t isSet, uint32_t flags);
+
+void tFlagGroupGetInfo(tFlagGroup* flagGroup, tFlagGroupInfo* info);
+
+uint32_t tFlagGroupDestroy(tFlagGroup* flagGroup);
 
 #endif
