@@ -510,6 +510,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\tMutex.c</FilePath>
             </File>
+            <File>
+              <FileName>tTimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source\tTimer.h</FilePath>
+            </File>
+            <File>
+              <FileName>tTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\tTimer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
