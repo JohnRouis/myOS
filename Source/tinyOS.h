@@ -28,6 +28,7 @@ typedef enum _tError
     tErrorResourceUnavaliable,
     tErrorDel,
     tErrorResourceFull,
+    tErrorOwner,
 }tErroe;
 
 

@@ -8,12 +8,12 @@
 /*事件类型*/
 typedef enum _tEventType
 {
-    tEventTypeUnkonwn = 0,
-    tEventTypeSem ,
-    tEventTypeMbox,
-    tEventTypeMemBlock,
-    tEventTypeFlagGroup,
-    tEventTypeMutex,
+    tEventTypeUnkonwn = (0 << 16),
+    tEventTypeSem = (1 << 16),
+    tEventTypeMbox = (2 << 16),
+    tEventTypeMemBlock = (3 << 16),
+    tEventTypeFlagGroup = (4 << 16),
+    tEventTypeMutex = (5 << 16),
 }tEventType;
 
 typedef struct _tEvent

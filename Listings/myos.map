@@ -342,6 +342,27 @@ Section Cross References
     tflaggroup.o(.ARM.exidx.text.tFlagGroupDestroy) refers to tflaggroup.o(.text.tFlagGroupDestroy) for [Anonymous Symbol]
     tmutex.o(.text.tMutexInit) refers to tevent.o(.text.tEventInit) for tEventInit
     tmutex.o(.ARM.exidx.text.tMutexInit) refers to tmutex.o(.text.tMutexInit) for [Anonymous Symbol]
+    tmutex.o(.text.tMutexWait) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
+    tmutex.o(.text.tMutexWait) refers to main.o(.bss.currentTask) for currentTask
+    tmutex.o(.text.tMutexWait) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
+    tmutex.o(.text.tMutexWait) refers to main.o(.text.tTaskSchedUnRdy) for tTaskSchedUnRdy
+    tmutex.o(.text.tMutexWait) refers to main.o(.text.tTaskSchedRdy) for tTaskSchedRdy
+    tmutex.o(.text.tMutexWait) refers to tevent.o(.text.tEventWait) for tEventWait
+    tmutex.o(.text.tMutexWait) refers to main.o(.text.tTaskSched) for tTaskSched
+    tmutex.o(.ARM.exidx.text.tMutexWait) refers to tmutex.o(.text.tMutexWait) for [Anonymous Symbol]
+    tmutex.o(.text.tMutexNoWaitGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
+    tmutex.o(.text.tMutexNoWaitGet) refers to main.o(.bss.currentTask) for currentTask
+    tmutex.o(.text.tMutexNoWaitGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
+    tmutex.o(.ARM.exidx.text.tMutexNoWaitGet) refers to tmutex.o(.text.tMutexNoWaitGet) for [Anonymous Symbol]
+    tmutex.o(.text.tMutexNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
+    tmutex.o(.text.tMutexNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
+    tmutex.o(.text.tMutexNotify) refers to main.o(.bss.currentTask) for currentTask
+    tmutex.o(.text.tMutexNotify) refers to main.o(.text.tTaskSchedUnRdy) for tTaskSchedUnRdy
+    tmutex.o(.text.tMutexNotify) refers to main.o(.text.tTaskSchedRdy) for tTaskSchedRdy
+    tmutex.o(.text.tMutexNotify) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
+    tmutex.o(.text.tMutexNotify) refers to tevent.o(.text.tEventWakeUp) for tEventWakeUp
+    tmutex.o(.text.tMutexNotify) refers to main.o(.text.tTaskSched) for tTaskSched
+    tmutex.o(.ARM.exidx.text.tMutexNotify) refers to tmutex.o(.text.tMutexNotify) for [Anonymous Symbol]
     startup_armcm3.o(.ARM.exidx.text.Default_Handler) refers to startup_armcm3.o(.text.Default_Handler) for [Anonymous Symbol]
     startup_armcm3.o(.text.Reset_Handler) refers to system_armcm3.o(.text.SystemInit) for SystemInit
     startup_armcm3.o(.text.Reset_Handler) refers to entry.o(.ARM.Collect$$$$00000000) for __main
@@ -460,7 +481,7 @@ Removing Unused input sections from the image.
     Removing tcpu.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
     Removing tcpu.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
     Removing tevent.o(.text), (0 bytes).
-    Removing tevent.o(.text.tEventInit), (28 bytes).
+    Removing tevent.o(.text.tEventInit), (26 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventInit), (8 bytes).
     Removing tevent.o(.text.tEventWait), (90 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventWait), (8 bytes).
@@ -474,9 +495,9 @@ Removing Unused input sections from the image.
     Removing tevent.o(.text.tEventWaitCount), (38 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventWaitCount), (8 bytes).
     Removing tsem.o(.text), (0 bytes).
-    Removing tsem.o(.text.tSemInit), (72 bytes).
+    Removing tsem.o(.text.tSemInit), (74 bytes).
     Removing tsem.o(.ARM.exidx.text.tSemInit), (8 bytes).
-    Removing tsem.o(.text.tSemWait), (96 bytes).
+    Removing tsem.o(.text.tSemWait), (98 bytes).
     Removing tsem.o(.ARM.exidx.text.tSemWait), (8 bytes).
     Removing tsem.o(.text.tSemNoWaitGet), (58 bytes).
     Removing tsem.o(.ARM.exidx.text.tSemNoWaitGet), (8 bytes).
@@ -487,9 +508,9 @@ Removing Unused input sections from the image.
     Removing tsem.o(.text.tSemDestroy), (58 bytes).
     Removing tsem.o(.ARM.exidx.text.tSemDestroy), (8 bytes).
     Removing tmbox.o(.text), (0 bytes).
-    Removing tmbox.o(.text.tMboxInit), (48 bytes).
+    Removing tmbox.o(.text.tMboxInit), (50 bytes).
     Removing tmbox.o(.ARM.exidx.text.tMboxInit), (8 bytes).
-    Removing tmbox.o(.text.tMboxWait), (144 bytes).
+    Removing tmbox.o(.text.tMboxWait), (146 bytes).
     Removing tmbox.o(.ARM.exidx.text.tMboxWait), (8 bytes).
     Removing tmbox.o(.text.tMboxNoWaitGet), (98 bytes).
     Removing tmbox.o(.ARM.exidx.text.tMboxNoWaitGet), (8 bytes).
@@ -502,9 +523,9 @@ Removing Unused input sections from the image.
     Removing tmbox.o(.text.tMboxGetInfo), (50 bytes).
     Removing tmbox.o(.ARM.exidx.text.tMboxGetInfo), (8 bytes).
     Removing tmemblock.o(.text), (0 bytes).
-    Removing tmemblock.o(.text.tMemBlockInit), (114 bytes).
+    Removing tmemblock.o(.text.tMemBlockInit), (116 bytes).
     Removing tmemblock.o(.ARM.exidx.text.tMemBlockInit), (8 bytes).
-    Removing tmemblock.o(.text.tMemBlockWait), (114 bytes).
+    Removing tmemblock.o(.text.tMemBlockWait), (116 bytes).
     Removing tmemblock.o(.ARM.exidx.text.tMemBlockWait), (8 bytes).
     Removing tmemblock.o(.text.tMemBlockNoWaitGet), (68 bytes).
     Removing tmemblock.o(.ARM.exidx.text.tMemBlockNoWaitGet), (8 bytes).
@@ -515,9 +536,9 @@ Removing Unused input sections from the image.
     Removing tmemblock.o(.text.tMemBlockDestroy), (50 bytes).
     Removing tmemblock.o(.ARM.exidx.text.tMemBlockDestroy), (8 bytes).
     Removing tflaggroup.o(.text), (0 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupInit), (26 bytes).
+    Removing tflaggroup.o(.text.tFlagGroupInit), (28 bytes).
     Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupInit), (8 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupWait), (132 bytes).
+    Removing tflaggroup.o(.text.tFlagGroupWait), (134 bytes).
     Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupWait), (8 bytes).
     Removing tflaggroup.o(.text.tFlagGroupCheckAndConsume), (168 bytes).
     Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupCheckAndConsume), (8 bytes).
@@ -530,8 +551,14 @@ Removing Unused input sections from the image.
     Removing tflaggroup.o(.text.tFlagGroupDestroy), (48 bytes).
     Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupDestroy), (8 bytes).
     Removing tmutex.o(.text), (0 bytes).
-    Removing tmutex.o(.text.tMutexInit), (34 bytes).
+    Removing tmutex.o(.text.tMutexInit), (36 bytes).
     Removing tmutex.o(.ARM.exidx.text.tMutexInit), (8 bytes).
+    Removing tmutex.o(.text.tMutexWait), (248 bytes).
+    Removing tmutex.o(.ARM.exidx.text.tMutexWait), (8 bytes).
+    Removing tmutex.o(.text.tMutexNoWaitGet), (120 bytes).
+    Removing tmutex.o(.ARM.exidx.text.tMutexNoWaitGet), (8 bytes).
+    Removing tmutex.o(.text.tMutexNotify), (258 bytes).
+    Removing tmutex.o(.ARM.exidx.text.tMutexNotify), (8 bytes).
     Removing startup_armcm3.o(.text), (0 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Default_Handler), (8 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Reset_Handler), (8 bytes).
@@ -541,7 +568,7 @@ Removing Unused input sections from the image.
     Removing system_armcm3.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_armcm3.o(.ARM.exidx.text.SystemInit), (8 bytes).
 
-164 unused section(s) (total 4516 bytes) removed from the image.
+170 unused section(s) (total 5182 bytes) removed from the image.
 
 ==============================================================================
 
@@ -761,23 +788,23 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000003c0   Data   RO          308    RESET               startup_armcm3.o
-    0x000003c0   0x000003c0   0x00000000   Code   RO          327  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000003c0   0x000003c0   0x00000004   Code   RO          330    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
-    0x000003c4   0x000003c4   0x00000004   Code   RO          333    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          335    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          337    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000003c8   0x000003c8   0x00000008   Code   RO          338    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          340    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          342    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000003d0   0x000003d0   0x00000004   Code   RO          331    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
+    0x00000000   0x00000000   0x000003c0   Data   RO          315    RESET               startup_armcm3.o
+    0x000003c0   0x000003c0   0x00000000   Code   RO          334  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000003c0   0x000003c0   0x00000004   Code   RO          337    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
+    0x000003c4   0x000003c4   0x00000004   Code   RO          340    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          342    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          344    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000003c8   0x000003c8   0x00000008   Code   RO          345    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          347    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          349    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000003d0   0x000003d0   0x00000004   Code   RO          338    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
     0x000003d4   0x000003d4   0x00000030   Code   RO           74    .text               cortex.o
-    0x00000404   0x00000404   0x00000030   Code   RO          344    .text               mc_w.l(init.o)
-    0x00000434   0x00000434   0x00000004   Code   RO          302    .text.Default_Handler  startup_armcm3.o
-    0x00000438   0x00000438   0x00000004   Code   RO          306    .text.HardFault_Handler  startup_armcm3.o
-    0x0000043c   0x0000043c   0x00000008   Code   RO          304    .text.Reset_Handler  startup_armcm3.o
+    0x00000404   0x00000404   0x00000030   Code   RO          351    .text               mc_w.l(init.o)
+    0x00000434   0x00000434   0x00000004   Code   RO          309    .text.Default_Handler  startup_armcm3.o
+    0x00000438   0x00000438   0x00000004   Code   RO          313    .text.HardFault_Handler  startup_armcm3.o
+    0x0000043c   0x0000043c   0x00000008   Code   RO          311    .text.Reset_Handler  startup_armcm3.o
     0x00000444   0x00000444   0x00000008   Code   RO          184    .text.SysTick_Handler  tcpu.o
-    0x0000044c   0x0000044c   0x00000026   Code   RO          318    .text.SystemInit    system_armcm3.o
+    0x0000044c   0x0000044c   0x00000026   Code   RO          325    .text.SystemInit    system_armcm3.o
     0x00000472   0x00000472   0x00000002   PAD
     0x00000474   0x00000474   0x00000042   Code   RO          182    .text.__NVIC_SetPriority  tcpu.o
     0x000004b6   0x000004b6   0x00000002   PAD
@@ -835,11 +862,11 @@ Memory Map of the image
     0x00000c74   0x00000c74   0x0000002a   Code   RO           53    .text.task2Entry    app.o
     0x00000c9e   0x00000c9e   0x00000002   PAD
     0x00000ca0   0x00000ca0   0x0000002a   Code   RO           55    .text.task3Entry    app.o
-    0x00000cca   0x00000cca   0x0000000e   Code   RO          348    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000cd8   0x00000cd8   0x00000002   Code   RO          349    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000cda   0x00000cda   0x0000000e   Code   RO          350    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000cca   0x00000cca   0x0000000e   Code   RO          355    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000cd8   0x00000cd8   0x00000002   Code   RO          356    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000cda   0x00000cda   0x0000000e   Code   RO          357    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x00000ce8   0x00000ce8   0x00000100   Data   RO          106    .rodata.tBitmapGetFirstSet.quickFindTable  tbitmap.o
-    0x00000de8   0x00000de8   0x00000020   Data   RO          347    Region$$Table       anon$$obj.o
+    0x00000de8   0x00000de8   0x00000020   Data   RO          354    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_NOINIT (Exec base: 0x20000000, Load base: 0x00000e08, Size: 0x00000000, Max: 0x0003f200, ABSOLUTE, UNINIT)
@@ -851,7 +878,7 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000e08   0x00000004   Data   RW          320    .data.SystemCoreClock  system_armcm3.o
+    0x20000000   0x00000e08   0x00000004   Data   RW          327    .data.SystemCoreClock  system_armcm3.o
     0x20000004        -       0x00000004   Zero   RW           37    .bss.currentTask    main.o
     0x20000008        -       0x00001000   Zero   RW           41    .bss.idleTaskEnv    main.o
     0x20001008        -       0x00000004   Zero   RW           38    .bss.nextTask       main.o
@@ -893,21 +920,21 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       268          0          0          0      12516       2138   app.o
+       268          0          0          0      12516       2148   app.o
         48          8          0          0          0        324   cortex.o
-       768          0          0          0       4577       4318   main.o
+       768          0          0          0       4577       4346   main.o
         16          0        960          0          0        803   startup_armcm3.o
         96          0          0          0          0       1484   switch.o
         38          0          0          4          0       1403   system_armcm3.o
        186          0        256          0          0       1326   tbitmap.o
        160          0          0          0          0       2693   tcpu.o
-        66          0          0          0          0       3334   tevent.o
+        66          0          0          0          0       3362   tevent.o
        214          0          0          0          0       2695   tlist.o
-       290          0          0          0          0       3575   ttask.o
+       290          0          0          0          0       3603   ttask.o
         52          0          0          0          0        536   ttime.o
 
     ----------------------------------------------------------------------
-      2246          8       1248          4      20680      24629   Object Totals
+      2246          8       1248          4      20680      24723   Object Totals
          0          0         32          0       3584          0   (incl. Generated)
         44          0          0          0          3          0   (incl. Padding)
 
@@ -946,8 +973,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2344         26       1248          4      20680      24649   Grand Totals
-      2344         26       1248          4      20680      24649   ELF Image Totals
+      2344         26       1248          4      20680      24743   Grand Totals
+      2344         26       1248          4      20680      24743   ELF Image Totals
       2344         26       1248          4          0          0   ROM Totals
 
 ==============================================================================
