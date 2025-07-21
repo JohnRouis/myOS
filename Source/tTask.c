@@ -1,25 +1,32 @@
 #include "tinyOS.h"
 
-void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, uint32_t* stack)
+void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, uint32_t* stack, uint32_t size)
 {
-	*(--stack) = (unsigned long)(1 << 24);
-	*(--stack) = (unsigned long)entry;
-	*(--stack) = (unsigned long)0x14;
-	*(--stack) = (unsigned long)0x12;
-	*(--stack) = (unsigned long)0x3;
-	*(--stack) = (unsigned long)0x2;
-	*(--stack) = (unsigned long)0x1;
-	*(--stack) = (unsigned long)param;
-	*(--stack) = (unsigned long)0x11;
-	*(--stack) = (unsigned long)0x10;
-	*(--stack) = (unsigned long)0x9;
-	*(--stack) = (unsigned long)0x8;
-	*(--stack) = (unsigned long)0x7;
-	*(--stack) = (unsigned long)0x6;
-	*(--stack) = (unsigned long)0x5;
-	*(--stack) = (unsigned long)0x4;
+    uint32_t* stackTop;//堆栈指针
+    task->stackBase = stack;//起始地址赋值
+    task->stackSize = size;
+    memset(stack, 0, size);
 
-	task->stack = stack;//更新堆栈指针位置
+    stackTop = stack + size / sizeof(tTaskStack);//堆栈指针初始化
+
+	*(--stackTop) = (unsigned long)(1 << 24);
+	*(--stackTop) = (unsigned long)entry;
+	*(--stackTop) = (unsigned long)0x14;
+	*(--stackTop) = (unsigned long)0x12;
+	*(--stackTop) = (unsigned long)0x3;
+	*(--stackTop) = (unsigned long)0x2;
+	*(--stackTop) = (unsigned long)0x1;
+	*(--stackTop) = (unsigned long)param;
+	*(--stackTop) = (unsigned long)0x11;
+	*(--stackTop) = (unsigned long)0x10;
+	*(--stackTop) = (unsigned long)0x9;
+	*(--stackTop) = (unsigned long)0x8;
+	*(--stackTop) = (unsigned long)0x7;
+	*(--stackTop) = (unsigned long)0x6;
+	*(--stackTop) = (unsigned long)0x5;
+	*(--stackTop) = (unsigned long)0x4;
+
+	task->stack = stackTop;//更新堆栈指针位置
 	task->delayTicks = 0;
 	task->prio = prio;
 	task->state = TINYOS_TASK_STATE_RDY;
@@ -153,6 +160,8 @@ void tTaskDeleteSelf(void)
 /* 任务信息的获取 */
 void tTaskGetInfo(tTask* task, tTaskInfo* info)
 {
+    uint32_t* stackEnd;//末端指针
+
     uint32_t status = tTaskEnterCritical();
 
     info->delayTicks = task->delayTicks;
@@ -164,6 +173,17 @@ void tTaskGetInfo(tTask* task, tTaskInfo* info)
     info->slice = task->slice;
 
     info->suspendCount = task->suspendCount;
+
+    //计算堆栈使用量
+    info->stackFree = 0;
+    stackEnd = task->stackBase;//末端赋值
+    while ((*stackEnd++ == 0) && (stackEnd <= task->stackBase + task->stackSize / sizeof(tTaskStack)))
+    {
+        info->stackFree++;
+    }
+    
+    //从单元数转成字节数
+    info->stackFree *= sizeof(tTaskStack);
 
     tTaskExitCritical(status);
 }

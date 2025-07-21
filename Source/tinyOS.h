@@ -1,6 +1,8 @@
 #ifndef TINYOS_H
 #define TINYOS_H
 
+#include "string.h"
+
 #include <stdint.h>
 
 #include "tConfig.h"

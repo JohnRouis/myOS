@@ -15,7 +15,11 @@ struct  _tEvent;//前置声明
 
 typedef struct _tTask
 {
-    tTaskStack* stack;
+    tTaskStack* stack;//存放任务的堆栈
+
+    uint32_t* stackBase;//堆栈的起始地址
+
+    uint32_t stackSize;//堆栈的容量
 
     uint32_t delayTicks;//任务延时计数
 
@@ -55,9 +59,12 @@ typedef struct _tTaskInfo
     uint32_t state;
     uint32_t slice;
     uint32_t suspendCount;
+
+    uint32_t stackSize;//堆栈总容量
+    uint32_t stackFree;//堆栈空余量
 }tTaskInfo;
 
-void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, uint32_t* stack);
+void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, uint32_t* stack, uint32_t size);
 
 void tTaskSuspend(tTask* task);
 

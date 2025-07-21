@@ -179,7 +179,7 @@ void tTimerModuleInit(void)
 #if TINYOS_TIMERTASK_PRIO >= (TINYOS_PRO_COUNT - 1)
     #error "The proprity of timer task must be greater than (TINYOS_PRO_COUNT - 1)"
 #endif
-    tTaskInit(&tTimerTask, tTimerSoftTask, (void*)0, TINYOS_TIMERTASK_PRIO, &tTimerTaskStack[TINYOS_IDLETASK_STACK_SIZE]);
+    tTaskInit(&tTimerTask, tTimerSoftTask, (void*)0, TINYOS_TIMERTASK_PRIO, tTimerTaskStack, TINYOS_TIMERTASK_STACK_SIZE);
 }
 
 /*

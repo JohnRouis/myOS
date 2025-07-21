@@ -46,7 +46,7 @@ void task3Entry(void* param)
 
 void tInitApp(void)
 {
-    tTaskInit(&tTask1, task1Entry, (void*)0x11111111, 0, &task1Env[1024]);
-	tTaskInit(&tTask2, task2Entry, (void*)0x22222222, 1, &task2Env[1024]);
-	tTaskInit(&tTask3, task3Entry, (void*)0x33333333, 1, &task3Env[1024]);
+    tTaskInit(&tTask1, task1Entry, (void*)0x11111111, 0, task1Env, sizeof(task1Env));
+	tTaskInit(&tTask2, task2Entry, (void*)0x22222222, 1, task2Env, sizeof(task2Env));
+	tTaskInit(&tTask3, task3Entry, (void*)0x33333333, 1, task3Env, sizeof(task3Env));
 }
