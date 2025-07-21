@@ -17,7 +17,7 @@ typedef enum _tTimerState
 
     tTimerStopped,//定时器已停止
 
-    tTimerDestroyed,//定时器已销毁
+    tTimerDestroyed//定时器已销毁
 }tTimerState;
 
 typedef struct _tTimer
@@ -39,6 +39,21 @@ typedef struct _tTimer
     tTimerState state;//定时器状态
 }tTimer;
 
+typedef struct _tTimerInfo
+{
+    uint32_t startDelayTicks;//初次启动的延时数
+
+    uint32_t durationTicks;//周期定时数
+
+    void (*timerFunc) (void* arg);//定时器回调函数
+
+    void* arg;//回调函数参数
+
+    uint32_t config;//配置参数
+
+    tTimerState state;//状态
+}tTimerInfo;
+
 //选择软件一点还是硬件一点的定时器
 #define TIMER_CONFIG_TYPE_HARD   (1 << 0)
 #define TIMER_CONFIG_TYPE_SOFT   (0 << 0)
@@ -48,6 +63,10 @@ void tTimerInit(tTimer* timer, uint32_t delayTicks, uint32_t durationTicks, void
 void tTimerStart(tTimer* timer);
 
 void tTimerStop(tTimer* timer);
+
+void tTimerDestroy(tTimer* timer);
+
+void tTimerGetInfo(tTimer* timer, tTimerInfo* info);
 
 void tTimerModuleInit(void);
 

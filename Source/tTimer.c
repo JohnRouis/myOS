@@ -89,6 +89,33 @@ void tTimerStop(tTimer* timer)
 }
 
 /*
+** Description: 销毁定时器
+*/
+void tTimerDestroy(tTimer* timer)
+{
+    tTimerStop(timer);//将定时器从列表中移除
+
+    timer->state = tTimerDestroyed;//状态标记
+}
+
+/*
+** Description: 定时器查询接口
+*/
+void tTimerGetInfo(tTimer* timer, tTimerInfo* info)
+{
+    uint32_t status = tTaskEnterCritical();
+
+    info->startDelayTicks = timer->startDelayTicks;
+    info->durationTicks = timer->durationTicks;
+    info->timerFunc = timer->timerFunc;
+    info->arg = timer->arg;
+    info->config = timer->config;
+    info->state = timer->state;
+
+    tTaskExitCritical(status);
+}
+
+/*
 ** Description: 功能辅助函数,遍历定时器列表,调用各个定时器的处理函数
 */
 static void tTimerCallFuncList(tList* timerList)
