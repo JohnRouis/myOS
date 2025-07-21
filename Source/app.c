@@ -10,7 +10,6 @@ tTaskStack task3Env[1024];
 int task1Flag = 0;
 void task1Entry(void* param)
 {
-	tSetSysTickPeriod(10);
 	for(;;)
 	{
 		task1Flag = 1;

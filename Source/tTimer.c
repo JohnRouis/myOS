@@ -175,7 +175,13 @@ void tTimerModuleInit(void)
     tListInit(&tTimerSoftList);
     tSemInit(&tTimerProtectSem, 1, 1);
     tSemInit(&tTimerTickSem, 0, 0);
+}
 
+/*
+** Description: 定时器任务初始化
+*/
+void tTimerInitTask(void)
+{
 #if TINYOS_TIMERTASK_PRIO >= (TINYOS_PRO_COUNT - 1)
     #error "The proprity of timer task must be greater than (TINYOS_PRO_COUNT - 1)"
 #endif

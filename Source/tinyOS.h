@@ -25,6 +25,8 @@
 
 #include "tTimer.h"
 
+#define TICKS_PER_SEC     (1000 / TINYOS_SYSTICK_MS)
+
 typedef enum _tError
 {
     tErrorNoError = 0,

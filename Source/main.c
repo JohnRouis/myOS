@@ -11,10 +11,19 @@ tList taskTable[TINYOS_PRO_COUNT];//就绪队列
 
 uint8_t schedLockCount;//调度锁计数器
 
+uint32_t tickCount;//时钟节拍计数
+
 tBitmap taskPrioBitmap;//任务优先级标志位置结构
 
 tList tTaskDelayedList;//延时队列
 
+uint32_t idleCount;//空闲任务计数 用于CPU使用百分比测量
+
+uint32_t idleMaxCount;//空闲任务最大计数值
+
+static void initCpuUsageStat(void);
+static void checkCpuUsage(void);
+static void cpuUsageSyncWithSysTick(void);
 
 tTask* tTaskHighestReady(void)
 {
@@ -129,6 +138,14 @@ void tTimeTaskRemove(tTask* task)
 	tListRemove(&tTaskDelayedList, &(task->delayNode));
 }
 
+/*
+** Description: 时钟节拍统计数初始化
+*/
+void tTimeTickInit(void)
+{
+	tickCount = 0;
+}
+
 /* 时钟节拍处理 */
 void tTaskSystemTickHandler()
 {
@@ -161,6 +178,10 @@ void tTaskSystemTickHandler()
 		}
 	}
 
+	tickCount++;
+
+	checkCpuUsage();//检查CPU使用率
+
 	tTaskExitCritical(status);
 
 	tTimerMoudleTickNotify();//定时器通知调用
@@ -168,16 +189,92 @@ void tTaskSystemTickHandler()
 	tTaskSched();
 }
 
-void idleTaskEntry(void* param)
-{
-	for(;;)
-	{
+static float cpuUsage;//CPU使用率统计
+static uint32_t enableCpuUsageState;//是否使能CPU统计功能
 
+/*
+** Description: 初始化CPU统计相关变量
+*/
+static void initCpuUsageStat(void)
+{
+	idleCount = 0;
+	idleMaxCount = 0;
+	cpuUsage = 0.0f;
+	enableCpuUsageState = 0;
+}
+
+/*
+** Description: 检查CPU使用率
+*/
+static void checkCpuUsage(void)
+{
+	if(enableCpuUsageState == 0)//与空闲任务的cpu统计同步
+	{
+		enableCpuUsageState = 1;
+		tickCount = 0;
+		return;
+	}
+
+	if(tickCount == TICKS_PER_SEC)
+	{
+		idleMaxCount = idleCount;
+		idleCount = 0;
+
+		tTaskSchedEnable();//计数完毕，开始进行任务调度
+	}
+	else if(tickCount % TICKS_PER_SEC == 0)
+	{
+		cpuUsage = 100 - (idleCount * 100.0 / idleMaxCount);
+		idleCount = 0;
 	}
 }
 
+static void cpuUsageSyncWithSysTick(void)
+{
+	while (enableCpuUsageState == 0)
+	{
+		;;
+	}
+	
+}
+
+/*
+** Description: 获取CPU利用率
+*/
+float tCpuUsageGet(void)
+{
+	float usage = 0;
+
+	uint32_t status = tTaskEnterCritical();
+	usage = cpuUsage;
+	tTaskExitCritical(status);
+
+	return usage;
+}
+
 tTask tTaskIdle;
-tTaskStack idleTaskEnv[1024];
+tTaskStack idleTaskEnv[TINYOS_IDLETASK_STACK_SIZE];
+
+void idleTaskEntry(void* param)
+{
+	tTaskSchedDisable();//禁止调度，为空闲任务留下100tick的时间计算CPU占比
+
+	tInitApp();//应用任务初始化
+
+	tTimerInitTask();//软件定时器初始化
+
+	tSetSysTickPeriod(TINYOS_SYSTICK_MS);//初始化时钟节拍
+
+	cpuUsageSyncWithSysTick();//等待与时钟同步
+	for(;;)
+	{
+		uint32_t status = tTaskEnterCritical();
+
+		idleCount++;
+
+		tTaskExitCritical(status);
+	}
+}
 
 int main(void)
 {
@@ -187,7 +284,9 @@ int main(void)
 
 	tTimerModuleInit();//定时器模块初始化
 
-	tInitApp();
+	initCpuUsageStat();//初始化CPU统计
+
+	tTimeTickInit();//时钟节拍初始化
 
 	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, TINYOS_PRO_COUNT - 1, idleTaskEnv, TINYOS_IDLETASK_STACK_SIZE);
 

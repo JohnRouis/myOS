@@ -70,6 +70,8 @@ void tTimerGetInfo(tTimer* timer, tTimerInfo* info);
 
 void tTimerModuleInit(void);
 
+void tTimerInitTask(void);
+
 void tTimerMoudleTickNotify(void);
 
 #endif

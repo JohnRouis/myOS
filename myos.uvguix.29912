@@ -3606,9 +3606,9 @@
       <ActiveTab>0</ActiveTab>
       <Doc>
         <Name>.\Source\main.c</Name>
-        <ColumnNumber>82</ColumnNumber>
-        <TopLine>161</TopLine>
-        <CurrentLine>192</CurrentLine>
+        <ColumnNumber>0</ColumnNumber>
+        <TopLine>244</TopLine>
+        <CurrentLine>264</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -3858,9 +3858,9 @@
       </Doc>
       <Doc>
         <Name>.\Source\tTimer.c</Name>
-        <ColumnNumber>122</ColumnNumber>
+        <ColumnNumber>35</ColumnNumber>
         <TopLine>159</TopLine>
-        <CurrentLine>182</CurrentLine>
+        <CurrentLine>186</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

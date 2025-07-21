@@ -9,4 +9,6 @@
 #define TINYOS_TIMERTASK_STACK_SIZE 1024//定时器任务堆栈大小
 #define TINYOS_TIMERTASK_PRIO      1//定时器任务优先级
 
+#define TINYOS_SYSTICK_MS          10//时钟节拍
+
 #endif
