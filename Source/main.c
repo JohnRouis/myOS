@@ -163,6 +163,8 @@ void tTaskSystemTickHandler()
 
 	tTaskExitCritical(status);
 
+	tTimerMoudleTickNotify();//定时器通知调用
+
 	tTaskSched();
 }
 
@@ -182,6 +184,8 @@ int main(void)
 	tTaskSchedInit();//调度锁初始化
 
 	tTaskDelayedInit();//初始化延时队列
+
+	tTimerModuleInit();//定时器模块初始化
 
 	tInitApp();
 

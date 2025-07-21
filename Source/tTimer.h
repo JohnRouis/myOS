@@ -45,4 +45,12 @@ typedef struct _tTimer
 
 void tTimerInit(tTimer* timer, uint32_t delayTicks, uint32_t durationTicks, void (*timerFunc) (void* arg), void* arg, uint32_t config);
 
+void tTimerStart(tTimer* timer);
+
+void tTimerStop(tTimer* timer);
+
+void tTimerModuleInit(void);
+
+void tTimerMoudleTickNotify(void);
+
 #endif
