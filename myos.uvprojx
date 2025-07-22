@@ -520,6 +520,16 @@
               <FileType>1</FileType>
               <FilePath>.\Source\tTimer.c</FilePath>
             </File>
+            <File>
+              <FileName>tHooks.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Source\tHooks.h</FilePath>
+            </File>
+            <File>
+              <FileName>tHooks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Source\tHooks.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -43,6 +43,10 @@ void tTaskInit(tTask* task, void (*entry)(void*), void* param, uint32_t prio, ui
 	tNodeInit(&(task->delayNode)); 
 
 	tTaskSchedRdy(task);
+
+#if TINYOS_ENABLE_HOOKS == 1
+    tHooksTaskInit(task);
+#endif
 }
 //任务挂起函数
 void tTaskSuspend(tTask* task)
@@ -181,7 +185,7 @@ void tTaskGetInfo(tTask* task, tTaskInfo* info)
     {
         info->stackFree++;
     }
-    
+
     //从单元数转成字节数
     info->stackFree *= sizeof(tTaskStack);
 

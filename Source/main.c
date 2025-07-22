@@ -111,6 +111,9 @@ void tTaskSched(void)
 	if(tempTask != currentTask)
 	{
 		nextTask = tempTask;
+#if TINYOS_ENABLE_HOOKS == 1
+		tHooksTaskSwitch(currentTask, nextTask);
+#endif
 		tTaskSwitch();
 	}
 
@@ -192,6 +195,10 @@ void tTaskSystemTickHandler()
 
 #if TINYOS_ENABLE_TIMER == 1
 	tTimerMoudleTickNotify();//定时器通知调用
+#endif
+
+#if TINYOS_ENABLE_HOOKS == 1
+	tHooksSysTick();
 #endif
 
 	tTaskSched();
@@ -292,6 +299,9 @@ void idleTaskEntry(void* param)
 		idleCount++;
 
 		tTaskExitCritical(status);
+#if TINYOS_ENABLE_HOOKS == 1
+		tHooksCpuIdle();
+#endif
 	}
 }
 
