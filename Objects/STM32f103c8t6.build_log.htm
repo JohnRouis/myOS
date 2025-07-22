@@ -1,0 +1,110 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.41.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Wick John, SZTU, LIC=IK1BF-6SN0A-01VP1-CDSMJ-E9BMJ-V6G63
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.41.0.0
+Toolchain Path:  E:\KEIL\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.22
+Assembler:       Armasm.exe V6.22
+Linker/Locator:  ArmLink.exe V6.22
+Library Manager: ArmAr.exe V6.22
+Hex Converter:   FromElf.exe V6.22
+CPU DLL:         SARMCM3.DLL V5.41.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.14.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\STM32f103c8t6_myOS\STM32f103c8t6.uvprojx
+Project File Date:  07/22/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.22', folder: 'E:\KEIL\ARM\ARMCLANG\Bin'
+Build target 'Target_1'
+Source/app.c(11): warning: unused parameter 'param' [-Wunused-parameter]
+   11 | void task1Entry(void* param)
+      |                       ^
+Source/app.c(23): warning: unused parameter 'param' [-Wunused-parameter]
+   23 | void task2Entry(void* param)
+      |                       ^
+Source/app.c(35): warning: unused parameter 'param' [-Wunused-parameter]
+   35 | void task3Entry(void* param)
+      |                       ^
+3 warnings generated.
+compiling app.c...
+compiling tMbox.c...
+compiling switch.c...
+compiling tFlagGroup.c...
+compiling tBitmap.c...
+compiling tCpu.c...
+Source/tList.c(50): warning: unused parameter 'list' [-Wunused-parameter]
+   50 | tNode* tListPpre(tList* list,  tNode* node)
+      |                         ^
+Source/tList.c(63): warning: unused parameter 'list' [-Wunused-parameter]
+   63 | tNode* tListNext(tList* list, tNode* node)
+      |                         ^
+2 warnings generated.
+compiling tList.c...
+Source/main.c(279): warning: unused parameter 'param' [-Wunused-parameter]
+  279 | void idleTaskEntry(void* param)
+      |                          ^
+1 warning generated.
+compiling main.c...
+assembling cortex.s...
+Source/tEvent.c(3): warning: unused parameter 'type' [-Wunused-parameter]
+    3 | void tEventInit(tEvent* event, tEventType type)
+      |                                           ^
+1 warning generated.
+compiling tEvent.c...
+compiling tHooks.c...
+compiling tMemBlock.c...
+compiling tMutex.c...
+compiling tSem.c...
+compiling tTask.c...
+compiling tTime.c...
+compiling tTimer.c...
+compiling system_stm32f10x.c...
+assembling startup_stm32f10x_md.s...
+linking...
+Program Size: Code=3214 RO-data=526 RW-data=4 ZI-data=18772  
+".\Objects\STM32f103c8t6.axf" - 0 Error(s), 7 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM::CMSIS@6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  E:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  E:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
