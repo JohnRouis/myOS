@@ -1,6 +1,8 @@
 #include "tMutex.h"
 #include "tinyOS.h"
 
+#if TINYOS_ENABLE_MUTEX == 1
+
 void tMutexInit(tMutex* mutex)
 {
     tEventInit(&mutex->event, tEventTypeMutex);
@@ -209,3 +211,5 @@ void tMutexGetInfo(tMutex* mutex, tMutexInfo* info)
 
     tTaskExitCritical(status);
 }
+
+#endif

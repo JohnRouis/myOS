@@ -1,6 +1,8 @@
 #include "tinyOS.h"
 #include "tTimer.h"
 
+#if TINYOS_ENABLE_TIMER == 1
+
 static tList tTimerHardList;//"硬"件定时器列表
 static tList tTimerSoftList;//软件定时器列表 定时器任务1和其他任务访问,中断不允许访问此列表
 
@@ -201,3 +203,5 @@ void tTimerMoudleTickNotify(void)
 
     tSemNotify(&tTimerTickSem);//通知软定时器节拍变化
 }
+
+#endif

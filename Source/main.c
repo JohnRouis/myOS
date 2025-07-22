@@ -21,9 +21,13 @@ uint32_t idleCount;//空闲任务计数 用于CPU使用百分比测量
 
 uint32_t idleMaxCount;//空闲任务最大计数值
 
+#if TINYOS_ENABLE_CPUUSAGE_STAT == 1
+
 static void initCpuUsageStat(void);
 static void checkCpuUsage(void);
 static void cpuUsageSyncWithSysTick(void);
+
+#endif
 
 tTask* tTaskHighestReady(void)
 {
@@ -180,14 +184,20 @@ void tTaskSystemTickHandler()
 
 	tickCount++;
 
+#if TINYOS_ENABLE_CPUUSAGE_STAT == 1
 	checkCpuUsage();//检查CPU使用率
+#endif
 
 	tTaskExitCritical(status);
 
+#if TINYOS_ENABLE_TIMER == 1
 	tTimerMoudleTickNotify();//定时器通知调用
+#endif
 
 	tTaskSched();
 }
+
+#if TINYOS_ENABLE_CPUUSAGE_STAT == 1
 
 static float cpuUsage;//CPU使用率统计
 static uint32_t enableCpuUsageState;//是否使能CPU统计功能
@@ -229,6 +239,9 @@ static void checkCpuUsage(void)
 	}
 }
 
+/*
+** Description: 阻塞等待同步
+*/
 static void cpuUsageSyncWithSysTick(void)
 {
 	while (enableCpuUsageState == 0)
@@ -251,6 +264,7 @@ float tCpuUsageGet(void)
 
 	return usage;
 }
+#endif
 
 tTask tTaskIdle;
 tTaskStack idleTaskEnv[TINYOS_IDLETASK_STACK_SIZE];
@@ -261,11 +275,16 @@ void idleTaskEntry(void* param)
 
 	tInitApp();//应用任务初始化
 
+#if TINYOS_ENABLE_TIMER == 1
 	tTimerInitTask();//软件定时器初始化
+#endif
 
 	tSetSysTickPeriod(TINYOS_SYSTICK_MS);//初始化时钟节拍
 
+#if TINYOS_ENABLE_CPUUSAGE_STAT == 1
 	cpuUsageSyncWithSysTick();//等待与时钟同步
+#endif
+
 	for(;;)
 	{
 		uint32_t status = tTaskEnterCritical();
@@ -282,9 +301,13 @@ int main(void)
 
 	tTaskDelayedInit();//初始化延时队列
 
+#if TINYOS_ENABLE_TIMER == 1
 	tTimerModuleInit();//定时器模块初始化
+#endif
 
+#if TINYOS_ENABLE_CPUUSAGE_STAT == 1
 	initCpuUsageStat();//初始化CPU统计
+#endif
 
 	tTimeTickInit();//时钟节拍初始化
 

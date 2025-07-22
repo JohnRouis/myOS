@@ -11,4 +11,14 @@
 
 #define TINYOS_SYSTICK_MS          10//时钟节拍
 
+//内核功能裁剪
+#define TINYOS_ENABLE_SEM           0
+#define TINYOS_ENABLE_MUTEX         0
+#define TINYOS_ENABLE_FLAGGROUP     0
+#define TINYOS_ENABLE_MBOX          0
+#define TINYOS_ENABLE_MEMBLOCK      0
+#define TINYOS_ENABLE_TIMER         0
+#define TINYOS_ENABLE_CPUUSAGE_STAT 0
+#define TINYOS_ENABLE_HOOKS         0
+
 #endif

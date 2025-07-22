@@ -72,42 +72,18 @@ Section Cross References
     main.o(.text.tTaskSystemTickHandler) refers to tlist.o(.text.tListRemoveFirst) for tListRemoveFirst
     main.o(.text.tTaskSystemTickHandler) refers to tlist.o(.text.tListAddLast) for tListAddLast
     main.o(.text.tTaskSystemTickHandler) refers to main.o(.bss.tickCount) for tickCount
-    main.o(.text.tTaskSystemTickHandler) refers to main.o(.text.checkCpuUsage) for checkCpuUsage
     main.o(.text.tTaskSystemTickHandler) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    main.o(.text.tTaskSystemTickHandler) refers to ttimer.o(.text.tTimerMoudleTickNotify) for tTimerMoudleTickNotify
     main.o(.text.tTaskSystemTickHandler) refers to main.o(.text.tTaskSched) for tTaskSched
     main.o(.ARM.exidx.text.tTaskSystemTickHandler) refers to main.o(.text.tTaskSystemTickHandler) for [Anonymous Symbol]
-    main.o(.text.checkCpuUsage) refers to main.o(.bss.enableCpuUsageState) for enableCpuUsageState
-    main.o(.text.checkCpuUsage) refers to main.o(.bss.tickCount) for tickCount
-    main.o(.text.checkCpuUsage) refers to main.o(.bss.idleCount) for idleCount
-    main.o(.text.checkCpuUsage) refers to main.o(.bss.idleMaxCount) for idleMaxCount
-    main.o(.text.checkCpuUsage) refers to main.o(.text.tTaskSchedEnable) for tTaskSchedEnable
-    main.o(.text.checkCpuUsage) refers to dfltui.o(.text) for __aeabi_ui2d
-    main.o(.text.checkCpuUsage) refers to dmul.o(.text) for __aeabi_dmul
-    main.o(.text.checkCpuUsage) refers to ddiv.o(.text) for __aeabi_ddiv
-    main.o(.text.checkCpuUsage) refers to dadd.o(.text) for __aeabi_dsub
-    main.o(.text.checkCpuUsage) refers to d2f.o(.text) for __aeabi_d2f
-    main.o(.text.checkCpuUsage) refers to main.o(.bss.cpuUsage) for cpuUsage
-    main.o(.ARM.exidx.text.checkCpuUsage) refers to main.o(.text.checkCpuUsage) for [Anonymous Symbol]
-    main.o(.text.tCpuUsageGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    main.o(.text.tCpuUsageGet) refers to main.o(.bss.cpuUsage) for cpuUsage
-    main.o(.text.tCpuUsageGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    main.o(.ARM.exidx.text.tCpuUsageGet) refers to main.o(.text.tCpuUsageGet) for [Anonymous Symbol]
     main.o(.text.idleTaskEntry) refers to main.o(.text.tTaskSchedDisable) for tTaskSchedDisable
     main.o(.text.idleTaskEntry) refers to app.o(.text.tInitApp) for tInitApp
-    main.o(.text.idleTaskEntry) refers to ttimer.o(.text.tTimerInitTask) for tTimerInitTask
     main.o(.text.idleTaskEntry) refers to tcpu.o(.text.tSetSysTickPeriod) for tSetSysTickPeriod
-    main.o(.text.idleTaskEntry) refers to main.o(.text.cpuUsageSyncWithSysTick) for cpuUsageSyncWithSysTick
     main.o(.text.idleTaskEntry) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
     main.o(.text.idleTaskEntry) refers to main.o(.bss.idleCount) for idleCount
     main.o(.text.idleTaskEntry) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
     main.o(.ARM.exidx.text.idleTaskEntry) refers to main.o(.text.idleTaskEntry) for [Anonymous Symbol]
-    main.o(.text.cpuUsageSyncWithSysTick) refers to main.o(.bss.enableCpuUsageState) for enableCpuUsageState
-    main.o(.ARM.exidx.text.cpuUsageSyncWithSysTick) refers to main.o(.text.cpuUsageSyncWithSysTick) for [Anonymous Symbol]
     main.o(.text.main) refers to main.o(.text.tTaskSchedInit) for tTaskSchedInit
     main.o(.text.main) refers to main.o(.text.tTaskDelayedInit) for tTaskDelayedInit
-    main.o(.text.main) refers to ttimer.o(.text.tTimerModuleInit) for tTimerModuleInit
-    main.o(.text.main) refers to main.o(.text.initCpuUsageStat) for initCpuUsageStat
     main.o(.text.main) refers to main.o(.text.tTimeTickInit) for tTimeTickInit
     main.o(.text.main) refers to main.o(.bss.idleTaskEnv) for idleTaskEnv
     main.o(.text.main) refers to main.o(.bss.tTaskIdle) for tTaskIdle
@@ -117,11 +93,6 @@ Section Cross References
     main.o(.text.main) refers to main.o(.bss.nextTask) for nextTask
     main.o(.text.main) refers to switch.o(.text.tTaskRunFirst) for tTaskRunFirst
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
-    main.o(.text.initCpuUsageStat) refers to main.o(.bss.idleCount) for idleCount
-    main.o(.text.initCpuUsageStat) refers to main.o(.bss.idleMaxCount) for idleMaxCount
-    main.o(.text.initCpuUsageStat) refers to main.o(.bss.cpuUsage) for cpuUsage
-    main.o(.text.initCpuUsageStat) refers to main.o(.bss.enableCpuUsageState) for enableCpuUsageState
-    main.o(.ARM.exidx.text.initCpuUsageStat) refers to main.o(.text.initCpuUsageStat) for [Anonymous Symbol]
     app.o(.text.task1Entry) refers to app.o(.bss.task1Flag) for task1Flag
     app.o(.text.task1Entry) refers to ttime.o(.text.tTaskDelay) for tTaskDelay
     app.o(.ARM.exidx.text.task1Entry) refers to app.o(.text.task1Entry) for [Anonymous Symbol]
@@ -255,216 +226,6 @@ Section Cross References
     tevent.o(.text.tEventWaitCount) refers to tlist.o(.text.tListCount) for tListCount
     tevent.o(.text.tEventWaitCount) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
     tevent.o(.ARM.exidx.text.tEventWaitCount) refers to tevent.o(.text.tEventWaitCount) for [Anonymous Symbol]
-    tsem.o(.text.tSemInit) refers to tevent.o(.text.tEventInit) for tEventInit
-    tsem.o(.ARM.exidx.text.tSemInit) refers to tsem.o(.text.tSemInit) for [Anonymous Symbol]
-    tsem.o(.text.tSemWait) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tsem.o(.text.tSemWait) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tsem.o(.text.tSemWait) refers to main.o(.bss.currentTask) for currentTask
-    tsem.o(.text.tSemWait) refers to tevent.o(.text.tEventWait) for tEventWait
-    tsem.o(.text.tSemWait) refers to main.o(.text.tTaskSched) for tTaskSched
-    tsem.o(.ARM.exidx.text.tSemWait) refers to tsem.o(.text.tSemWait) for [Anonymous Symbol]
-    tsem.o(.text.tSemNoWaitGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tsem.o(.text.tSemNoWaitGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tsem.o(.ARM.exidx.text.tSemNoWaitGet) refers to tsem.o(.text.tSemNoWaitGet) for [Anonymous Symbol]
-    tsem.o(.text.tSemNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tsem.o(.text.tSemNotify) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tsem.o(.text.tSemNotify) refers to tevent.o(.text.tEventWakeUp) for tEventWakeUp
-    tsem.o(.text.tSemNotify) refers to main.o(.bss.currentTask) for currentTask
-    tsem.o(.text.tSemNotify) refers to main.o(.text.tTaskSched) for tTaskSched
-    tsem.o(.text.tSemNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tsem.o(.ARM.exidx.text.tSemNotify) refers to tsem.o(.text.tSemNotify) for [Anonymous Symbol]
-    tsem.o(.text.tSemGetInfo) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tsem.o(.text.tSemGetInfo) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tsem.o(.text.tSemGetInfo) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tsem.o(.ARM.exidx.text.tSemGetInfo) refers to tsem.o(.text.tSemGetInfo) for [Anonymous Symbol]
-    tsem.o(.text.tSemDestroy) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tsem.o(.text.tSemDestroy) refers to tevent.o(.text.tEventRemoveAll) for tEventRemoveAll
-    tsem.o(.text.tSemDestroy) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tsem.o(.text.tSemDestroy) refers to main.o(.text.tTaskSched) for tTaskSched
-    tsem.o(.ARM.exidx.text.tSemDestroy) refers to tsem.o(.text.tSemDestroy) for [Anonymous Symbol]
-    tmbox.o(.text.tMboxInit) refers to tevent.o(.text.tEventInit) for tEventInit
-    tmbox.o(.ARM.exidx.text.tMboxInit) refers to tmbox.o(.text.tMboxInit) for [Anonymous Symbol]
-    tmbox.o(.text.tMboxWait) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmbox.o(.text.tMboxWait) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmbox.o(.text.tMboxWait) refers to main.o(.bss.currentTask) for currentTask
-    tmbox.o(.text.tMboxWait) refers to tevent.o(.text.tEventWait) for tEventWait
-    tmbox.o(.text.tMboxWait) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmbox.o(.ARM.exidx.text.tMboxWait) refers to tmbox.o(.text.tMboxWait) for [Anonymous Symbol]
-    tmbox.o(.text.tMboxNoWaitGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmbox.o(.text.tMboxNoWaitGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmbox.o(.ARM.exidx.text.tMboxNoWaitGet) refers to tmbox.o(.text.tMboxNoWaitGet) for [Anonymous Symbol]
-    tmbox.o(.text.tMboxNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmbox.o(.text.tMboxNotify) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tmbox.o(.text.tMboxNotify) refers to tevent.o(.text.tEventWakeUp) for tEventWakeUp
-    tmbox.o(.text.tMboxNotify) refers to main.o(.bss.currentTask) for currentTask
-    tmbox.o(.text.tMboxNotify) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmbox.o(.text.tMboxNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmbox.o(.ARM.exidx.text.tMboxNotify) refers to tmbox.o(.text.tMboxNotify) for [Anonymous Symbol]
-    tmbox.o(.text.tMboxFlush) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmbox.o(.text.tMboxFlush) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tmbox.o(.text.tMboxFlush) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmbox.o(.ARM.exidx.text.tMboxFlush) refers to tmbox.o(.text.tMboxFlush) for [Anonymous Symbol]
-    tmbox.o(.text.tMboxDestroy) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmbox.o(.text.tMboxDestroy) refers to tevent.o(.text.tEventRemoveAll) for tEventRemoveAll
-    tmbox.o(.text.tMboxDestroy) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmbox.o(.text.tMboxDestroy) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmbox.o(.ARM.exidx.text.tMboxDestroy) refers to tmbox.o(.text.tMboxDestroy) for [Anonymous Symbol]
-    tmbox.o(.text.tMboxGetInfo) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmbox.o(.text.tMboxGetInfo) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tmbox.o(.text.tMboxGetInfo) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmbox.o(.ARM.exidx.text.tMboxGetInfo) refers to tmbox.o(.text.tMboxGetInfo) for [Anonymous Symbol]
-    tmemblock.o(.text.tMemBlockInit) refers to tevent.o(.text.tEventInit) for tEventInit
-    tmemblock.o(.text.tMemBlockInit) refers to tlist.o(.text.tListInit) for tListInit
-    tmemblock.o(.text.tMemBlockInit) refers to tlist.o(.text.tNodeInit) for tNodeInit
-    tmemblock.o(.text.tMemBlockInit) refers to tlist.o(.text.tListAddLast) for tListAddLast
-    tmemblock.o(.ARM.exidx.text.tMemBlockInit) refers to tmemblock.o(.text.tMemBlockInit) for [Anonymous Symbol]
-    tmemblock.o(.text.tMemBlockWait) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmemblock.o(.text.tMemBlockWait) refers to tlist.o(.text.tListCount) for tListCount
-    tmemblock.o(.text.tMemBlockWait) refers to tlist.o(.text.tListRemoveFirst) for tListRemoveFirst
-    tmemblock.o(.text.tMemBlockWait) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmemblock.o(.text.tMemBlockWait) refers to main.o(.bss.currentTask) for currentTask
-    tmemblock.o(.text.tMemBlockWait) refers to tevent.o(.text.tEventWait) for tEventWait
-    tmemblock.o(.text.tMemBlockWait) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmemblock.o(.ARM.exidx.text.tMemBlockWait) refers to tmemblock.o(.text.tMemBlockWait) for [Anonymous Symbol]
-    tmemblock.o(.text.tMemBlockNoWaitGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmemblock.o(.text.tMemBlockNoWaitGet) refers to tlist.o(.text.tListCount) for tListCount
-    tmemblock.o(.text.tMemBlockNoWaitGet) refers to tlist.o(.text.tListRemoveFirst) for tListRemoveFirst
-    tmemblock.o(.text.tMemBlockNoWaitGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmemblock.o(.ARM.exidx.text.tMemBlockNoWaitGet) refers to tmemblock.o(.text.tMemBlockNoWaitGet) for [Anonymous Symbol]
-    tmemblock.o(.text.tMemBlockNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmemblock.o(.text.tMemBlockNotify) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tmemblock.o(.text.tMemBlockNotify) refers to tevent.o(.text.tEventWakeUp) for tEventWakeUp
-    tmemblock.o(.text.tMemBlockNotify) refers to main.o(.bss.currentTask) for currentTask
-    tmemblock.o(.text.tMemBlockNotify) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmemblock.o(.text.tMemBlockNotify) refers to tlist.o(.text.tListAddLast) for tListAddLast
-    tmemblock.o(.text.tMemBlockNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmemblock.o(.ARM.exidx.text.tMemBlockNotify) refers to tmemblock.o(.text.tMemBlockNotify) for [Anonymous Symbol]
-    tmemblock.o(.text.tMemBlockGetInfo) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmemblock.o(.text.tMemBlockGetInfo) refers to tlist.o(.text.tListCount) for tListCount
-    tmemblock.o(.text.tMemBlockGetInfo) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tmemblock.o(.text.tMemBlockGetInfo) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmemblock.o(.ARM.exidx.text.tMemBlockGetInfo) refers to tmemblock.o(.text.tMemBlockGetInfo) for [Anonymous Symbol]
-    tmemblock.o(.text.tMemBlockDestroy) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmemblock.o(.text.tMemBlockDestroy) refers to tevent.o(.text.tEventRemoveAll) for tEventRemoveAll
-    tmemblock.o(.text.tMemBlockDestroy) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmemblock.o(.text.tMemBlockDestroy) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmemblock.o(.ARM.exidx.text.tMemBlockDestroy) refers to tmemblock.o(.text.tMemBlockDestroy) for [Anonymous Symbol]
-    tflaggroup.o(.text.tFlagGroupInit) refers to tevent.o(.text.tEventInit) for tEventInit
-    tflaggroup.o(.ARM.exidx.text.tFlagGroupInit) refers to tflaggroup.o(.text.tFlagGroupInit) for [Anonymous Symbol]
-    tflaggroup.o(.text.tFlagGroupWait) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tflaggroup.o(.text.tFlagGroupWait) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for tFlagGroupCheckAndConsume
-    tflaggroup.o(.text.tFlagGroupWait) refers to main.o(.bss.currentTask) for currentTask
-    tflaggroup.o(.text.tFlagGroupWait) refers to tevent.o(.text.tEventWait) for tEventWait
-    tflaggroup.o(.text.tFlagGroupWait) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tflaggroup.o(.text.tFlagGroupWait) refers to main.o(.text.tTaskSched) for tTaskSched
-    tflaggroup.o(.ARM.exidx.text.tFlagGroupWait) refers to tflaggroup.o(.text.tFlagGroupWait) for [Anonymous Symbol]
-    tflaggroup.o(.ARM.exidx.text.tFlagGroupCheckAndConsume) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for [Anonymous Symbol]
-    tflaggroup.o(.text.tFlagGroupNoWaitGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tflaggroup.o(.text.tFlagGroupNoWaitGet) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for tFlagGroupCheckAndConsume
-    tflaggroup.o(.text.tFlagGroupNoWaitGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tflaggroup.o(.ARM.exidx.text.tFlagGroupNoWaitGet) refers to tflaggroup.o(.text.tFlagGroupNoWaitGet) for [Anonymous Symbol]
-    tflaggroup.o(.text.tFlagGroupNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tflaggroup.o(.text.tFlagGroupNotify) refers to tflaggroup.o(.text.tFlagGroupCheckAndConsume) for tFlagGroupCheckAndConsume
-    tflaggroup.o(.text.tFlagGroupNotify) refers to tevent.o(.text.tEventWakeUpTask) for tEventWakeUpTask
-    tflaggroup.o(.text.tFlagGroupNotify) refers to main.o(.text.tTaskSched) for tTaskSched
-    tflaggroup.o(.text.tFlagGroupNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tflaggroup.o(.ARM.exidx.text.tFlagGroupNotify) refers to tflaggroup.o(.text.tFlagGroupNotify) for [Anonymous Symbol]
-    tflaggroup.o(.text.tFlagGroupGetInfo) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tflaggroup.o(.text.tFlagGroupGetInfo) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tflaggroup.o(.text.tFlagGroupGetInfo) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tflaggroup.o(.ARM.exidx.text.tFlagGroupGetInfo) refers to tflaggroup.o(.text.tFlagGroupGetInfo) for [Anonymous Symbol]
-    tflaggroup.o(.text.tFlagGroupDestroy) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tflaggroup.o(.text.tFlagGroupDestroy) refers to tevent.o(.text.tEventRemoveAll) for tEventRemoveAll
-    tflaggroup.o(.text.tFlagGroupDestroy) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tflaggroup.o(.text.tFlagGroupDestroy) refers to main.o(.text.tTaskSched) for tTaskSched
-    tflaggroup.o(.ARM.exidx.text.tFlagGroupDestroy) refers to tflaggroup.o(.text.tFlagGroupDestroy) for [Anonymous Symbol]
-    tmutex.o(.text.tMutexInit) refers to tevent.o(.text.tEventInit) for tEventInit
-    tmutex.o(.ARM.exidx.text.tMutexInit) refers to tmutex.o(.text.tMutexInit) for [Anonymous Symbol]
-    tmutex.o(.text.tMutexWait) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmutex.o(.text.tMutexWait) refers to main.o(.bss.currentTask) for currentTask
-    tmutex.o(.text.tMutexWait) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmutex.o(.text.tMutexWait) refers to main.o(.text.tTaskSchedUnRdy) for tTaskSchedUnRdy
-    tmutex.o(.text.tMutexWait) refers to main.o(.text.tTaskSchedRdy) for tTaskSchedRdy
-    tmutex.o(.text.tMutexWait) refers to tevent.o(.text.tEventWait) for tEventWait
-    tmutex.o(.text.tMutexWait) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmutex.o(.ARM.exidx.text.tMutexWait) refers to tmutex.o(.text.tMutexWait) for [Anonymous Symbol]
-    tmutex.o(.text.tMutexNoWaitGet) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmutex.o(.text.tMutexNoWaitGet) refers to main.o(.bss.currentTask) for currentTask
-    tmutex.o(.text.tMutexNoWaitGet) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmutex.o(.ARM.exidx.text.tMutexNoWaitGet) refers to tmutex.o(.text.tMutexNoWaitGet) for [Anonymous Symbol]
-    tmutex.o(.text.tMutexNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmutex.o(.text.tMutexNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmutex.o(.text.tMutexNotify) refers to main.o(.bss.currentTask) for currentTask
-    tmutex.o(.text.tMutexNotify) refers to main.o(.text.tTaskSchedUnRdy) for tTaskSchedUnRdy
-    tmutex.o(.text.tMutexNotify) refers to main.o(.text.tTaskSchedRdy) for tTaskSchedRdy
-    tmutex.o(.text.tMutexNotify) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tmutex.o(.text.tMutexNotify) refers to tevent.o(.text.tEventWakeUp) for tEventWakeUp
-    tmutex.o(.text.tMutexNotify) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmutex.o(.ARM.exidx.text.tMutexNotify) refers to tmutex.o(.text.tMutexNotify) for [Anonymous Symbol]
-    tmutex.o(.text.tMutexDestroy) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmutex.o(.text.tMutexDestroy) refers to main.o(.text.tTaskSchedUnRdy) for tTaskSchedUnRdy
-    tmutex.o(.text.tMutexDestroy) refers to main.o(.text.tTaskSchedRdy) for tTaskSchedRdy
-    tmutex.o(.text.tMutexDestroy) refers to tevent.o(.text.tEventRemoveAll) for tEventRemoveAll
-    tmutex.o(.text.tMutexDestroy) refers to main.o(.text.tTaskSched) for tTaskSched
-    tmutex.o(.text.tMutexDestroy) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmutex.o(.ARM.exidx.text.tMutexDestroy) refers to tmutex.o(.text.tMutexDestroy) for [Anonymous Symbol]
-    tmutex.o(.text.tMutexGetInfo) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    tmutex.o(.text.tMutexGetInfo) refers to tevent.o(.text.tEventWaitCount) for tEventWaitCount
-    tmutex.o(.text.tMutexGetInfo) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    tmutex.o(.ARM.exidx.text.tMutexGetInfo) refers to tmutex.o(.text.tMutexGetInfo) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerInit) refers to tlist.o(.text.tNodeInit) for tNodeInit
-    ttimer.o(.ARM.exidx.text.tTimerInit) refers to ttimer.o(.text.tTimerInit) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerStart) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    ttimer.o(.text.tTimerStart) refers to ttimer.o(.bss.tTimerHardList) for tTimerHardList
-    ttimer.o(.text.tTimerStart) refers to tlist.o(.text.tListAddLast) for tListAddLast
-    ttimer.o(.text.tTimerStart) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    ttimer.o(.text.tTimerStart) refers to ttimer.o(.bss.tTimerProtectSem) for tTimerProtectSem
-    ttimer.o(.text.tTimerStart) refers to tsem.o(.text.tSemWait) for tSemWait
-    ttimer.o(.text.tTimerStart) refers to ttimer.o(.bss.tTimerSoftList) for tTimerSoftList
-    ttimer.o(.text.tTimerStart) refers to tsem.o(.text.tSemNotify) for tSemNotify
-    ttimer.o(.ARM.exidx.text.tTimerStart) refers to ttimer.o(.text.tTimerStart) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerStop) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    ttimer.o(.text.tTimerStop) refers to ttimer.o(.bss.tTimerHardList) for tTimerHardList
-    ttimer.o(.text.tTimerStop) refers to tlist.o(.text.tListRemove) for tListRemove
-    ttimer.o(.text.tTimerStop) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    ttimer.o(.text.tTimerStop) refers to ttimer.o(.bss.tTimerProtectSem) for tTimerProtectSem
-    ttimer.o(.text.tTimerStop) refers to tsem.o(.text.tSemWait) for tSemWait
-    ttimer.o(.text.tTimerStop) refers to ttimer.o(.bss.tTimerSoftList) for tTimerSoftList
-    ttimer.o(.text.tTimerStop) refers to tsem.o(.text.tSemNotify) for tSemNotify
-    ttimer.o(.ARM.exidx.text.tTimerStop) refers to ttimer.o(.text.tTimerStop) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerDestroy) refers to ttimer.o(.text.tTimerStop) for tTimerStop
-    ttimer.o(.ARM.exidx.text.tTimerDestroy) refers to ttimer.o(.text.tTimerDestroy) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerGetInfo) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    ttimer.o(.text.tTimerGetInfo) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    ttimer.o(.ARM.exidx.text.tTimerGetInfo) refers to ttimer.o(.text.tTimerGetInfo) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerModuleInit) refers to ttimer.o(.bss.tTimerHardList) for tTimerHardList
-    ttimer.o(.text.tTimerModuleInit) refers to tlist.o(.text.tListInit) for tListInit
-    ttimer.o(.text.tTimerModuleInit) refers to ttimer.o(.bss.tTimerSoftList) for tTimerSoftList
-    ttimer.o(.text.tTimerModuleInit) refers to ttimer.o(.bss.tTimerProtectSem) for tTimerProtectSem
-    ttimer.o(.text.tTimerModuleInit) refers to tsem.o(.text.tSemInit) for tSemInit
-    ttimer.o(.text.tTimerModuleInit) refers to ttimer.o(.bss.tTimerTickSem) for tTimerTickSem
-    ttimer.o(.ARM.exidx.text.tTimerModuleInit) refers to ttimer.o(.text.tTimerModuleInit) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerInitTask) refers to ttimer.o(.bss.tTimerTaskStack) for tTimerTaskStack
-    ttimer.o(.text.tTimerInitTask) refers to ttimer.o(.bss.tTimerTask) for tTimerTask
-    ttimer.o(.text.tTimerInitTask) refers to ttimer.o(.text.tTimerSoftTask) for tTimerSoftTask
-    ttimer.o(.text.tTimerInitTask) refers to ttask.o(.text.tTaskInit) for tTaskInit
-    ttimer.o(.ARM.exidx.text.tTimerInitTask) refers to ttimer.o(.text.tTimerInitTask) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerSoftTask) refers to ttimer.o(.bss.tTimerTickSem) for tTimerTickSem
-    ttimer.o(.text.tTimerSoftTask) refers to tsem.o(.text.tSemWait) for tSemWait
-    ttimer.o(.text.tTimerSoftTask) refers to ttimer.o(.bss.tTimerProtectSem) for tTimerProtectSem
-    ttimer.o(.text.tTimerSoftTask) refers to ttimer.o(.bss.tTimerSoftList) for tTimerSoftList
-    ttimer.o(.text.tTimerSoftTask) refers to ttimer.o(.text.tTimerCallFuncList) for tTimerCallFuncList
-    ttimer.o(.text.tTimerSoftTask) refers to tsem.o(.text.tSemNotify) for tSemNotify
-    ttimer.o(.ARM.exidx.text.tTimerSoftTask) refers to ttimer.o(.text.tTimerSoftTask) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerMoudleTickNotify) refers to switch.o(.text.tTaskEnterCritical) for tTaskEnterCritical
-    ttimer.o(.text.tTimerMoudleTickNotify) refers to ttimer.o(.bss.tTimerHardList) for tTimerHardList
-    ttimer.o(.text.tTimerMoudleTickNotify) refers to ttimer.o(.text.tTimerCallFuncList) for tTimerCallFuncList
-    ttimer.o(.text.tTimerMoudleTickNotify) refers to switch.o(.text.tTaskExitCritical) for tTaskExitCritical
-    ttimer.o(.text.tTimerMoudleTickNotify) refers to ttimer.o(.bss.tTimerTickSem) for tTimerTickSem
-    ttimer.o(.text.tTimerMoudleTickNotify) refers to tsem.o(.text.tSemNotify) for tSemNotify
-    ttimer.o(.ARM.exidx.text.tTimerMoudleTickNotify) refers to ttimer.o(.text.tTimerMoudleTickNotify) for [Anonymous Symbol]
-    ttimer.o(.text.tTimerCallFuncList) refers to tlist.o(.text.tListRemove) for tListRemove
-    ttimer.o(.ARM.exidx.text.tTimerCallFuncList) refers to ttimer.o(.text.tTimerCallFuncList) for [Anonymous Symbol]
     startup_armcm3.o(.ARM.exidx.text.Default_Handler) refers to startup_armcm3.o(.text.Default_Handler) for [Anonymous Symbol]
     startup_armcm3.o(.text.Reset_Handler) refers to system_armcm3.o(.text.SystemInit) for SystemInit
     startup_armcm3.o(.text.Reset_Handler) refers to entry.o(.ARM.Collect$$$$00000000) for __main
@@ -487,27 +248,11 @@ Section Cross References
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry4.o(.ARM.Collect$$$$00000003) for _main_stk
-    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
-    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
-    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
-    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
-    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
-    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
-    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
     entry4.o(.ARM.Collect$$$$00000003) refers to entry4.o(.ARM.Collect$$$$00002714) for __lit__00000000
     entry4.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
     entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
     entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text.main) for main
     entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text.main) for main
-    fepilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    depilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
-    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
 
 
@@ -519,6 +264,7 @@ Removing Unused input sections from the image.
     Removing main.o(.ARM.exidx.text.tTaskHighestReady), (8 bytes).
     Removing main.o(.ARM.exidx.text.tTaskSchedInit), (8 bytes).
     Removing main.o(.ARM.exidx.text.tTaskSchedDisable), (8 bytes).
+    Removing main.o(.text.tTaskSchedEnable), (64 bytes).
     Removing main.o(.ARM.exidx.text.tTaskSchedEnable), (8 bytes).
     Removing main.o(.ARM.exidx.text.tTaskSched), (8 bytes).
     Removing main.o(.ARM.exidx.text.tTaskSchedRdy), (8 bytes).
@@ -532,14 +278,10 @@ Removing Unused input sections from the image.
     Removing main.o(.ARM.exidx.text.tTimeTaskRemove), (8 bytes).
     Removing main.o(.ARM.exidx.text.tTimeTickInit), (8 bytes).
     Removing main.o(.ARM.exidx.text.tTaskSystemTickHandler), (8 bytes).
-    Removing main.o(.ARM.exidx.text.checkCpuUsage), (8 bytes).
-    Removing main.o(.text.tCpuUsageGet), (38 bytes).
-    Removing main.o(.ARM.exidx.text.tCpuUsageGet), (8 bytes).
     Removing main.o(.ARM.exidx.text.idleTaskEntry), (8 bytes).
-    Removing main.o(.ARM.exidx.text.cpuUsageSyncWithSysTick), (8 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
-    Removing main.o(.ARM.exidx.text.initCpuUsageStat), (8 bytes).
     Removing main.o(.bss.idleTask), (4 bytes).
+    Removing main.o(.bss.idleMaxCount), (4 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
     Removing app.o(.text), (0 bytes).
     Removing app.o(.ARM.exidx.text.task1Entry), (8 bytes).
@@ -603,97 +345,25 @@ Removing Unused input sections from the image.
     Removing tcpu.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
     Removing tcpu.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
     Removing tevent.o(.text), (0 bytes).
+    Removing tevent.o(.text.tEventInit), (26 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventInit), (8 bytes).
+    Removing tevent.o(.text.tEventWait), (90 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventWait), (8 bytes).
+    Removing tevent.o(.text.tEventWakeUp), (104 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventWakeUp), (8 bytes).
     Removing tevent.o(.text.tEventWakeUpTask), (90 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventWakeUpTask), (8 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventRemoveTask), (8 bytes).
     Removing tevent.o(.text.tEventRemoveAll), (116 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventRemoveAll), (8 bytes).
+    Removing tevent.o(.text.tEventWaitCount), (38 bytes).
     Removing tevent.o(.ARM.exidx.text.tEventWaitCount), (8 bytes).
     Removing tsem.o(.text), (0 bytes).
-    Removing tsem.o(.ARM.exidx.text.tSemInit), (8 bytes).
-    Removing tsem.o(.ARM.exidx.text.tSemWait), (8 bytes).
-    Removing tsem.o(.text.tSemNoWaitGet), (58 bytes).
-    Removing tsem.o(.ARM.exidx.text.tSemNoWaitGet), (8 bytes).
-    Removing tsem.o(.ARM.exidx.text.tSemNotify), (8 bytes).
-    Removing tsem.o(.text.tSemGetInfo), (50 bytes).
-    Removing tsem.o(.ARM.exidx.text.tSemGetInfo), (8 bytes).
-    Removing tsem.o(.text.tSemDestroy), (58 bytes).
-    Removing tsem.o(.ARM.exidx.text.tSemDestroy), (8 bytes).
     Removing tmbox.o(.text), (0 bytes).
-    Removing tmbox.o(.text.tMboxInit), (50 bytes).
-    Removing tmbox.o(.ARM.exidx.text.tMboxInit), (8 bytes).
-    Removing tmbox.o(.text.tMboxWait), (146 bytes).
-    Removing tmbox.o(.ARM.exidx.text.tMboxWait), (8 bytes).
-    Removing tmbox.o(.text.tMboxNoWaitGet), (98 bytes).
-    Removing tmbox.o(.ARM.exidx.text.tMboxNoWaitGet), (8 bytes).
-    Removing tmbox.o(.text.tMboxNotify), (218 bytes).
-    Removing tmbox.o(.ARM.exidx.text.tMboxNotify), (8 bytes).
-    Removing tmbox.o(.text.tMboxFlush), (48 bytes).
-    Removing tmbox.o(.ARM.exidx.text.tMboxFlush), (8 bytes).
-    Removing tmbox.o(.text.tMboxDestroy), (48 bytes).
-    Removing tmbox.o(.ARM.exidx.text.tMboxDestroy), (8 bytes).
-    Removing tmbox.o(.text.tMboxGetInfo), (50 bytes).
-    Removing tmbox.o(.ARM.exidx.text.tMboxGetInfo), (8 bytes).
     Removing tmemblock.o(.text), (0 bytes).
-    Removing tmemblock.o(.text.tMemBlockInit), (116 bytes).
-    Removing tmemblock.o(.ARM.exidx.text.tMemBlockInit), (8 bytes).
-    Removing tmemblock.o(.text.tMemBlockWait), (116 bytes).
-    Removing tmemblock.o(.ARM.exidx.text.tMemBlockWait), (8 bytes).
-    Removing tmemblock.o(.text.tMemBlockNoWaitGet), (68 bytes).
-    Removing tmemblock.o(.ARM.exidx.text.tMemBlockNoWaitGet), (8 bytes).
-    Removing tmemblock.o(.text.tMemBlockNotify), (88 bytes).
-    Removing tmemblock.o(.ARM.exidx.text.tMemBlockNotify), (8 bytes).
-    Removing tmemblock.o(.text.tMemBlockGetInfo), (62 bytes).
-    Removing tmemblock.o(.ARM.exidx.text.tMemBlockGetInfo), (8 bytes).
-    Removing tmemblock.o(.text.tMemBlockDestroy), (50 bytes).
-    Removing tmemblock.o(.ARM.exidx.text.tMemBlockDestroy), (8 bytes).
     Removing tflaggroup.o(.text), (0 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupInit), (28 bytes).
-    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupInit), (8 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupWait), (134 bytes).
-    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupWait), (8 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupCheckAndConsume), (168 bytes).
-    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupCheckAndConsume), (8 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupNoWaitGet), (52 bytes).
-    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupNoWaitGet), (8 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupNotify), (178 bytes).
-    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupNotify), (8 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupGetInfo), (42 bytes).
-    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupGetInfo), (8 bytes).
-    Removing tflaggroup.o(.text.tFlagGroupDestroy), (48 bytes).
-    Removing tflaggroup.o(.ARM.exidx.text.tFlagGroupDestroy), (8 bytes).
     Removing tmutex.o(.text), (0 bytes).
-    Removing tmutex.o(.text.tMutexInit), (36 bytes).
-    Removing tmutex.o(.ARM.exidx.text.tMutexInit), (8 bytes).
-    Removing tmutex.o(.text.tMutexWait), (248 bytes).
-    Removing tmutex.o(.ARM.exidx.text.tMutexWait), (8 bytes).
-    Removing tmutex.o(.text.tMutexNoWaitGet), (120 bytes).
-    Removing tmutex.o(.ARM.exidx.text.tMutexNoWaitGet), (8 bytes).
-    Removing tmutex.o(.text.tMutexNotify), (258 bytes).
-    Removing tmutex.o(.ARM.exidx.text.tMutexNotify), (8 bytes).
-    Removing tmutex.o(.text.tMutexDestroy), (124 bytes).
-    Removing tmutex.o(.ARM.exidx.text.tMutexDestroy), (8 bytes).
-    Removing tmutex.o(.text.tMutexGetInfo), (86 bytes).
-    Removing tmutex.o(.ARM.exidx.text.tMutexGetInfo), (8 bytes).
     Removing ttimer.o(.text), (0 bytes).
-    Removing ttimer.o(.text.tTimerInit), (90 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerInit), (8 bytes).
-    Removing ttimer.o(.text.tTimerStart), (150 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerStart), (8 bytes).
-    Removing ttimer.o(.text.tTimerStop), (114 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerStop), (8 bytes).
-    Removing ttimer.o(.text.tTimerDestroy), (24 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerDestroy), (8 bytes).
-    Removing ttimer.o(.text.tTimerGetInfo), (74 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerGetInfo), (8 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerModuleInit), (8 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerInitTask), (8 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerSoftTask), (8 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerMoudleTickNotify), (8 bytes).
-    Removing ttimer.o(.ARM.exidx.text.tTimerCallFuncList), (8 bytes).
     Removing startup_armcm3.o(.text), (0 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Default_Handler), (8 bytes).
     Removing startup_armcm3.o(.ARM.exidx.text.Reset_Handler), (8 bytes).
@@ -703,7 +373,7 @@ Removing Unused input sections from the image.
     Removing system_armcm3.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_armcm3.o(.ARM.exidx.text.SystemInit), (8 bytes).
 
-187 unused section(s) (total 5450 bytes) removed from the image.
+112 unused section(s) (total 2072 bytes) removed from the image.
 
 ==============================================================================
 
@@ -726,18 +396,7 @@ Image Symbol Table
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
-    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
-    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
-    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
-    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
-    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     Source/cortex.s                          0x00000000   Number         0  cortex.o ABSOLUTE
     __tagsym$$used.0                         0x00000000   Number         0  startup_armcm3.o(RESET)
     app.c                                    0x00000000   Number         0  app.o ABSOLUTE
@@ -772,109 +431,61 @@ Image Symbol Table
     .ARM.Collect$$$$00002714                 0x000003d0   Section        4  entry4.o(.ARM.Collect$$$$00002714)
     .text                                    0x000003d4   Section       48  cortex.o(.text)
     .text                                    0x00000404   Section        0  memseta.o(.text)
-    .text                                    0x00000428   Section        0  dadd.o(.text)
-    .text                                    0x00000576   Section        0  dmul.o(.text)
-    .text                                    0x0000065a   Section        0  ddiv.o(.text)
-    .text                                    0x00000738   Section        0  dfltui.o(.text)
-    .text                                    0x00000752   Section        0  d2f.o(.text)
-    .text                                    0x0000078a   Section        0  llshl.o(.text)
-    .text                                    0x000007a8   Section        0  llsshr.o(.text)
-    .text                                    0x000007cc   Section        0  iusefp.o(.text)
-    .text                                    0x000007cc   Section        0  fepilogue.o(.text)
-    .text                                    0x0000083a   Section        0  depilogue.o(.text)
-    .text                                    0x000008f4   Section       48  init.o(.text)
-    .text                                    0x00000924   Section        0  llushr.o(.text)
-    [Anonymous Symbol]                       0x00000944   Section        0  startup_armcm3.o(.text.Default_Handler)
-    [Anonymous Symbol]                       0x00000948   Section        0  startup_armcm3.o(.text.HardFault_Handler)
-    [Anonymous Symbol]                       0x0000094c   Section        0  startup_armcm3.o(.text.Reset_Handler)
-    [Anonymous Symbol]                       0x00000954   Section        0  tcpu.o(.text.SysTick_Handler)
-    [Anonymous Symbol]                       0x0000095c   Section        0  system_armcm3.o(.text.SystemInit)
-    __NVIC_SetPriority                       0x00000985   Thumb Code    66  tcpu.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x00000984   Section        0  tcpu.o(.text.__NVIC_SetPriority)
-    checkCpuUsage                            0x000009c9   Thumb Code   232  main.o(.text.checkCpuUsage)
-    [Anonymous Symbol]                       0x000009c8   Section        0  main.o(.text.checkCpuUsage)
-    cpuUsageSyncWithSysTick                  0x00000ab1   Thumb Code    20  main.o(.text.cpuUsageSyncWithSysTick)
-    [Anonymous Symbol]                       0x00000ab0   Section        0  main.o(.text.cpuUsageSyncWithSysTick)
-    [Anonymous Symbol]                       0x00000ac4   Section        0  main.o(.text.idleTaskEntry)
-    initCpuUsageStat                         0x00000b01   Thumb Code    44  main.o(.text.initCpuUsageStat)
-    [Anonymous Symbol]                       0x00000b00   Section        0  main.o(.text.initCpuUsageStat)
-    [Anonymous Symbol]                       0x00000b2c   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x00000b8c   Section        0  tbitmap.o(.text.tBitmapClear)
-    [Anonymous Symbol]                       0x00000ba8   Section        0  tbitmap.o(.text.tBitmapGetFirstSet)
-    [Anonymous Symbol]                       0x00000c2c   Section        0  tbitmap.o(.text.tBitmapPosCount)
-    [Anonymous Symbol]                       0x00000c30   Section        0  tbitmap.o(.text.tBitmapSet)
-    [Anonymous Symbol]                       0x00000c4c   Section        0  tevent.o(.text.tEventInit)
-    [Anonymous Symbol]                       0x00000c68   Section        0  tevent.o(.text.tEventRemoveTask)
-    [Anonymous Symbol]                       0x00000cac   Section        0  tevent.o(.text.tEventWait)
-    [Anonymous Symbol]                       0x00000d08   Section        0  tevent.o(.text.tEventWaitCount)
-    [Anonymous Symbol]                       0x00000d30   Section        0  tevent.o(.text.tEventWakeUp)
-    [Anonymous Symbol]                       0x00000d98   Section        0  app.o(.text.tInitApp)
-    [Anonymous Symbol]                       0x00000e24   Section        0  tlist.o(.text.tListAddLast)
-    [Anonymous Symbol]                       0x00000e54   Section        0  tlist.o(.text.tListCount)
-    [Anonymous Symbol]                       0x00000e60   Section        0  tlist.o(.text.tListFirst)
-    [Anonymous Symbol]                       0x00000e80   Section        0  tlist.o(.text.tListInit)
-    [Anonymous Symbol]                       0x00000e98   Section        0  tlist.o(.text.tListRemove)
-    [Anonymous Symbol]                       0x00000ebc   Section        0  tlist.o(.text.tListRemoveFirst)
-    [Anonymous Symbol]                       0x00000ef4   Section        0  tlist.o(.text.tNodeInit)
-    [Anonymous Symbol]                       0x00000f04   Section        0  tsem.o(.text.tSemInit)
-    [Anonymous Symbol]                       0x00000f50   Section        0  tsem.o(.text.tSemNotify)
-    [Anonymous Symbol]                       0x00000fc0   Section        0  tsem.o(.text.tSemWait)
-    [Anonymous Symbol]                       0x00001024   Section        0  tcpu.o(.text.tSetSysTickPeriod)
-    [Anonymous Symbol]                       0x0000107c   Section        0  ttime.o(.text.tTaskDelay)
-    [Anonymous Symbol]                       0x000010b0   Section        0  main.o(.text.tTaskDelayedInit)
-    [Anonymous Symbol]                       0x000010c0   Section        0  switch.o(.text.tTaskEnterCritical)
-    [Anonymous Symbol]                       0x000010d4   Section        0  switch.o(.text.tTaskExitCritical)
-    [Anonymous Symbol]                       0x000010e8   Section        0  main.o(.text.tTaskHighestReady)
-    [Anonymous Symbol]                       0x0000111c   Section        0  ttask.o(.text.tTaskInit)
-    [Anonymous Symbol]                       0x00001264   Section        0  switch.o(.text.tTaskRunFirst)
-    [Anonymous Symbol]                       0x00001290   Section        0  main.o(.text.tTaskSched)
-    [Anonymous Symbol]                       0x000012e8   Section        0  main.o(.text.tTaskSchedDisable)
-    [Anonymous Symbol]                       0x0000131c   Section        0  main.o(.text.tTaskSchedEnable)
-    [Anonymous Symbol]                       0x0000135c   Section        0  main.o(.text.tTaskSchedInit)
-    [Anonymous Symbol]                       0x0000139c   Section        0  main.o(.text.tTaskSchedRdy)
-    [Anonymous Symbol]                       0x000013d0   Section        0  main.o(.text.tTaskSchedUnRdy)
-    [Anonymous Symbol]                       0x00001420   Section        0  switch.o(.text.tTaskSwitch)
-    [Anonymous Symbol]                       0x00001430   Section        0  main.o(.text.tTaskSystemTickHandler)
-    [Anonymous Symbol]                       0x00001538   Section        0  main.o(.text.tTimeTaskWait)
-    [Anonymous Symbol]                       0x00001568   Section        0  main.o(.text.tTimeTaskWakeUp)
-    [Anonymous Symbol]                       0x00001590   Section        0  main.o(.text.tTimeTickInit)
-    tTimerCallFuncList                       0x000015a1   Thumb Code   122  ttimer.o(.text.tTimerCallFuncList)
-    [Anonymous Symbol]                       0x000015a0   Section        0  ttimer.o(.text.tTimerCallFuncList)
-    [Anonymous Symbol]                       0x0000161c   Section        0  ttimer.o(.text.tTimerInitTask)
-    [Anonymous Symbol]                       0x00001650   Section        0  ttimer.o(.text.tTimerModuleInit)
-    [Anonymous Symbol]                       0x0000168c   Section        0  ttimer.o(.text.tTimerMoudleTickNotify)
-    tTimerSoftTask                           0x000016b9   Thumb Code    60  ttimer.o(.text.tTimerSoftTask)
-    [Anonymous Symbol]                       0x000016b8   Section        0  ttimer.o(.text.tTimerSoftTask)
-    [Anonymous Symbol]                       0x000016f4   Section        0  app.o(.text.task1Entry)
-    [Anonymous Symbol]                       0x00001720   Section        0  app.o(.text.task2Entry)
-    [Anonymous Symbol]                       0x0000174c   Section        0  app.o(.text.task3Entry)
-    i.__scatterload_copy                     0x00001776   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00001784   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00001786   Section       14  handlers.o(i.__scatterload_zeroinit)
-    tBitmapGetFirstSet.quickFindTable        0x00001794   Data         256  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
-    [Anonymous Symbol]                       0x00001794   Section        0  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
-    cpuUsage                                 0x20000004   Data           4  main.o(.bss.cpuUsage)
-    [Anonymous Symbol]                       0x20000004   Section        0  main.o(.bss.cpuUsage)
-    enableCpuUsageState                      0x2000000c   Data           4  main.o(.bss.enableCpuUsageState)
-    [Anonymous Symbol]                       0x2000000c   Section        0  main.o(.bss.enableCpuUsageState)
-    tTimerHardList                           0x2000116c   Data          12  ttimer.o(.bss.tTimerHardList)
-    [Anonymous Symbol]                       0x2000116c   Section        0  ttimer.o(.bss.tTimerHardList)
-    tTimerProtectSem                         0x20001178   Data          24  ttimer.o(.bss.tTimerProtectSem)
-    [Anonymous Symbol]                       0x20001178   Section        0  ttimer.o(.bss.tTimerProtectSem)
-    tTimerSoftList                           0x20001190   Data          12  ttimer.o(.bss.tTimerSoftList)
-    [Anonymous Symbol]                       0x20001190   Section        0  ttimer.o(.bss.tTimerSoftList)
-    tTimerTask                               0x2000119c   Data          80  ttimer.o(.bss.tTimerTask)
-    [Anonymous Symbol]                       0x2000119c   Section        0  ttimer.o(.bss.tTimerTask)
-    tTimerTaskStack                          0x200011ec   Data        4096  ttimer.o(.bss.tTimerTaskStack)
-    [Anonymous Symbol]                       0x200011ec   Section        0  ttimer.o(.bss.tTimerTaskStack)
-    tTimerTickSem                            0x200021ec   Data          24  ttimer.o(.bss.tTimerTickSem)
-    [Anonymous Symbol]                       0x200021ec   Section        0  ttimer.o(.bss.tTimerTickSem)
+    .text                                    0x00000428   Section       48  init.o(.text)
+    [Anonymous Symbol]                       0x00000458   Section        0  startup_armcm3.o(.text.Default_Handler)
+    [Anonymous Symbol]                       0x0000045c   Section        0  startup_armcm3.o(.text.HardFault_Handler)
+    [Anonymous Symbol]                       0x00000460   Section        0  startup_armcm3.o(.text.Reset_Handler)
+    [Anonymous Symbol]                       0x00000468   Section        0  tcpu.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x00000470   Section        0  system_armcm3.o(.text.SystemInit)
+    __NVIC_SetPriority                       0x00000499   Thumb Code    66  tcpu.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x00000498   Section        0  tcpu.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x000004dc   Section        0  main.o(.text.idleTaskEntry)
+    [Anonymous Symbol]                       0x00000510   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x00000568   Section        0  tbitmap.o(.text.tBitmapClear)
+    [Anonymous Symbol]                       0x00000584   Section        0  tbitmap.o(.text.tBitmapGetFirstSet)
+    [Anonymous Symbol]                       0x00000608   Section        0  tbitmap.o(.text.tBitmapPosCount)
+    [Anonymous Symbol]                       0x0000060c   Section        0  tbitmap.o(.text.tBitmapSet)
+    [Anonymous Symbol]                       0x00000628   Section        0  tevent.o(.text.tEventRemoveTask)
+    [Anonymous Symbol]                       0x0000066c   Section        0  app.o(.text.tInitApp)
+    [Anonymous Symbol]                       0x000006f8   Section        0  tlist.o(.text.tListAddLast)
+    [Anonymous Symbol]                       0x00000728   Section        0  tlist.o(.text.tListCount)
+    [Anonymous Symbol]                       0x00000734   Section        0  tlist.o(.text.tListFirst)
+    [Anonymous Symbol]                       0x00000754   Section        0  tlist.o(.text.tListInit)
+    [Anonymous Symbol]                       0x0000076c   Section        0  tlist.o(.text.tListRemove)
+    [Anonymous Symbol]                       0x00000790   Section        0  tlist.o(.text.tListRemoveFirst)
+    [Anonymous Symbol]                       0x000007c8   Section        0  tlist.o(.text.tNodeInit)
+    [Anonymous Symbol]                       0x000007d8   Section        0  tcpu.o(.text.tSetSysTickPeriod)
+    [Anonymous Symbol]                       0x00000830   Section        0  ttime.o(.text.tTaskDelay)
+    [Anonymous Symbol]                       0x00000864   Section        0  main.o(.text.tTaskDelayedInit)
+    [Anonymous Symbol]                       0x00000874   Section        0  switch.o(.text.tTaskEnterCritical)
+    [Anonymous Symbol]                       0x00000888   Section        0  switch.o(.text.tTaskExitCritical)
+    [Anonymous Symbol]                       0x0000089c   Section        0  main.o(.text.tTaskHighestReady)
+    [Anonymous Symbol]                       0x000008d0   Section        0  ttask.o(.text.tTaskInit)
+    [Anonymous Symbol]                       0x00000a18   Section        0  switch.o(.text.tTaskRunFirst)
+    [Anonymous Symbol]                       0x00000a44   Section        0  main.o(.text.tTaskSched)
+    [Anonymous Symbol]                       0x00000a9c   Section        0  main.o(.text.tTaskSchedDisable)
+    [Anonymous Symbol]                       0x00000ad0   Section        0  main.o(.text.tTaskSchedInit)
+    [Anonymous Symbol]                       0x00000b10   Section        0  main.o(.text.tTaskSchedRdy)
+    [Anonymous Symbol]                       0x00000b44   Section        0  main.o(.text.tTaskSchedUnRdy)
+    [Anonymous Symbol]                       0x00000b94   Section        0  switch.o(.text.tTaskSwitch)
+    [Anonymous Symbol]                       0x00000ba4   Section        0  main.o(.text.tTaskSystemTickHandler)
+    [Anonymous Symbol]                       0x00000ca4   Section        0  main.o(.text.tTimeTaskWait)
+    [Anonymous Symbol]                       0x00000cd4   Section        0  main.o(.text.tTimeTaskWakeUp)
+    [Anonymous Symbol]                       0x00000cfc   Section        0  main.o(.text.tTimeTickInit)
+    [Anonymous Symbol]                       0x00000d0c   Section        0  app.o(.text.task1Entry)
+    [Anonymous Symbol]                       0x00000d38   Section        0  app.o(.text.task2Entry)
+    [Anonymous Symbol]                       0x00000d64   Section        0  app.o(.text.task3Entry)
+    i.__scatterload_copy                     0x00000d8e   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000d9c   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000d9e   Section       14  handlers.o(i.__scatterload_zeroinit)
+    tBitmapGetFirstSet.quickFindTable        0x00000dac   Data         256  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
+    [Anonymous Symbol]                       0x00000dac   Section        0  tbitmap.o(.rodata.tBitmapGetFirstSet.quickFindTable)
 
     Global Symbols
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     __Vectors                                0x00000000   Data         960  startup_armcm3.o(RESET)
     __cpp_initialize__aeabi_                  - Undefined Weak Reference
     __cxa_finalize                            - Undefined Weak Reference
@@ -898,120 +509,90 @@ Image Symbol Table
     __aeabi_memclr4                          0x00000413   Thumb Code     0  memseta.o(.text)
     __aeabi_memclr8                          0x00000413   Thumb Code     0  memseta.o(.text)
     _memset$wrapper                          0x00000417   Thumb Code    18  memseta.o(.text)
-    __aeabi_dadd                             0x00000429   Thumb Code   322  dadd.o(.text)
-    __aeabi_dsub                             0x0000056b   Thumb Code     6  dadd.o(.text)
-    __aeabi_drsub                            0x00000571   Thumb Code     6  dadd.o(.text)
-    __aeabi_dmul                             0x00000577   Thumb Code   228  dmul.o(.text)
-    __aeabi_ddiv                             0x0000065b   Thumb Code   222  ddiv.o(.text)
-    __aeabi_ui2d                             0x00000739   Thumb Code    26  dfltui.o(.text)
-    __aeabi_d2f                              0x00000753   Thumb Code    56  d2f.o(.text)
-    __aeabi_llsl                             0x0000078b   Thumb Code    30  llshl.o(.text)
-    _ll_shift_l                              0x0000078b   Thumb Code     0  llshl.o(.text)
-    __aeabi_lasr                             0x000007a9   Thumb Code    36  llsshr.o(.text)
-    _ll_sshift_r                             0x000007a9   Thumb Code     0  llsshr.o(.text)
-    __I$use$fp                               0x000007cd   Thumb Code     0  iusefp.o(.text)
-    _float_round                             0x000007cd   Thumb Code    18  fepilogue.o(.text)
-    _float_epilogue                          0x000007df   Thumb Code    92  fepilogue.o(.text)
-    _double_round                            0x0000083b   Thumb Code    30  depilogue.o(.text)
-    _double_epilogue                         0x00000859   Thumb Code   156  depilogue.o(.text)
-    __scatterload                            0x000008f5   Thumb Code    38  init.o(.text)
-    __scatterload_rt2                        0x000008f5   Thumb Code     0  init.o(.text)
-    __aeabi_llsr                             0x00000925   Thumb Code    32  llushr.o(.text)
-    _ll_ushift_r                             0x00000925   Thumb Code     0  llushr.o(.text)
-    BusFault_Handler                         0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    DebugMon_Handler                         0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Default_Handler                          0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt0_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt1_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt2_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt3_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt4_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt5_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt6_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt7_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt8_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    Interrupt9_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    MemManage_Handler                        0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    NMI_Handler                              0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    SVC_Handler                              0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    UsageFault_Handler                       0x00000945   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
-    HardFault_Handler                        0x00000949   Thumb Code     4  startup_armcm3.o(.text.HardFault_Handler)
-    Reset_Handler                            0x0000094d   Thumb Code     8  startup_armcm3.o(.text.Reset_Handler)
-    SysTick_Handler                          0x00000955   Thumb Code     8  tcpu.o(.text.SysTick_Handler)
-    SystemInit                               0x0000095d   Thumb Code    38  system_armcm3.o(.text.SystemInit)
-    idleTaskEntry                            0x00000ac5   Thumb Code    58  main.o(.text.idleTaskEntry)
-    main                                     0x00000b2d   Thumb Code    96  main.o(.text.main)
-    tBitmapClear                             0x00000b8d   Thumb Code    26  tbitmap.o(.text.tBitmapClear)
-    tBitmapGetFirstSet                       0x00000ba9   Thumb Code   130  tbitmap.o(.text.tBitmapGetFirstSet)
-    tBitmapPosCount                          0x00000c2d   Thumb Code     4  tbitmap.o(.text.tBitmapPosCount)
-    tBitmapSet                               0x00000c31   Thumb Code    26  tbitmap.o(.text.tBitmapSet)
-    tEventInit                               0x00000c4d   Thumb Code    26  tevent.o(.text.tEventInit)
-    tEventRemoveTask                         0x00000c69   Thumb Code    66  tevent.o(.text.tEventRemoveTask)
-    tEventWait                               0x00000cad   Thumb Code    90  tevent.o(.text.tEventWait)
-    tEventWaitCount                          0x00000d09   Thumb Code    38  tevent.o(.text.tEventWaitCount)
-    tEventWakeUp                             0x00000d31   Thumb Code   104  tevent.o(.text.tEventWakeUp)
-    tInitApp                                 0x00000d99   Thumb Code   140  app.o(.text.tInitApp)
-    tListAddLast                             0x00000e25   Thumb Code    46  tlist.o(.text.tListAddLast)
-    tListCount                               0x00000e55   Thumb Code    12  tlist.o(.text.tListCount)
-    tListFirst                               0x00000e61   Thumb Code    30  tlist.o(.text.tListFirst)
-    tListInit                                0x00000e81   Thumb Code    22  tlist.o(.text.tListInit)
-    tListRemove                              0x00000e99   Thumb Code    34  tlist.o(.text.tListRemove)
-    tListRemoveFirst                         0x00000ebd   Thumb Code    54  tlist.o(.text.tListRemoveFirst)
-    tNodeInit                                0x00000ef5   Thumb Code    16  tlist.o(.text.tNodeInit)
-    tSemInit                                 0x00000f05   Thumb Code    74  tsem.o(.text.tSemInit)
-    tSemNotify                               0x00000f51   Thumb Code   112  tsem.o(.text.tSemNotify)
-    tSemWait                                 0x00000fc1   Thumb Code    98  tsem.o(.text.tSemWait)
-    tSetSysTickPeriod                        0x00001025   Thumb Code    86  tcpu.o(.text.tSetSysTickPeriod)
-    tTaskDelay                               0x0000107d   Thumb Code    52  ttime.o(.text.tTaskDelay)
-    tTaskDelayedInit                         0x000010b1   Thumb Code    16  main.o(.text.tTaskDelayedInit)
-    tTaskEnterCritical                       0x000010c1   Thumb Code    20  switch.o(.text.tTaskEnterCritical)
-    tTaskExitCritical                        0x000010d5   Thumb Code    18  switch.o(.text.tTaskExitCritical)
-    tTaskHighestReady                        0x000010e9   Thumb Code    50  main.o(.text.tTaskHighestReady)
-    tTaskInit                                0x0000111d   Thumb Code   326  ttask.o(.text.tTaskInit)
-    tTaskRunFirst                            0x00001265   Thumb Code    42  switch.o(.text.tTaskRunFirst)
-    tTaskSched                               0x00001291   Thumb Code    88  main.o(.text.tTaskSched)
-    tTaskSchedDisable                        0x000012e9   Thumb Code    52  main.o(.text.tTaskSchedDisable)
-    tTaskSchedEnable                         0x0000131d   Thumb Code    64  main.o(.text.tTaskSchedEnable)
-    tTaskSchedInit                           0x0000135d   Thumb Code    64  main.o(.text.tTaskSchedInit)
-    tTaskSchedRdy                            0x0000139d   Thumb Code    52  main.o(.text.tTaskSchedRdy)
-    tTaskSchedUnRdy                          0x000013d1   Thumb Code    78  main.o(.text.tTaskSchedUnRdy)
-    tTaskSwitch                              0x00001421   Thumb Code    16  switch.o(.text.tTaskSwitch)
-    tTaskSystemTickHandler                   0x00001431   Thumb Code   264  main.o(.text.tTaskSystemTickHandler)
-    tTimeTaskWait                            0x00001539   Thumb Code    46  main.o(.text.tTimeTaskWait)
-    tTimeTaskWakeUp                          0x00001569   Thumb Code    38  main.o(.text.tTimeTaskWakeUp)
-    tTimeTickInit                            0x00001591   Thumb Code    14  main.o(.text.tTimeTickInit)
-    tTimerInitTask                           0x0000161d   Thumb Code    50  ttimer.o(.text.tTimerInitTask)
-    tTimerModuleInit                         0x00001651   Thumb Code    60  ttimer.o(.text.tTimerModuleInit)
-    tTimerMoudleTickNotify                   0x0000168d   Thumb Code    44  ttimer.o(.text.tTimerMoudleTickNotify)
-    task1Entry                               0x000016f5   Thumb Code    42  app.o(.text.task1Entry)
-    task2Entry                               0x00001721   Thumb Code    42  app.o(.text.task2Entry)
-    task3Entry                               0x0000174d   Thumb Code    42  app.o(.text.task3Entry)
-    __scatterload_copy                       0x00001777   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00001785   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00001787   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00001894   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000018b4   Number         0  anon$$obj.o(Region$$Table)
+    __scatterload                            0x00000429   Thumb Code    38  init.o(.text)
+    __scatterload_rt2                        0x00000429   Thumb Code     0  init.o(.text)
+    BusFault_Handler                         0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    DebugMon_Handler                         0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Default_Handler                          0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt0_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt1_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt2_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt3_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt4_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt5_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt6_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt7_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt8_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    Interrupt9_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    MemManage_Handler                        0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    NMI_Handler                              0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    SVC_Handler                              0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    UsageFault_Handler                       0x00000459   Thumb Code     4  startup_armcm3.o(.text.Default_Handler)
+    HardFault_Handler                        0x0000045d   Thumb Code     4  startup_armcm3.o(.text.HardFault_Handler)
+    Reset_Handler                            0x00000461   Thumb Code     8  startup_armcm3.o(.text.Reset_Handler)
+    SysTick_Handler                          0x00000469   Thumb Code     8  tcpu.o(.text.SysTick_Handler)
+    SystemInit                               0x00000471   Thumb Code    38  system_armcm3.o(.text.SystemInit)
+    idleTaskEntry                            0x000004dd   Thumb Code    50  main.o(.text.idleTaskEntry)
+    main                                     0x00000511   Thumb Code    88  main.o(.text.main)
+    tBitmapClear                             0x00000569   Thumb Code    26  tbitmap.o(.text.tBitmapClear)
+    tBitmapGetFirstSet                       0x00000585   Thumb Code   130  tbitmap.o(.text.tBitmapGetFirstSet)
+    tBitmapPosCount                          0x00000609   Thumb Code     4  tbitmap.o(.text.tBitmapPosCount)
+    tBitmapSet                               0x0000060d   Thumb Code    26  tbitmap.o(.text.tBitmapSet)
+    tEventRemoveTask                         0x00000629   Thumb Code    66  tevent.o(.text.tEventRemoveTask)
+    tInitApp                                 0x0000066d   Thumb Code   140  app.o(.text.tInitApp)
+    tListAddLast                             0x000006f9   Thumb Code    46  tlist.o(.text.tListAddLast)
+    tListCount                               0x00000729   Thumb Code    12  tlist.o(.text.tListCount)
+    tListFirst                               0x00000735   Thumb Code    30  tlist.o(.text.tListFirst)
+    tListInit                                0x00000755   Thumb Code    22  tlist.o(.text.tListInit)
+    tListRemove                              0x0000076d   Thumb Code    34  tlist.o(.text.tListRemove)
+    tListRemoveFirst                         0x00000791   Thumb Code    54  tlist.o(.text.tListRemoveFirst)
+    tNodeInit                                0x000007c9   Thumb Code    16  tlist.o(.text.tNodeInit)
+    tSetSysTickPeriod                        0x000007d9   Thumb Code    86  tcpu.o(.text.tSetSysTickPeriod)
+    tTaskDelay                               0x00000831   Thumb Code    52  ttime.o(.text.tTaskDelay)
+    tTaskDelayedInit                         0x00000865   Thumb Code    16  main.o(.text.tTaskDelayedInit)
+    tTaskEnterCritical                       0x00000875   Thumb Code    20  switch.o(.text.tTaskEnterCritical)
+    tTaskExitCritical                        0x00000889   Thumb Code    18  switch.o(.text.tTaskExitCritical)
+    tTaskHighestReady                        0x0000089d   Thumb Code    50  main.o(.text.tTaskHighestReady)
+    tTaskInit                                0x000008d1   Thumb Code   326  ttask.o(.text.tTaskInit)
+    tTaskRunFirst                            0x00000a19   Thumb Code    42  switch.o(.text.tTaskRunFirst)
+    tTaskSched                               0x00000a45   Thumb Code    88  main.o(.text.tTaskSched)
+    tTaskSchedDisable                        0x00000a9d   Thumb Code    52  main.o(.text.tTaskSchedDisable)
+    tTaskSchedInit                           0x00000ad1   Thumb Code    64  main.o(.text.tTaskSchedInit)
+    tTaskSchedRdy                            0x00000b11   Thumb Code    52  main.o(.text.tTaskSchedRdy)
+    tTaskSchedUnRdy                          0x00000b45   Thumb Code    78  main.o(.text.tTaskSchedUnRdy)
+    tTaskSwitch                              0x00000b95   Thumb Code    16  switch.o(.text.tTaskSwitch)
+    tTaskSystemTickHandler                   0x00000ba5   Thumb Code   256  main.o(.text.tTaskSystemTickHandler)
+    tTimeTaskWait                            0x00000ca5   Thumb Code    46  main.o(.text.tTimeTaskWait)
+    tTimeTaskWakeUp                          0x00000cd5   Thumb Code    38  main.o(.text.tTimeTaskWakeUp)
+    tTimeTickInit                            0x00000cfd   Thumb Code    14  main.o(.text.tTimeTickInit)
+    task1Entry                               0x00000d0d   Thumb Code    42  app.o(.text.task1Entry)
+    task2Entry                               0x00000d39   Thumb Code    42  app.o(.text.task2Entry)
+    task3Entry                               0x00000d65   Thumb Code    42  app.o(.text.task3Entry)
+    __scatterload_copy                       0x00000d8f   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000d9d   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000d9f   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000eac   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000ecc   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_armcm3.o(.data.SystemCoreClock)
-    currentTask                              0x20000008   Data           4  main.o(.bss.currentTask)
-    idleCount                                0x20000010   Data           4  main.o(.bss.idleCount)
-    idleMaxCount                             0x20000014   Data           4  main.o(.bss.idleMaxCount)
-    idleTaskEnv                              0x20000018   Data        4096  main.o(.bss.idleTaskEnv)
-    nextTask                                 0x20001018   Data           4  main.o(.bss.nextTask)
-    schedLockCount                           0x2000101c   Data           1  main.o(.bss.schedLockCount)
-    tTask1                                   0x20001020   Data          80  app.o(.bss.tTask1)
-    tTask2                                   0x20001070   Data          80  app.o(.bss.tTask2)
-    tTask3                                   0x200010c0   Data          80  app.o(.bss.tTask3)
-    tTaskDelayedList                         0x20001110   Data          12  main.o(.bss.tTaskDelayedList)
-    tTaskIdle                                0x2000111c   Data          80  main.o(.bss.tTaskIdle)
-    task1Env                                 0x20002204   Data        4096  app.o(.bss.task1Env)
-    task1Flag                                0x20003204   Data           4  app.o(.bss.task1Flag)
-    task2Env                                 0x20003208   Data        4096  app.o(.bss.task2Env)
-    task2Flag                                0x20004208   Data           4  app.o(.bss.task2Flag)
-    task3Env                                 0x2000420c   Data        4096  app.o(.bss.task3Env)
-    task3Flag                                0x2000520c   Data           4  app.o(.bss.task3Flag)
-    taskPrioBitmap                           0x20005210   Data           4  main.o(.bss.taskPrioBitmap)
-    taskTable                                0x20005214   Data         384  main.o(.bss.taskTable)
-    tickCount                                0x20005394   Data           4  main.o(.bss.tickCount)
+    currentTask                              0x20000004   Data           4  main.o(.bss.currentTask)
+    idleCount                                0x20000008   Data           4  main.o(.bss.idleCount)
+    idleTaskEnv                              0x2000000c   Data        4096  main.o(.bss.idleTaskEnv)
+    nextTask                                 0x2000100c   Data           4  main.o(.bss.nextTask)
+    schedLockCount                           0x20001010   Data           1  main.o(.bss.schedLockCount)
+    tTask1                                   0x20001014   Data          80  app.o(.bss.tTask1)
+    tTask2                                   0x20001064   Data          80  app.o(.bss.tTask2)
+    tTask3                                   0x200010b4   Data          80  app.o(.bss.tTask3)
+    tTaskDelayedList                         0x20001104   Data          12  main.o(.bss.tTaskDelayedList)
+    tTaskIdle                                0x20001110   Data          80  main.o(.bss.tTaskIdle)
+    task1Env                                 0x20001160   Data        4096  app.o(.bss.task1Env)
+    task1Flag                                0x20002160   Data           4  app.o(.bss.task1Flag)
+    task2Env                                 0x20002164   Data        4096  app.o(.bss.task2Env)
+    task2Flag                                0x20003164   Data           4  app.o(.bss.task2Flag)
+    task3Env                                 0x20003168   Data        4096  app.o(.bss.task3Env)
+    task3Flag                                0x20004168   Data           4  app.o(.bss.task3Flag)
+    taskPrioBitmap                           0x2000416c   Data           4  main.o(.bss.taskPrioBitmap)
+    taskTable                                0x20004170   Data         384  main.o(.bss.taskTable)
+    tickCount                                0x200042f0   Data           4  main.o(.bss.tickCount)
     Image$$ARM_LIB_STACK$$ZI$$Limit          0x20040000   Number         0  anon$$obj.o ABSOLUTE
 
 
@@ -1022,180 +603,137 @@ Memory Map of the image
 
   Image Entry point : 0x000003c1
 
-  Load Region LR_ROM (Base: 0x00000000, Size: 0x000018b8, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_ROM (Base: 0x00000000, Size: 0x00000ed0, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_ROM (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000018b4, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_ROM (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000ecc, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000003c0   Data   RO          367    RESET               startup_armcm3.o
-    0x000003c0   0x000003c0   0x00000000   Code   RO          386  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000003c0   0x000003c0   0x00000004   Code   RO          401    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
-    0x000003c4   0x000003c4   0x00000004   Code   RO          404    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          406    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000003c8   0x000003c8   0x00000000   Code   RO          408    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000003c8   0x000003c8   0x00000008   Code   RO          409    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          411    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000003d0   0x000003d0   0x00000000   Code   RO          413    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000003d0   0x000003d0   0x00000004   Code   RO          402    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
-    0x000003d4   0x000003d4   0x00000030   Code   RO           89    .text               cortex.o
-    0x00000404   0x00000404   0x00000024   Code   RO          389    .text               mc_w.l(memseta.o)
-    0x00000428   0x00000428   0x0000014e   Code   RO          391    .text               mf_w.l(dadd.o)
-    0x00000576   0x00000576   0x000000e4   Code   RO          393    .text               mf_w.l(dmul.o)
-    0x0000065a   0x0000065a   0x000000de   Code   RO          395    .text               mf_w.l(ddiv.o)
-    0x00000738   0x00000738   0x0000001a   Code   RO          397    .text               mf_w.l(dfltui.o)
-    0x00000752   0x00000752   0x00000038   Code   RO          399    .text               mf_w.l(d2f.o)
-    0x0000078a   0x0000078a   0x0000001e   Code   RO          415    .text               mc_w.l(llshl.o)
-    0x000007a8   0x000007a8   0x00000024   Code   RO          417    .text               mc_w.l(llsshr.o)
-    0x000007cc   0x000007cc   0x00000000   Code   RO          419    .text               mc_w.l(iusefp.o)
-    0x000007cc   0x000007cc   0x0000006e   Code   RO          420    .text               mf_w.l(fepilogue.o)
-    0x0000083a   0x0000083a   0x000000ba   Code   RO          422    .text               mf_w.l(depilogue.o)
-    0x000008f4   0x000008f4   0x00000030   Code   RO          424    .text               mc_w.l(init.o)
-    0x00000924   0x00000924   0x00000020   Code   RO          426    .text               mc_w.l(llushr.o)
-    0x00000944   0x00000944   0x00000004   Code   RO          361    .text.Default_Handler  startup_armcm3.o
-    0x00000948   0x00000948   0x00000004   Code   RO          365    .text.HardFault_Handler  startup_armcm3.o
-    0x0000094c   0x0000094c   0x00000008   Code   RO          363    .text.Reset_Handler  startup_armcm3.o
-    0x00000954   0x00000954   0x00000008   Code   RO          199    .text.SysTick_Handler  tcpu.o
-    0x0000095c   0x0000095c   0x00000026   Code   RO          377    .text.SystemInit    system_armcm3.o
-    0x00000982   0x00000982   0x00000002   PAD
-    0x00000984   0x00000984   0x00000042   Code   RO          197    .text.__NVIC_SetPriority  tcpu.o
-    0x000009c6   0x000009c6   0x00000002   PAD
-    0x000009c8   0x000009c8   0x000000e8   Code   RO           32    .text.checkCpuUsage  main.o
-    0x00000ab0   0x00000ab0   0x00000014   Code   RO           38    .text.cpuUsageSyncWithSysTick  main.o
-    0x00000ac4   0x00000ac4   0x0000003a   Code   RO           36    .text.idleTaskEntry  main.o
-    0x00000afe   0x00000afe   0x00000002   PAD
-    0x00000b00   0x00000b00   0x0000002c   Code   RO           42    .text.initCpuUsageStat  main.o
-    0x00000b2c   0x00000b2c   0x00000060   Code   RO           40    .text.main          main.o
-    0x00000b8c   0x00000b8c   0x0000001a   Code   RO          117    .text.tBitmapClear  tbitmap.o
-    0x00000ba6   0x00000ba6   0x00000002   PAD
-    0x00000ba8   0x00000ba8   0x00000082   Code   RO          119    .text.tBitmapGetFirstSet  tbitmap.o
-    0x00000c2a   0x00000c2a   0x00000002   PAD
-    0x00000c2c   0x00000c2c   0x00000004   Code   RO          113    .text.tBitmapPosCount  tbitmap.o
-    0x00000c30   0x00000c30   0x0000001a   Code   RO          115    .text.tBitmapSet    tbitmap.o
-    0x00000c4a   0x00000c4a   0x00000002   PAD
-    0x00000c4c   0x00000c4c   0x0000001a   Code   RO          208    .text.tEventInit    tevent.o
-    0x00000c66   0x00000c66   0x00000002   PAD
-    0x00000c68   0x00000c68   0x00000042   Code   RO          216    .text.tEventRemoveTask  tevent.o
-    0x00000caa   0x00000caa   0x00000002   PAD
-    0x00000cac   0x00000cac   0x0000005a   Code   RO          210    .text.tEventWait    tevent.o
-    0x00000d06   0x00000d06   0x00000002   PAD
-    0x00000d08   0x00000d08   0x00000026   Code   RO          220    .text.tEventWaitCount  tevent.o
-    0x00000d2e   0x00000d2e   0x00000002   PAD
-    0x00000d30   0x00000d30   0x00000068   Code   RO          212    .text.tEventWakeUp  tevent.o
-    0x00000d98   0x00000d98   0x0000008c   Code   RO           72    .text.tInitApp      app.o
-    0x00000e24   0x00000e24   0x0000002e   Code   RO          147    .text.tListAddLast  tlist.o
-    0x00000e52   0x00000e52   0x00000002   PAD
-    0x00000e54   0x00000e54   0x0000000c   Code   RO          133    .text.tListCount    tlist.o
-    0x00000e60   0x00000e60   0x0000001e   Code   RO          135    .text.tListFirst    tlist.o
-    0x00000e7e   0x00000e7e   0x00000002   PAD
-    0x00000e80   0x00000e80   0x00000016   Code   RO          131    .text.tListInit     tlist.o
-    0x00000e96   0x00000e96   0x00000002   PAD
-    0x00000e98   0x00000e98   0x00000022   Code   RO          153    .text.tListRemove   tlist.o
-    0x00000eba   0x00000eba   0x00000002   PAD
-    0x00000ebc   0x00000ebc   0x00000036   Code   RO          149    .text.tListRemoveFirst  tlist.o
-    0x00000ef2   0x00000ef2   0x00000002   PAD
-    0x00000ef4   0x00000ef4   0x00000010   Code   RO          129    .text.tNodeInit     tlist.o
-    0x00000f04   0x00000f04   0x0000004a   Code   RO          229    .text.tSemInit      tsem.o
-    0x00000f4e   0x00000f4e   0x00000002   PAD
-    0x00000f50   0x00000f50   0x00000070   Code   RO          235    .text.tSemNotify    tsem.o
-    0x00000fc0   0x00000fc0   0x00000062   Code   RO          231    .text.tSemWait      tsem.o
-    0x00001022   0x00001022   0x00000002   PAD
-    0x00001024   0x00001024   0x00000056   Code   RO          195    .text.tSetSysTickPeriod  tcpu.o
-    0x0000107a   0x0000107a   0x00000002   PAD
-    0x0000107c   0x0000107c   0x00000034   Code   RO          187    .text.tTaskDelay    ttime.o
-    0x000010b0   0x000010b0   0x00000010   Code   RO           20    .text.tTaskDelayedInit  main.o
-    0x000010c0   0x000010c0   0x00000014   Code   RO           96    .text.tTaskEnterCritical  switch.o
-    0x000010d4   0x000010d4   0x00000012   Code   RO           98    .text.tTaskExitCritical  switch.o
-    0x000010e6   0x000010e6   0x00000002   PAD
-    0x000010e8   0x000010e8   0x00000032   Code   RO            4    .text.tTaskHighestReady  main.o
-    0x0000111a   0x0000111a   0x00000002   PAD
-    0x0000111c   0x0000111c   0x00000146   Code   RO          162    .text.tTaskInit     ttask.o
-    0x00001262   0x00001262   0x00000002   PAD
-    0x00001264   0x00001264   0x0000002a   Code   RO          100    .text.tTaskRunFirst  switch.o
-    0x0000128e   0x0000128e   0x00000002   PAD
-    0x00001290   0x00001290   0x00000058   Code   RO           12    .text.tTaskSched    main.o
-    0x000012e8   0x000012e8   0x00000034   Code   RO            8    .text.tTaskSchedDisable  main.o
-    0x0000131c   0x0000131c   0x00000040   Code   RO           10    .text.tTaskSchedEnable  main.o
-    0x0000135c   0x0000135c   0x00000040   Code   RO            6    .text.tTaskSchedInit  main.o
-    0x0000139c   0x0000139c   0x00000034   Code   RO           14    .text.tTaskSchedRdy  main.o
-    0x000013d0   0x000013d0   0x0000004e   Code   RO           16    .text.tTaskSchedUnRdy  main.o
-    0x0000141e   0x0000141e   0x00000002   PAD
-    0x00001420   0x00001420   0x00000010   Code   RO          102    .text.tTaskSwitch   switch.o
-    0x00001430   0x00001430   0x00000108   Code   RO           30    .text.tTaskSystemTickHandler  main.o
-    0x00001538   0x00001538   0x0000002e   Code   RO           22    .text.tTimeTaskWait  main.o
-    0x00001566   0x00001566   0x00000002   PAD
-    0x00001568   0x00001568   0x00000026   Code   RO           24    .text.tTimeTaskWakeUp  main.o
-    0x0000158e   0x0000158e   0x00000002   PAD
-    0x00001590   0x00001590   0x0000000e   Code   RO           28    .text.tTimeTickInit  main.o
-    0x0000159e   0x0000159e   0x00000002   PAD
-    0x000015a0   0x000015a0   0x0000007a   Code   RO          346    .text.tTimerCallFuncList  ttimer.o
-    0x0000161a   0x0000161a   0x00000002   PAD
-    0x0000161c   0x0000161c   0x00000032   Code   RO          340    .text.tTimerInitTask  ttimer.o
-    0x0000164e   0x0000164e   0x00000002   PAD
-    0x00001650   0x00001650   0x0000003c   Code   RO          338    .text.tTimerModuleInit  ttimer.o
-    0x0000168c   0x0000168c   0x0000002c   Code   RO          344    .text.tTimerMoudleTickNotify  ttimer.o
-    0x000016b8   0x000016b8   0x0000003c   Code   RO          342    .text.tTimerSoftTask  ttimer.o
-    0x000016f4   0x000016f4   0x0000002a   Code   RO           66    .text.task1Entry    app.o
-    0x0000171e   0x0000171e   0x00000002   PAD
-    0x00001720   0x00001720   0x0000002a   Code   RO           68    .text.task2Entry    app.o
-    0x0000174a   0x0000174a   0x00000002   PAD
-    0x0000174c   0x0000174c   0x0000002a   Code   RO           70    .text.task3Entry    app.o
-    0x00001776   0x00001776   0x0000000e   Code   RO          430    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00001784   0x00001784   0x00000002   Code   RO          431    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00001786   0x00001786   0x0000000e   Code   RO          432    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00001794   0x00001794   0x00000100   Data   RO          121    .rodata.tBitmapGetFirstSet.quickFindTable  tbitmap.o
-    0x00001894   0x00001894   0x00000020   Data   RO          429    Region$$Table       anon$$obj.o
+    0x00000000   0x00000000   0x000003c0   Data   RO          231    RESET               startup_armcm3.o
+    0x000003c0   0x000003c0   0x00000000   Code   RO          250  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000003c0   0x000003c0   0x00000004   Code   RO          255    .ARM.Collect$$$$00000003  mc_w.l(entry4.o)
+    0x000003c4   0x000003c4   0x00000004   Code   RO          258    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          260    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000003c8   0x000003c8   0x00000000   Code   RO          262    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000003c8   0x000003c8   0x00000008   Code   RO          263    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          265    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000003d0   0x000003d0   0x00000000   Code   RO          267    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000003d0   0x000003d0   0x00000004   Code   RO          256    .ARM.Collect$$$$00002714  mc_w.l(entry4.o)
+    0x000003d4   0x000003d4   0x00000030   Code   RO           79    .text               cortex.o
+    0x00000404   0x00000404   0x00000024   Code   RO          253    .text               mc_w.l(memseta.o)
+    0x00000428   0x00000428   0x00000030   Code   RO          269    .text               mc_w.l(init.o)
+    0x00000458   0x00000458   0x00000004   Code   RO          225    .text.Default_Handler  startup_armcm3.o
+    0x0000045c   0x0000045c   0x00000004   Code   RO          229    .text.HardFault_Handler  startup_armcm3.o
+    0x00000460   0x00000460   0x00000008   Code   RO          227    .text.Reset_Handler  startup_armcm3.o
+    0x00000468   0x00000468   0x00000008   Code   RO          189    .text.SysTick_Handler  tcpu.o
+    0x00000470   0x00000470   0x00000026   Code   RO          241    .text.SystemInit    system_armcm3.o
+    0x00000496   0x00000496   0x00000002   PAD
+    0x00000498   0x00000498   0x00000042   Code   RO          187    .text.__NVIC_SetPriority  tcpu.o
+    0x000004da   0x000004da   0x00000002   PAD
+    0x000004dc   0x000004dc   0x00000032   Code   RO           32    .text.idleTaskEntry  main.o
+    0x0000050e   0x0000050e   0x00000002   PAD
+    0x00000510   0x00000510   0x00000058   Code   RO           34    .text.main          main.o
+    0x00000568   0x00000568   0x0000001a   Code   RO          107    .text.tBitmapClear  tbitmap.o
+    0x00000582   0x00000582   0x00000002   PAD
+    0x00000584   0x00000584   0x00000082   Code   RO          109    .text.tBitmapGetFirstSet  tbitmap.o
+    0x00000606   0x00000606   0x00000002   PAD
+    0x00000608   0x00000608   0x00000004   Code   RO          103    .text.tBitmapPosCount  tbitmap.o
+    0x0000060c   0x0000060c   0x0000001a   Code   RO          105    .text.tBitmapSet    tbitmap.o
+    0x00000626   0x00000626   0x00000002   PAD
+    0x00000628   0x00000628   0x00000042   Code   RO          206    .text.tEventRemoveTask  tevent.o
+    0x0000066a   0x0000066a   0x00000002   PAD
+    0x0000066c   0x0000066c   0x0000008c   Code   RO           62    .text.tInitApp      app.o
+    0x000006f8   0x000006f8   0x0000002e   Code   RO          137    .text.tListAddLast  tlist.o
+    0x00000726   0x00000726   0x00000002   PAD
+    0x00000728   0x00000728   0x0000000c   Code   RO          123    .text.tListCount    tlist.o
+    0x00000734   0x00000734   0x0000001e   Code   RO          125    .text.tListFirst    tlist.o
+    0x00000752   0x00000752   0x00000002   PAD
+    0x00000754   0x00000754   0x00000016   Code   RO          121    .text.tListInit     tlist.o
+    0x0000076a   0x0000076a   0x00000002   PAD
+    0x0000076c   0x0000076c   0x00000022   Code   RO          143    .text.tListRemove   tlist.o
+    0x0000078e   0x0000078e   0x00000002   PAD
+    0x00000790   0x00000790   0x00000036   Code   RO          139    .text.tListRemoveFirst  tlist.o
+    0x000007c6   0x000007c6   0x00000002   PAD
+    0x000007c8   0x000007c8   0x00000010   Code   RO          119    .text.tNodeInit     tlist.o
+    0x000007d8   0x000007d8   0x00000056   Code   RO          185    .text.tSetSysTickPeriod  tcpu.o
+    0x0000082e   0x0000082e   0x00000002   PAD
+    0x00000830   0x00000830   0x00000034   Code   RO          177    .text.tTaskDelay    ttime.o
+    0x00000864   0x00000864   0x00000010   Code   RO           20    .text.tTaskDelayedInit  main.o
+    0x00000874   0x00000874   0x00000014   Code   RO           86    .text.tTaskEnterCritical  switch.o
+    0x00000888   0x00000888   0x00000012   Code   RO           88    .text.tTaskExitCritical  switch.o
+    0x0000089a   0x0000089a   0x00000002   PAD
+    0x0000089c   0x0000089c   0x00000032   Code   RO            4    .text.tTaskHighestReady  main.o
+    0x000008ce   0x000008ce   0x00000002   PAD
+    0x000008d0   0x000008d0   0x00000146   Code   RO          152    .text.tTaskInit     ttask.o
+    0x00000a16   0x00000a16   0x00000002   PAD
+    0x00000a18   0x00000a18   0x0000002a   Code   RO           90    .text.tTaskRunFirst  switch.o
+    0x00000a42   0x00000a42   0x00000002   PAD
+    0x00000a44   0x00000a44   0x00000058   Code   RO           12    .text.tTaskSched    main.o
+    0x00000a9c   0x00000a9c   0x00000034   Code   RO            8    .text.tTaskSchedDisable  main.o
+    0x00000ad0   0x00000ad0   0x00000040   Code   RO            6    .text.tTaskSchedInit  main.o
+    0x00000b10   0x00000b10   0x00000034   Code   RO           14    .text.tTaskSchedRdy  main.o
+    0x00000b44   0x00000b44   0x0000004e   Code   RO           16    .text.tTaskSchedUnRdy  main.o
+    0x00000b92   0x00000b92   0x00000002   PAD
+    0x00000b94   0x00000b94   0x00000010   Code   RO           92    .text.tTaskSwitch   switch.o
+    0x00000ba4   0x00000ba4   0x00000100   Code   RO           30    .text.tTaskSystemTickHandler  main.o
+    0x00000ca4   0x00000ca4   0x0000002e   Code   RO           22    .text.tTimeTaskWait  main.o
+    0x00000cd2   0x00000cd2   0x00000002   PAD
+    0x00000cd4   0x00000cd4   0x00000026   Code   RO           24    .text.tTimeTaskWakeUp  main.o
+    0x00000cfa   0x00000cfa   0x00000002   PAD
+    0x00000cfc   0x00000cfc   0x0000000e   Code   RO           28    .text.tTimeTickInit  main.o
+    0x00000d0a   0x00000d0a   0x00000002   PAD
+    0x00000d0c   0x00000d0c   0x0000002a   Code   RO           56    .text.task1Entry    app.o
+    0x00000d36   0x00000d36   0x00000002   PAD
+    0x00000d38   0x00000d38   0x0000002a   Code   RO           58    .text.task2Entry    app.o
+    0x00000d62   0x00000d62   0x00000002   PAD
+    0x00000d64   0x00000d64   0x0000002a   Code   RO           60    .text.task3Entry    app.o
+    0x00000d8e   0x00000d8e   0x0000000e   Code   RO          273    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000d9c   0x00000d9c   0x00000002   Code   RO          274    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000d9e   0x00000d9e   0x0000000e   Code   RO          275    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000dac   0x00000dac   0x00000100   Data   RO          111    .rodata.tBitmapGetFirstSet.quickFindTable  tbitmap.o
+    0x00000eac   0x00000eac   0x00000020   Data   RO          272    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_NOINIT (Exec base: 0x20000000, Load base: 0x000018b4, Size: 0x00000000, Max: 0x0003f200, ABSOLUTE, UNINIT)
+    Execution Region RW_NOINIT (Exec base: 0x20000000, Load base: 0x00000ecc, Size: 0x00000000, Max: 0x0003f200, ABSOLUTE, UNINIT)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region RW_RAM (Exec base: 0x20000000, Load base: 0x000018b4, Size: 0x00005398, Max: 0x0003f200, ABSOLUTE)
+    Execution Region RW_RAM (Exec base: 0x20000000, Load base: 0x00000ecc, Size: 0x000042f4, Max: 0x0003f200, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x000018b4   0x00000004   Data   RW          379    .data.SystemCoreClock  system_armcm3.o
-    0x20000004        -       0x00000004   Zero   RW           51    .bss.cpuUsage       main.o
-    0x20000008        -       0x00000004   Zero   RW           47    .bss.currentTask    main.o
-    0x2000000c        -       0x00000004   Zero   RW           57    .bss.enableCpuUsageState  main.o
-    0x20000010        -       0x00000004   Zero   RW           52    .bss.idleCount      main.o
-    0x20000014        -       0x00000004   Zero   RW           56    .bss.idleMaxCount   main.o
-    0x20000018        -       0x00001000   Zero   RW           54    .bss.idleTaskEnv    main.o
-    0x20001018        -       0x00000004   Zero   RW           48    .bss.nextTask       main.o
-    0x2000101c        -       0x00000001   Zero   RW           46    .bss.schedLockCount  main.o
-    0x2000101d   0x000018b8   0x00000003   PAD
-    0x20001020        -       0x00000050   Zero   RW           77    .bss.tTask1         app.o
-    0x20001070        -       0x00000050   Zero   RW           79    .bss.tTask2         app.o
-    0x200010c0        -       0x00000050   Zero   RW           81    .bss.tTask3         app.o
-    0x20001110        -       0x0000000c   Zero   RW           49    .bss.tTaskDelayedList  main.o
-    0x2000111c        -       0x00000050   Zero   RW           53    .bss.tTaskIdle      main.o
-    0x2000116c        -       0x0000000c   Zero   RW          348    .bss.tTimerHardList  ttimer.o
-    0x20001178        -       0x00000018   Zero   RW          349    .bss.tTimerProtectSem  ttimer.o
-    0x20001190        -       0x0000000c   Zero   RW          350    .bss.tTimerSoftList  ttimer.o
-    0x2000119c        -       0x00000050   Zero   RW          352    .bss.tTimerTask     ttimer.o
-    0x200011ec        -       0x00001000   Zero   RW          353    .bss.tTimerTaskStack  ttimer.o
-    0x200021ec        -       0x00000018   Zero   RW          351    .bss.tTimerTickSem  ttimer.o
-    0x20002204        -       0x00001000   Zero   RW           78    .bss.task1Env       app.o
-    0x20003204        -       0x00000004   Zero   RW           74    .bss.task1Flag      app.o
-    0x20003208        -       0x00001000   Zero   RW           80    .bss.task2Env       app.o
-    0x20004208        -       0x00000004   Zero   RW           75    .bss.task2Flag      app.o
-    0x2000420c        -       0x00001000   Zero   RW           82    .bss.task3Env       app.o
-    0x2000520c        -       0x00000004   Zero   RW           76    .bss.task3Flag      app.o
-    0x20005210        -       0x00000004   Zero   RW           44    .bss.taskPrioBitmap  main.o
-    0x20005214        -       0x00000180   Zero   RW           45    .bss.taskTable      main.o
-    0x20005394        -       0x00000004   Zero   RW           50    .bss.tickCount      main.o
+    0x20000000   0x00000ecc   0x00000004   Data   RW          243    .data.SystemCoreClock  system_armcm3.o
+    0x20000004        -       0x00000004   Zero   RW           39    .bss.currentTask    main.o
+    0x20000008        -       0x00000004   Zero   RW           43    .bss.idleCount      main.o
+    0x2000000c        -       0x00001000   Zero   RW           45    .bss.idleTaskEnv    main.o
+    0x2000100c        -       0x00000004   Zero   RW           40    .bss.nextTask       main.o
+    0x20001010        -       0x00000001   Zero   RW           38    .bss.schedLockCount  main.o
+    0x20001011   0x00000ed0   0x00000003   PAD
+    0x20001014        -       0x00000050   Zero   RW           67    .bss.tTask1         app.o
+    0x20001064        -       0x00000050   Zero   RW           69    .bss.tTask2         app.o
+    0x200010b4        -       0x00000050   Zero   RW           71    .bss.tTask3         app.o
+    0x20001104        -       0x0000000c   Zero   RW           41    .bss.tTaskDelayedList  main.o
+    0x20001110        -       0x00000050   Zero   RW           44    .bss.tTaskIdle      main.o
+    0x20001160        -       0x00001000   Zero   RW           68    .bss.task1Env       app.o
+    0x20002160        -       0x00000004   Zero   RW           64    .bss.task1Flag      app.o
+    0x20002164        -       0x00001000   Zero   RW           70    .bss.task2Env       app.o
+    0x20003164        -       0x00000004   Zero   RW           65    .bss.task2Flag      app.o
+    0x20003168        -       0x00001000   Zero   RW           72    .bss.task3Env       app.o
+    0x20004168        -       0x00000004   Zero   RW           66    .bss.task3Flag      app.o
+    0x2000416c        -       0x00000004   Zero   RW           36    .bss.taskPrioBitmap  main.o
+    0x20004170        -       0x00000180   Zero   RW           37    .bss.taskTable      main.o
+    0x200042f0        -       0x00000004   Zero   RW           42    .bss.tickCount      main.o
 
 
-    Execution Region ARM_LIB_HEAP (Exec base: 0x20005398, Load base: 0x000018b8, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
+    Execution Region ARM_LIB_HEAP (Exec base: 0x200042f8, Load base: 0x00000ed0, Size: 0x00000c00, Max: 0x00000c00, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20005398        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
+    0x200042f8        -       0x00000c00   Zero   RW            1    ARM_LIB_HEAP.bss    anon$$obj.o
 
 
-    Execution Region ARM_LIB_STACK (Exec base: 0x2003fe00, Load base: 0x000018b8, Size: 0x00000200, Max: 0x00000200, ABSOLUTE)
+    Execution Region ARM_LIB_STACK (Exec base: 0x2003fe00, Load base: 0x00000ed0, Size: 0x00000200, Max: 0x00000200, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1211,23 +749,21 @@ Image component sizes
 
        266          0          0          0      12540       2196   app.o
         48          8          0          0          0        324   cortex.o
-      1276          0          0          0       4605       5327   main.o
+       892          0          0          0       4593       4693   main.o
         16          0        960          0          0        803   startup_armcm3.o
         96          0          0          0          0       1484   switch.o
         38          0          0          4          0       1403   system_armcm3.o
        186          0        256          0          0       1326   tbitmap.o
        160          0          0          0          0       2693   tcpu.o
-       324          0          0          0          0       3411   tevent.o
+        66          0          0          0          0       3411   tevent.o
        214          0          0          0          0       2695   tlist.o
-       284          0          0          0          0       3075   tsem.o
        326          0          0          0          0       3873   ttask.o
         52          0          0          0          0        536   ttime.o
-       336          0          0          0       4248       4166   ttimer.o
 
     ----------------------------------------------------------------------
-      3682          8       1248          4      24980      33312   Object Totals
+      2406          8       1248          4      20720      25437   Object Totals
          0          0         32          0       3584          0   (incl. Generated)
-        60          0          0          0          3          0   (incl. Padding)
+        46          0          0          0          3          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1243,32 +779,20 @@ Image component sizes
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
         48         10          0          0          0         68   init.o
-         0          0          0          0          0          0   iusefp.o
-        30          0          0          0          0         68   llshl.o
-        36          0          0          0          0         68   llsshr.o
-        32          0          0          0          0         68   llushr.o
         36          0          0          0          0        108   memseta.o
-        56          0          0          0          0         88   d2f.o
-       334          0          0          0          0        148   dadd.o
-       222          0          0          0          0        100   ddiv.o
-       186          0          0          0          0        176   depilogue.o
-        26          0          0          0          0         76   dfltui.o
-       228          0          0          0          0         96   dmul.o
-       110          0          0          0          0        168   fepilogue.o
 
     ----------------------------------------------------------------------
-      1394         18          0          0          0       1232   Library Totals
+       134         18          0          0          0        176   Library Totals
          0          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-       232         18          0          0          0        380   mc_w.l
-      1162          0          0          0          0        852   mf_w.l
+       134         18          0          0          0        176   mc_w.l
 
     ----------------------------------------------------------------------
-      1394         18          0          0          0       1232   Library Totals
+       134         18          0          0          0        176   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1277,15 +801,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5076         26       1248          4      24980      33936   Grand Totals
-      5076         26       1248          4      24980      33936   ELF Image Totals
-      5076         26       1248          4          0          0   ROM Totals
+      2540         26       1248          4      20720      25565   Grand Totals
+      2540         26       1248          4      20720      25565   ELF Image Totals
+      2540         26       1248          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 6324 (   6.18kB)
-    Total RW  Size (RW Data + ZI Data)             24984 (  24.40kB)
-    Total ROM Size (Code + RO Data + RW Data)       6328 (   6.18kB)
+    Total RO  Size (Code + RO Data)                 3788 (   3.70kB)
+    Total RW  Size (RW Data + ZI Data)             20724 (  20.24kB)
+    Total ROM Size (Code + RO Data + RW Data)       3792 (   3.70kB)
 
 ==============================================================================
 

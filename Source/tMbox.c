@@ -1,6 +1,8 @@
 #include "tMbox.h"
 #include "tinyOS.h"
 
+#if TINYOS_ENABLE_MBOX == 1
+
 /* ” œ‰≥ı ºªØ */
 void tMboxInit(tMbox* mbox, void** msgBuffer, uint32_t maxCount)
 {
@@ -170,3 +172,5 @@ void tMboxGetInfo(tMbox* mbox, tMboxInfo* info)
 
     tTaskExitCritical(status);
 }
+
+#endif
