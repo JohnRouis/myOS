@@ -1,5 +1,6 @@
 #include "tinyOS.h"
 #include "stm32f10x.h"
+
 void tSetSysTickPeriod(uint32_t ms)
 {
 	SysTick->LOAD = ms * SystemCoreClock / 1000 - 1;

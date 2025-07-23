@@ -1,0 +1,101 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             |.text|, CODE, READONLY
+    2 00000000         PendSV_Handler
+                               PROC
+    3 00000000                 EXPORT           PendSV_Handler
+    4 00000000         
+    5 00000000                 IMPORT           currentTask
+    6 00000000                 IMPORT           nextTask
+    7 00000000         
+    8 00000000 F3EF 8009       MRS              R0, PSP
+    9 00000004 B120            CBZ              R0, PendSVHandler_nosave
+   10 00000006         
+   11 00000006 E920 0FF0       STMDB            R0!, {R4-R11}
+   12 0000000A         
+   13 0000000A 4907            LDR              R1, =currentTask
+   14 0000000C 6809            LDR              R1, [R1]
+   15 0000000E 6008            STR              R0, [R1]
+   16 00000010         
+   17 00000010         PendSVHandler_nosave
+   18 00000010         
+   19 00000010 4805            LDR              R0, =currentTask
+   20 00000012 4906            LDR              R1, =nextTask
+   21 00000014 680A            LDR              R2, [R1]
+   22 00000016 6002            STR              R2, [R0]
+   23 00000018         
+   24 00000018 6810            LDR              R0, [R2]
+   25 0000001A E8B0 0FF0       LDMIA            R0!, {R4-R11}
+   26 0000001E         
+   27 0000001E F380 8809       MSR              PSP, R0
+   28 00000022 F04E 0E04       ORR              LR, LR, #0x04
+   29 00000026 4770            BX               LR
+   30 00000028         
+   31 00000028                 ENDP
+   32 00000028                 END
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\cortex.d -o.\objects\cortex.o -IE:\KEIL\Keil\STM32F1xx_D
+FP\2.4.1\Device\Include --predefine="__UVISION_VERSION SETA 541" --predefine="S
+TM32F10X_MD SETA 1" --list=.\listings\cortex.lst Source\cortex.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 1 in file Source\cortex.s
+   Uses
+      None
+Comment: .text unused
+PendSVHandler_nosave 00000010
+
+Symbol: PendSVHandler_nosave
+   Definitions
+      At line 17 in file Source\cortex.s
+   Uses
+      At line 9 in file Source\cortex.s
+Comment: PendSVHandler_nosave used once
+PendSV_Handler 00000000
+
+Symbol: PendSV_Handler
+   Definitions
+      At line 2 in file Source\cortex.s
+   Uses
+      At line 3 in file Source\cortex.s
+Comment: PendSV_Handler used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+currentTask 00000000
+
+Symbol: currentTask
+   Definitions
+      At line 5 in file Source\cortex.s
+   Uses
+      At line 13 in file Source\cortex.s
+      At line 19 in file Source\cortex.s
+
+nextTask 00000000
+
+Symbol: nextTask
+   Definitions
+      At line 6 in file Source\cortex.s
+   Uses
+      At line 20 in file Source\cortex.s
+Comment: nextTask used once
+2 symbols
+339 symbols in table

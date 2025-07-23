@@ -280,8 +280,6 @@ void idleTaskEntry(void* param)
 {
 	tTaskSchedDisable();//禁止调度，为空闲任务留下100tick的时间计算CPU占比
 
-	tInitApp();//应用任务初始化
-
 #if TINYOS_ENABLE_TIMER == 1
 	tTimerInitTask();//软件定时器初始化
 #endif
@@ -291,7 +289,7 @@ void idleTaskEntry(void* param)
 #if TINYOS_ENABLE_CPUUSAGE_STAT == 1
 	cpuUsageSyncWithSysTick();//等待与时钟同步
 #endif
-
+	
 	for(;;)
 	{
 		uint32_t status = tTaskEnterCritical();
@@ -321,7 +319,9 @@ int main(void)
 
 	tTimeTickInit();//时钟节拍初始化
 
-	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, TINYOS_PRO_COUNT - 1, idleTaskEnv, TINYOS_IDLETASK_STACK_SIZE);
+	tTaskInit(&tTaskIdle, idleTaskEntry, (void*)0, TINYOS_PRO_COUNT - 1, idleTaskEnv, TINYOS_IDLETASK_STACK_SIZE);//
+	
+	tInitApp();//应用任务初始化
 
 	nextTask = tTaskHighestReady();//找到最高优先级任务
 

@@ -1,8 +1,44 @@
-./objects/switch.o: Source\switch.c Source\tinyOS.h Source\tConfig.h \
-  Source\tLib.h Source\tEvent.h Source\tTask.h Source\tSem.h \
-  Source\tMbox.h Source\tMemBlock.h Source\tFlagGroup.h Source\tMutex.h \
-  Source\tTimer.h Source\tHooks.h \
-  E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
-  RTE\_Target_1\RTE_Components.h \
-  E:\KEIL\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm3.h \
-  E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h
+.\objects\switch.o: Source\switch.c
+.\objects\switch.o: Source\tinyOS.h
+.\objects\switch.o: E:\KEIL\ARM\ARMCC\Bin\..\include\string.h
+.\objects\switch.o: E:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\switch.o: Source\tConfig.h
+.\objects\switch.o: Source\tLib.h
+.\objects\switch.o: Source\tEvent.h
+.\objects\switch.o: Source\tTask.h
+.\objects\switch.o: Source\tSem.h
+.\objects\switch.o: Source\tMbox.h
+.\objects\switch.o: Source\tMemBlock.h
+.\objects\switch.o: Source\tFlagGroup.h
+.\objects\switch.o: Source\tMutex.h
+.\objects\switch.o: Source\tTimer.h
+.\objects\switch.o: Source\tHooks.h
+.\objects\switch.o: Source\tinyOS.h
+.\objects\switch.o: .\Start\stm32f10x.h
+.\objects\switch.o: .\Start\core_cm3.h
+.\objects\switch.o: .\Start\system_stm32f10x.h
+.\objects\switch.o: .\Source\stm32f10x_conf.h
+.\objects\switch.o: .\Library\stm32f10x_adc.h
+.\objects\switch.o: .\Start\stm32f10x.h
+.\objects\switch.o: .\Library\stm32f10x_bkp.h
+.\objects\switch.o: .\Library\stm32f10x_can.h
+.\objects\switch.o: .\Library\stm32f10x_cec.h
+.\objects\switch.o: .\Library\stm32f10x_crc.h
+.\objects\switch.o: .\Library\stm32f10x_dac.h
+.\objects\switch.o: .\Library\stm32f10x_dbgmcu.h
+.\objects\switch.o: .\Library\stm32f10x_dma.h
+.\objects\switch.o: .\Library\stm32f10x_exti.h
+.\objects\switch.o: .\Library\stm32f10x_flash.h
+.\objects\switch.o: .\Library\stm32f10x_fsmc.h
+.\objects\switch.o: .\Library\stm32f10x_gpio.h
+.\objects\switch.o: .\Library\stm32f10x_i2c.h
+.\objects\switch.o: .\Library\stm32f10x_iwdg.h
+.\objects\switch.o: .\Library\stm32f10x_pwr.h
+.\objects\switch.o: .\Library\stm32f10x_rcc.h
+.\objects\switch.o: .\Library\stm32f10x_rtc.h
+.\objects\switch.o: .\Library\stm32f10x_sdio.h
+.\objects\switch.o: .\Library\stm32f10x_spi.h
+.\objects\switch.o: .\Library\stm32f10x_tim.h
+.\objects\switch.o: .\Library\stm32f10x_usart.h
+.\objects\switch.o: .\Library\stm32f10x_wwdg.h
+.\objects\switch.o: .\Library\misc.h

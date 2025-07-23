@@ -1,8 +1,44 @@
-./objects/tcpu.o: Source\tCpu.c Source\tinyOS.h Source\tConfig.h \
-  Source\tLib.h Source\tEvent.h Source\tTask.h Source\tSem.h \
-  Source\tMbox.h Source\tMemBlock.h Source\tFlagGroup.h Source\tMutex.h \
-  Source\tTimer.h Source\tHooks.h \
-  E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
-  RTE\_Target_1\RTE_Components.h \
-  E:\KEIL\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm3.h \
-  E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h
+.\objects\tcpu.o: Source\tCpu.c
+.\objects\tcpu.o: Source\tinyOS.h
+.\objects\tcpu.o: E:\KEIL\ARM\ARMCC\Bin\..\include\string.h
+.\objects\tcpu.o: E:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tcpu.o: Source\tConfig.h
+.\objects\tcpu.o: Source\tLib.h
+.\objects\tcpu.o: Source\tEvent.h
+.\objects\tcpu.o: Source\tTask.h
+.\objects\tcpu.o: Source\tSem.h
+.\objects\tcpu.o: Source\tMbox.h
+.\objects\tcpu.o: Source\tMemBlock.h
+.\objects\tcpu.o: Source\tFlagGroup.h
+.\objects\tcpu.o: Source\tMutex.h
+.\objects\tcpu.o: Source\tTimer.h
+.\objects\tcpu.o: Source\tHooks.h
+.\objects\tcpu.o: Source\tinyOS.h
+.\objects\tcpu.o: .\Start\stm32f10x.h
+.\objects\tcpu.o: .\Start\core_cm3.h
+.\objects\tcpu.o: .\Start\system_stm32f10x.h
+.\objects\tcpu.o: .\Source\stm32f10x_conf.h
+.\objects\tcpu.o: .\Library\stm32f10x_adc.h
+.\objects\tcpu.o: .\Start\stm32f10x.h
+.\objects\tcpu.o: .\Library\stm32f10x_bkp.h
+.\objects\tcpu.o: .\Library\stm32f10x_can.h
+.\objects\tcpu.o: .\Library\stm32f10x_cec.h
+.\objects\tcpu.o: .\Library\stm32f10x_crc.h
+.\objects\tcpu.o: .\Library\stm32f10x_dac.h
+.\objects\tcpu.o: .\Library\stm32f10x_dbgmcu.h
+.\objects\tcpu.o: .\Library\stm32f10x_dma.h
+.\objects\tcpu.o: .\Library\stm32f10x_exti.h
+.\objects\tcpu.o: .\Library\stm32f10x_flash.h
+.\objects\tcpu.o: .\Library\stm32f10x_fsmc.h
+.\objects\tcpu.o: .\Library\stm32f10x_gpio.h
+.\objects\tcpu.o: .\Library\stm32f10x_i2c.h
+.\objects\tcpu.o: .\Library\stm32f10x_iwdg.h
+.\objects\tcpu.o: .\Library\stm32f10x_pwr.h
+.\objects\tcpu.o: .\Library\stm32f10x_rcc.h
+.\objects\tcpu.o: .\Library\stm32f10x_rtc.h
+.\objects\tcpu.o: .\Library\stm32f10x_sdio.h
+.\objects\tcpu.o: .\Library\stm32f10x_spi.h
+.\objects\tcpu.o: .\Library\stm32f10x_tim.h
+.\objects\tcpu.o: .\Library\stm32f10x_usart.h
+.\objects\tcpu.o: .\Library\stm32f10x_wwdg.h
+.\objects\tcpu.o: .\Library\misc.h

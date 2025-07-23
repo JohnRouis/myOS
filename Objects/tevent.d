@@ -1,4 +1,16 @@
-./objects/tevent.o: Source\tEvent.c Source\tinyOS.h Source\tConfig.h \
-  Source\tLib.h Source\tEvent.h Source\tTask.h Source\tSem.h \
-  Source\tMbox.h Source\tMemBlock.h Source\tFlagGroup.h Source\tMutex.h \
-  Source\tTimer.h Source\tHooks.h
+.\objects\tevent.o: Source\tEvent.c
+.\objects\tevent.o: Source\tinyOS.h
+.\objects\tevent.o: E:\KEIL\ARM\ARMCC\Bin\..\include\string.h
+.\objects\tevent.o: E:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tevent.o: Source\tConfig.h
+.\objects\tevent.o: Source\tLib.h
+.\objects\tevent.o: Source\tEvent.h
+.\objects\tevent.o: Source\tTask.h
+.\objects\tevent.o: Source\tSem.h
+.\objects\tevent.o: Source\tMbox.h
+.\objects\tevent.o: Source\tMemBlock.h
+.\objects\tevent.o: Source\tFlagGroup.h
+.\objects\tevent.o: Source\tMutex.h
+.\objects\tevent.o: Source\tTimer.h
+.\objects\tevent.o: Source\tHooks.h
+.\objects\tevent.o: Source\tinyOS.h

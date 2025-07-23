@@ -1,4 +1,16 @@
-./objects/ttask.o: Source\tTask.c Source\tinyOS.h Source\tConfig.h \
-  Source\tLib.h Source\tEvent.h Source\tTask.h Source\tSem.h \
-  Source\tMbox.h Source\tMemBlock.h Source\tFlagGroup.h Source\tMutex.h \
-  Source\tTimer.h Source\tHooks.h
+.\objects\ttask.o: Source\tTask.c
+.\objects\ttask.o: Source\tinyOS.h
+.\objects\ttask.o: E:\KEIL\ARM\ARMCC\Bin\..\include\string.h
+.\objects\ttask.o: E:\KEIL\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ttask.o: Source\tConfig.h
+.\objects\ttask.o: Source\tLib.h
+.\objects\ttask.o: Source\tEvent.h
+.\objects\ttask.o: Source\tTask.h
+.\objects\ttask.o: Source\tSem.h
+.\objects\ttask.o: Source\tMbox.h
+.\objects\ttask.o: Source\tMemBlock.h
+.\objects\ttask.o: Source\tFlagGroup.h
+.\objects\ttask.o: Source\tMutex.h
+.\objects\ttask.o: Source\tTimer.h
+.\objects\ttask.o: Source\tHooks.h
+.\objects\ttask.o: Source\tinyOS.h

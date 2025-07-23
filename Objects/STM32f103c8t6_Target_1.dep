@@ -1,7 +1,9 @@
-Dependencies for Project 'STM32f103c8t6', Target 'Target_1': (DO NOT MODIFY !)
-CompilerVersion: 6220000::V6.22::ARMCLANG
-F (.\Source\app.c)(0x687DF9C6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/app.o -MMD)
+Dependencies for Project 'stm32f103c8t6', Target 'Target_1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\Source\app.c)(0x6880869B)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\app.o --omf_browse .\objects\app.crf --depend .\objects\app.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -13,9 +15,37 @@ I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
-F (.\Source\cortex.s)(0x685BA09D)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 541" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/cortex.o)
-F (.\Source\main.c)(0x687F2CB6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/main.o -MMD)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Source\main.c)(0x6880861F)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -27,12 +57,37 @@ I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x682BE9A5)
-I (RTE\_Target_1\RTE_Components.h)(0x687F2D49)
-I (E:\KEIL\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm3.h)(0x664BD888)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x682BE9A5)
-F (.\Source\switch.c)(0x687F2CB6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/switch.o -MMD)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Source\switch.c)(0x6880859F)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\switch.o --omf_browse .\objects\switch.crf --depend .\objects\switch.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -44,15 +99,41 @@ I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x682BE9A5)
-I (RTE\_Target_1\RTE_Components.h)(0x687F2D49)
-I (E:\KEIL\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm3.h)(0x664BD888)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x682BE9A5)
-F (.\Source\tBitmap.c)(0x685E2D3D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tbitmap.o -MMD)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Source\tBitmap.c)(0x685E2D3D)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tbitmap.o --omf_browse .\objects\tbitmap.crf --depend .\objects\tbitmap.d)
 I (Source\tLib.h)(0x6860ECB8)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 F (.\Source\tConfig.h)(0x687F17DD)()
-F (.\Source\tCpu.c)(0x687F2CB6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tcpu.o -MMD)
+F (.\Source\tCpu.c)(0x687F42FF)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tcpu.o --omf_browse .\objects\tcpu.crf --depend .\objects\tcpu.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -64,12 +145,37 @@ I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x682BE9A5)
-I (RTE\_Target_1\RTE_Components.h)(0x687F2D49)
-I (E:\KEIL\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm3.h)(0x664BD888)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x682BE9A5)
-F (.\Source\tEvent.c)(0x6878EA9F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tevent.o -MMD)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Source\tEvent.c)(0x6878EA9F)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tevent.o --omf_browse .\objects\tevent.crf --depend .\objects\tevent.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -82,13 +188,15 @@ I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tEvent.h)(0x687B22BE)()
-F (.\Source\tFlagGroup.c)(0x687F194B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tflaggroup.o -MMD)
+F (.\Source\tFlagGroup.c)(0x687F194B)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tflaggroup.o --omf_browse .\objects\tflaggroup.crf --depend .\objects\tflaggroup.d)
 I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tEvent.h)(0x687B22BE)
 I (Source\tLib.h)(0x6860ECB8)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tTask.h)(0x687DE71A)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
 I (Source\tSem.h)(0x68737294)
 I (Source\tMbox.h)(0x6874EB87)
 I (Source\tMemBlock.h)(0x68767785)
@@ -96,9 +204,11 @@ I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tFlagGroup.h)(0x6879FC2E)()
-F (.\Source\tHooks.c)(0x687F21AD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/thooks.o -MMD)
+F (.\Source\tHooks.c)(0x687F21AD)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\thooks.o --omf_browse .\objects\thooks.crf --depend .\objects\thooks.d)
 I (Source\tHooks.h)(0x687F215A)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -112,15 +222,18 @@ I (Source\tTimer.h)(0x687E07E1)
 F (.\Source\tHooks.h)(0x687F215A)()
 F (.\Source\tinyOS.h)(0x687F2208)()
 F (.\Source\tLib.h)(0x6860ECB8)()
-F (.\Source\tList.c)(0x6860EDCA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tlist.o -MMD)
+F (.\Source\tList.c)(0x6860EDCA)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tlist.o --omf_browse .\objects\tlist.crf --depend .\objects\tlist.d)
 I (Source\tLib.h)(0x6860ECB8)
-F (.\Source\tMbox.c)(0x687F1970)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tmbox.o -MMD)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+F (.\Source\tMbox.c)(0x687F1970)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tmbox.o --omf_browse .\objects\tmbox.crf --depend .\objects\tmbox.d)
 I (Source\tMbox.h)(0x6874EB87)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tEvent.h)(0x687B22BE)
 I (Source\tLib.h)(0x6860ECB8)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tTask.h)(0x687DE71A)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
 I (Source\tSem.h)(0x68737294)
 I (Source\tMemBlock.h)(0x68767785)
 I (Source\tFlagGroup.h)(0x6879FC2E)
@@ -128,13 +241,15 @@ I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tMbox.h)(0x6874EB87)()
-F (.\Source\tMemBlock.c)(0x687F1990)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tmemblock.o -MMD)
+F (.\Source\tMemBlock.c)(0x687F1990)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tmemblock.o --omf_browse .\objects\tmemblock.crf --depend .\objects\tmemblock.d)
 I (Source\tMemBlock.h)(0x68767785)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tEvent.h)(0x687B22BE)
 I (Source\tLib.h)(0x6860ECB8)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tTask.h)(0x687DE71A)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
 I (Source\tSem.h)(0x68737294)
 I (Source\tMbox.h)(0x6874EB87)
 I (Source\tFlagGroup.h)(0x6879FC2E)
@@ -142,13 +257,15 @@ I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tMemBlock.h)(0x68767785)()
-F (.\Source\tMutex.c)(0x687F1929)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tmutex.o -MMD)
+F (.\Source\tMutex.c)(0x687F1929)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tmutex.o --omf_browse .\objects\tmutex.crf --depend .\objects\tmutex.d)
 I (Source\tMutex.h)(0x687B36EA)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tEvent.h)(0x687B22BE)
 I (Source\tLib.h)(0x6860ECB8)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tTask.h)(0x687DE71A)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
 I (Source\tSem.h)(0x68737294)
 I (Source\tMbox.h)(0x6874EB87)
 I (Source\tMemBlock.h)(0x68767785)
@@ -156,13 +273,15 @@ I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tMutex.h)(0x687B36EA)()
-F (.\Source\tSem.c)(0x687F18FC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/tsem.o -MMD)
+F (.\Source\tSem.c)(0x687F18FC)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\tsem.o --omf_browse .\objects\tsem.crf --depend .\objects\tsem.d)
 I (Source\tSem.h)(0x68737294)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tEvent.h)(0x687B22BE)
 I (Source\tLib.h)(0x6860ECB8)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tTask.h)(0x687DE71A)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
 I (Source\tMbox.h)(0x6874EB87)
 I (Source\tMemBlock.h)(0x68767785)
 I (Source\tFlagGroup.h)(0x6879FC2E)
@@ -170,8 +289,10 @@ I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tSem.h)(0x68737294)()
-F (.\Source\tTask.c)(0x687F23F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/ttask.o -MMD)
+F (.\Source\tTask.c)(0x687F23F3)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ttask.o --omf_browse .\objects\ttask.crf --depend .\objects\ttask.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -184,8 +305,10 @@ I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tTask.h)(0x687DE71A)()
-F (.\Source\tTime.c)(0x68627394)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/ttime.o -MMD)
+F (.\Source\tTime.c)(0x68627394)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ttime.o --omf_browse .\objects\ttime.crf --depend .\objects\ttime.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -197,8 +320,10 @@ I (Source\tFlagGroup.h)(0x6879FC2E)
 I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
-F (.\Source\tTimer.c)(0x687F19C6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/ttimer.o -MMD)
+F (.\Source\tTimer.c)(0x687F19C6)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ttimer.o --omf_browse .\objects\ttimer.crf --depend .\objects\ttimer.d)
 I (Source\tinyOS.h)(0x687F2208)
+I (E:\KEIL\ARM\ARMCC\include\string.h)(0x5D9B3488)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
 I (Source\tConfig.h)(0x687F17DD)
 I (Source\tLib.h)(0x6860ECB8)
 I (Source\tEvent.h)(0x687B22BE)
@@ -211,10 +336,785 @@ I (Source\tMutex.h)(0x687B36EA)
 I (Source\tTimer.h)(0x687E07E1)
 I (Source\tHooks.h)(0x687F215A)
 F (.\Source\tTimer.h)(0x687E07E1)()
-F (RTE/Device/STM32F103C8/RTE_Device.h)(0x682BE9A5)()
-F (RTE/Device/STM32F103C8/startup_stm32f10x_md.s)(0x682BE9A5)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 541" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f10x_md.o)
-F (RTE/Device/STM32F103C8/system_stm32f10x.c)(0x682BE9A5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-IE:/KEIL/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IE:/KEIL/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -D_RTE_-o ./objects/system_stm32f10x.o -MMD)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x682BE9A5)
-I (RTE\_Target_1\RTE_Components.h)(0x687F2D49)
-I (E:\KEIL\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm3.h)(0x664BD888)
-I (E:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x682BE9A5)
+F (.\Source\stm32f10x_conf.h)(0x4D99A59E)()
+F (.\Source\stm32f10x_it.c)(0x687F487A)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
+I (Source\stm32f10x_it.h)(0x4D99A59E)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Source\stm32f10x_it.h)(0x4D99A59E)()
+F (.\Source\cortex.s)(0x685BA09D)(--cpu Cortex-M3 -g --apcs=interwork -IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 541" --pd "STM32F10X_MD SETA 1"--list .\listings\cortex.lst --xref -o .\objects\cortex.o --depend .\objects\cortex.d)
+F (.\Start\startup_stm32f10x_md.s)(0x4D783CD2)(--cpu Cortex-M3 -g --apcs=interwork -IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 541" --pd "STM32F10X_MD SETA 1"--list .\listings\startup_stm32f10x_md.lst --xref -o .\objects\startup_stm32f10x_md.o --depend .\objects\startup_stm32f10x_md.d)
+F (.\Start\core_cm3.c)(0x4C0C587E)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+F (.\Start\core_cm3.h)(0x4D523B58)()
+F (.\Start\stm32f10x.h)(0x4D783CB4)()
+F (.\Start\system_stm32f10x.c)(0x4D783CB0)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
+I (Start\stm32f10x.h)(0x4D783CB4)
+I (Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Start\system_stm32f10x.h)(0x4D783CAA)()
+F (.\Library\misc.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\misc.o --omf_browse .\objects\misc.crf --depend .\objects\misc.d)
+I (Library\misc.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\misc.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_adc.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_adc.o --omf_browse .\objects\stm32f10x_adc.crf --depend .\objects\stm32f10x_adc.d)
+I (Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_adc.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_bkp.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_bkp.o --omf_browse .\objects\stm32f10x_bkp.crf --depend .\objects\stm32f10x_bkp.d)
+I (Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_bkp.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_can.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_can.o --omf_browse .\objects\stm32f10x_can.crf --depend .\objects\stm32f10x_can.d)
+I (Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_can.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_cec.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_cec.o --omf_browse .\objects\stm32f10x_cec.crf --depend .\objects\stm32f10x_cec.d)
+I (Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_cec.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_crc.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_crc.o --omf_browse .\objects\stm32f10x_crc.crf --depend .\objects\stm32f10x_crc.d)
+I (Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_crc.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_dac.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_dac.o --omf_browse .\objects\stm32f10x_dac.crf --depend .\objects\stm32f10x_dac.d)
+I (Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_dac.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_dbgmcu.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_dbgmcu.o --omf_browse .\objects\stm32f10x_dbgmcu.crf --depend .\objects\stm32f10x_dbgmcu.d)
+I (Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_dma.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_dma.o --omf_browse .\objects\stm32f10x_dma.crf --depend .\objects\stm32f10x_dma.d)
+I (Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_dma.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_exti.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_exti.o --omf_browse .\objects\stm32f10x_exti.crf --depend .\objects\stm32f10x_exti.d)
+I (Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_exti.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_flash.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_flash.o --omf_browse .\objects\stm32f10x_flash.crf --depend .\objects\stm32f10x_flash.d)
+I (Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_flash.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_fsmc.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_fsmc.o --omf_browse .\objects\stm32f10x_fsmc.crf --depend .\objects\stm32f10x_fsmc.d)
+I (Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_gpio.c)(0x4D79EEC6)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_gpio.o --omf_browse .\objects\stm32f10x_gpio.crf --depend .\objects\stm32f10x_gpio.d)
+I (Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_gpio.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_i2c.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_i2c.o --omf_browse .\objects\stm32f10x_i2c.crf --depend .\objects\stm32f10x_i2c.d)
+I (Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_i2c.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_iwdg.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_iwdg.o --omf_browse .\objects\stm32f10x_iwdg.crf --depend .\objects\stm32f10x_iwdg.d)
+I (Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_pwr.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_pwr.o --omf_browse .\objects\stm32f10x_pwr.crf --depend .\objects\stm32f10x_pwr.d)
+I (Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_pwr.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_rcc.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_rcc.o --omf_browse .\objects\stm32f10x_rcc.crf --depend .\objects\stm32f10x_rcc.d)
+I (Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_rcc.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_rtc.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_rtc.o --omf_browse .\objects\stm32f10x_rtc.crf --depend .\objects\stm32f10x_rtc.d)
+I (Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_rtc.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_sdio.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_sdio.o --omf_browse .\objects\stm32f10x_sdio.crf --depend .\objects\stm32f10x_sdio.d)
+I (Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_sdio.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_spi.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_spi.o --omf_browse .\objects\stm32f10x_spi.crf --depend .\objects\stm32f10x_spi.d)
+I (Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_spi.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_tim.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_tim.o --omf_browse .\objects\stm32f10x_tim.crf --depend .\objects\stm32f10x_tim.d)
+I (Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_tim.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_usart.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_usart.o --omf_browse .\objects\stm32f10x_usart.crf --depend .\objects\stm32f10x_usart.d)
+I (Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_usart.h)(0x4D783BB4)()
+F (.\Library\stm32f10x_wwdg.c)(0x4D783BB4)(--c99 --gnu -c --cpu Cortex-M3 -g -O1 --apcs=interwork --split_sections -I .\Start -I .\Source -I .\Library-IE:\KEIL\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="541" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_wwdg.o --omf_browse .\objects\stm32f10x_wwdg.crf --depend .\objects\stm32f10x_wwdg.d)
+I (Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (E:\KEIL\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\Source\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)()
