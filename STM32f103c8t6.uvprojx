@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Start;.\Source;.\Library</IncludePath>
+              <IncludePath>.\Start;.\Source;.\Library;.\Hardware</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -398,6 +398,11 @@
               <FileName>switch.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\switch.c</FilePath>
+            </File>
+            <File>
+              <FileName>cortex.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Source\cortex.s</FilePath>
             </File>
             <File>
               <FileName>tBitmap.c</FileName>
@@ -539,11 +544,6 @@
               <FileType>5</FileType>
               <FilePath>.\Source\stm32f10x_it.h</FilePath>
             </File>
-            <File>
-              <FileName>cortex.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Source\cortex.s</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -578,6 +578,36 @@
               <FileName>system_stm32f10x.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Start\system_stm32f10x.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Hardware</GroupName>
+          <Files>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\OLED.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED_Font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\OLED_Font.h</FilePath>
+            </File>
+            <File>
+              <FileName>LED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\LED.h</FilePath>
+            </File>
+            <File>
+              <FileName>LED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\LED.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -825,5 +855,14 @@
     <components/>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>stm32f103c8t6</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

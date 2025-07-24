@@ -5,7 +5,8 @@
             "includePath": [
                 "d:\\STM32f103c8t6_myOS\\Start",
                 "d:\\STM32f103c8t6_myOS\\Source",
-                "d:\\STM32f103c8t6_myOS\\Library"
+                "d:\\STM32f103c8t6_myOS\\Library",
+                "d:\\STM32f103c8t6_myOS\\Hardware"
             ],
             "defines": [
                 "USE_STDPERIPH_DRIVER",

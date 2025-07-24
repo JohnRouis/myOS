@@ -42,3 +42,5 @@
 .\objects\app.o: .\Library\stm32f10x_usart.h
 .\objects\app.o: .\Library\stm32f10x_wwdg.h
 .\objects\app.o: .\Library\misc.h
+.\objects\app.o: .\Hardware\OLED.h
+.\objects\app.o: .\Hardware\LED.h
